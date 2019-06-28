@@ -15,10 +15,16 @@ namespace UMLGraph
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
+            btnBorrarLienzo.Visible = false;
+            lblEnunciado.Text = en.EnunciadoTxt;
+            lblNumEjericio.Text = en.NumEjercicio.ToString();
             lblBienvenida.Text = "Bienvenid@\n" + usuario;
         }
 
         List<Clase> listaClases = new List<Clase>();
+        Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
+
+        
         //down es para saber si se esta clickeando algo
         bool down = false;
         //inicial es para definir el punto donde esta el mouse cuando hace click
@@ -41,6 +47,7 @@ namespace UMLGraph
 
         private void Ctr_MouseUp(object sender, MouseEventArgs e) => down = false;
 
+        List<Point> lista = new List<Point>();
         private void Ctr_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -52,6 +59,8 @@ namespace UMLGraph
 
         private void btnClase_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Recuerda que el nombre de las clases es en singular.\n" +
+                "Fíjate que los atributos y métodos correspondan a la clase");
             //Se añade una nueva clase a la lista
             listaClases.Add(new Clase(160, 120));
 
@@ -68,6 +77,38 @@ namespace UMLGraph
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            //listaClases.Clear();
+            //this.Controls.Add(listaClases.Last().getCaja());
+        }
+
+        private void BtnInterfaz_Click(object sender, EventArgs e)
+        {
+
+            //Se añade una nueva clase a la lista
+            listaClases.Add(new Clase(160, 120));
+
+            //Aqui se añade el panel de la clase a los controles del Form
+            this.Controls.Add(listaClases.Last().getCaja());
+
+
+            //Este paso es para que el picture box se pueda mover arrastrando con el mouse
+            listaClases.Last().getCaja().MouseDown += Ctr_MouseDown;
+            listaClases.Last().getCaja().MouseUp += Ctr_MouseUp;
+            listaClases.Last().getCaja().MouseMove += Ctr_MouseMove;
+
+
+        }
+
+        private void BtnDependencia_Click(object sender, EventArgs e)
+        {
+            Dependencia dep = new Dependencia(160,120);
+        //    dep.dibujar(e);
         }
     }
 }

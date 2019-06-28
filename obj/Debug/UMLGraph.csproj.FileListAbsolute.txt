@@ -17,3 +17,5 @@ C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.csproj.CoreCompileInput
 C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.exe
 C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.pdb
 C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.InterfazGrafica.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.InterfazGrafica.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Login.resources
