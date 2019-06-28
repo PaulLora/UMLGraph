@@ -16,6 +16,8 @@ namespace UMLGraph
         public Login()
         {
             InitializeComponent();
+            this.txtUsuario.Text = "admin";
+            this.txtClave.Text = "admin";
         }
 
         private void Button1_Click(object sender, EventArgs e)

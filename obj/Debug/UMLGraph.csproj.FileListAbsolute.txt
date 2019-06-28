@@ -7,3 +7,13 @@ C:\Users\bryan\source\repos\UMLGraph\bin\Debug\UMLGraph.exe
 C:\Users\bryan\source\repos\UMLGraph\bin\Debug\UMLGraph.pdb
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.exe
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.pdb
+C:\Users\Equipo\Source\Repos\UMLGraph\bin\Debug\UMLGraph.exe.config
+C:\Users\Equipo\Source\Repos\UMLGraph\bin\Debug\UMLGraph.exe
+C:\Users\Equipo\Source\Repos\UMLGraph\bin\Debug\UMLGraph.pdb
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.csprojAssemblyReference.cache
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.Properties.Resources.resources
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.csproj.GenerateResource.cache
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.csproj.CoreCompileInputs.cache
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.exe
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.pdb
+C:\Users\Equipo\Source\Repos\UMLGraph\obj\Debug\UMLGraph.InterfazGrafica.resources

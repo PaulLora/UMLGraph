@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace UMLGraph
 {
-    class Figura
+    abstract class Figura
     {
-
+        public abstract void dibujar();
     }
 }

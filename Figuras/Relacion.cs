@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace UMLGraph
 {
-    class Relacion:Figura
+    class Relacion : Figura
     {
+        public override void dibujar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
