@@ -1,6 +1,6 @@
 ﻿namespace UMLGraph
 {
-    partial class Login
+    partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.txtNomUsuario = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnRegistrarse = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.txtNomUsuario = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtConfirmacionClave = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 25);
-            this.panel1.TabIndex = 9;
+            this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             // 
             // lblTitulo
@@ -72,9 +75,9 @@
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(3, 3);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(54, 18);
+            this.lblTitulo.Size = new System.Drawing.Size(67, 18);
             this.lblTitulo.TabIndex = 4;
-            this.lblTitulo.Text = "Log In";
+            this.lblTitulo.Text = "Sign Up";
             // 
             // btnRestaurar
             // 
@@ -89,7 +92,6 @@
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
             this.btnRestaurar.Click += new System.EventHandler(this.BtnRestaurar_Click);
-            this.btnRestaurar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnRestaurar_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -130,49 +132,17 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // txtClave
+            // btnRegistrarse
             // 
-            this.txtClave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnRegistrarse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClave.Location = new System.Drawing.Point(100, 148);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(147, 20);
-            this.txtClave.TabIndex = 15;
-            this.txtClave.Text = "Contraseña";
-            // 
-            // txtNomUsuario
-            // 
-            this.txtNomUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomUsuario.Location = new System.Drawing.Point(100, 90);
-            this.txtNomUsuario.Name = "txtNomUsuario";
-            this.txtNomUsuario.Size = new System.Drawing.Size(147, 20);
-            this.txtNomUsuario.TabIndex = 14;
-            this.txtNomUsuario.Text = "Nombre de usuario";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(50, 143);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(50, 85);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.btnRegistrarse.Location = new System.Drawing.Point(112, 195);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrarse.TabIndex = 2;
+            this.btnRegistrarse.Text = "Registrarse";
+            this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Click += new System.EventHandler(this.BtnRegistrarse_Click);
             // 
             // pictureBox1
             // 
@@ -181,67 +151,124 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // btnLogin
+            // pictureBox2
             // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Location = new System.Drawing.Point(112, 211);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "Ingresar";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(50, 69);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
-            // Login
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(50, 104);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(50, 140);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // txtNomUsuario
+            // 
+            this.txtNomUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNomUsuario.Location = new System.Drawing.Point(100, 74);
+            this.txtNomUsuario.Name = "txtNomUsuario";
+            this.txtNomUsuario.Size = new System.Drawing.Size(147, 20);
+            this.txtNomUsuario.TabIndex = 7;
+            this.txtNomUsuario.Text = "Nombre de usuario";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClave.Location = new System.Drawing.Point(100, 109);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(147, 20);
+            this.txtClave.TabIndex = 8;
+            this.txtClave.Text = "Contraseña";
+            // 
+            // txtConfirmacionClave
+            // 
+            this.txtConfirmacionClave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConfirmacionClave.Location = new System.Drawing.Point(100, 145);
+            this.txtConfirmacionClave.Name = "txtConfirmacionClave";
+            this.txtConfirmacionClave.Size = new System.Drawing.Size(147, 20);
+            this.txtConfirmacionClave.TabIndex = 9;
+            this.txtConfirmacionClave.Text = "Confirmar contraseña";
+            // 
+            // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(300, 250);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtConfirmacionClave);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtNomUsuario);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnRegistrarse);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
+            this.Text = "SignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox btnRestaurar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.TextBox txtNomUsuario;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox txtNomUsuario;
+        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.TextBox txtConfirmacionClave;
     }
 }
