@@ -23,6 +23,7 @@ namespace UMLGraph
         }
 
         List<Clase> listaClases = new List<Clase>();
+        List<Interfaz> listaInterfaces = new List<Interfaz>();
         Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
 
         
@@ -92,16 +93,16 @@ namespace UMLGraph
         {
 
             //Se añade una nueva clase a la lista
-            listaClases.Add(new Clase(160, 120));
+            listaInterfaces.Add(new Interfaz(160, 120));
 
             //Aqui se añade el panel de la clase a los controles del Form
-            this.Controls.Add(listaClases.Last().getCaja());
+            this.Controls.Add(listaInterfaces.Last().getCaja());
 
 
             //Este paso es para que el picture box se pueda mover arrastrando con el mouse
-            listaClases.Last().getCaja().MouseDown += Ctr_MouseDown;
-            listaClases.Last().getCaja().MouseUp += Ctr_MouseUp;
-            listaClases.Last().getCaja().MouseMove += Ctr_MouseMove;
+            listaInterfaces.Last().getCaja().MouseDown += Ctr_MouseDown;
+            listaInterfaces.Last().getCaja().MouseUp += Ctr_MouseUp;
+            listaInterfaces.Last().getCaja().MouseMove += Ctr_MouseMove;
 
 
         }

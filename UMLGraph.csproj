@@ -53,6 +53,7 @@
     <Compile Include="Figuras\Dependencia.cs" />
     <Compile Include="Figuras\Figura.cs" />
     <Compile Include="Figuras\Herencia.cs" />
+    <Compile Include="Figuras\Interfaz.cs" />
     <Compile Include="Figuras\Relacion.cs" />
     <Compile Include="Interfaz\InterfazGrafica.cs">
       <SubType>Form</SubType>
