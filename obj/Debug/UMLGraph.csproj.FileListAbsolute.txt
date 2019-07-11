@@ -21,3 +21,17 @@ C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.InterfazGrafica.resource
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Inicio.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.SignUp.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Login.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.csprojAssemblyReference.cache
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo3.Interfaz.LlenarClase.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.InterfazGrafica.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.Inicio.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.Login.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.SignUp.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.Properties.Resources.resources
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.csproj.GenerateResource.cache
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.csproj.CoreCompileInputs.cache
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.exe
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\obj\Debug\UMLGraph.pdb
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\bin\Debug\UMLGraph.exe.config
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\bin\Debug\UMLGraph.exe
+C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph2\UMLGraph\bin\Debug\UMLGraph.pdb
