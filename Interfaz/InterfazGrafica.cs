@@ -12,6 +12,7 @@ using UMLGraph.Grupos;
 using UMLGraph.Grupos.Grupo3.Interfaz;
 using UMLGraph.Grupos.Grupo3;
 using UMLGraph.Grupos.Grupo3.Figuras;
+using UMLGraph.Grupos.Grupo6.FigurasGr6;
 
 namespace UMLGraph
 {
@@ -36,6 +37,7 @@ namespace UMLGraph
             var grupos = new List<Groups>();//Se creo una clase Groups sencilla que guarda un name y un value
             grupos.Add(new Groups() { Name = "Grupo X", Value = "GRX" });//Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los sigueintes grupos
             grupos.Add(new Groups() { Name = "Grupo 3", Value = "GR3" });
+            grupos.Add(new Groups() { Name = "Grupo 6", Value = "GR6" });
             //Se llena el comboBox
             this.CmbSelecGrupo.DataSource = grupos;
             this.CmbSelecGrupo.DisplayMember = "Name";//Se define que será mostrado y seleccionamos el atributo name
@@ -46,6 +48,7 @@ namespace UMLGraph
 
         List<Clase> listaClases = new List<Clase>();
         List<Interfaz> listaInterfaces = new List<Interfaz>();
+        List<InterfazM> listaClasM = new List<InterfazM>();
         Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
 
         
@@ -110,6 +113,8 @@ namespace UMLGraph
                 //agrego a la lista de paneles al nuevo panel
                 gr3.paneles.Add(panel);
             }
+           
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -141,7 +146,16 @@ namespace UMLGraph
                 listaInterfaces.Last().getCaja().MouseUp += Ctr_MouseUp;
                 listaInterfaces.Last().getCaja().MouseMove += Ctr_MouseMove;
             }
-            
+
+            else if (selected.Equals("GR6"))
+            {
+                listaClasM.Add(new InterfazM(160, 120));
+                this.Controls.Add(listaClases.Last().getCaja());
+                listaClasM.Last().getCaja().MouseDown += Ctr_MouseDown;
+                listaClasM.Last().getCaja().MouseUp += Ctr_MouseUp;
+                listaClasM.Last().getCaja().MouseMove += Ctr_MouseMove;
+            }
+
 
 
         }

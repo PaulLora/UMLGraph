@@ -6,50 +6,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UMLGraph
+namespace UMLGraph.Grupos.Grupo6.FigurasGr6
 {
-    class Interfaz : Figura
+    class ClaseM: Figura
     {
-
         Graphics g;
         Pen p;
         int x, y, anchura = 130, altura = 20;
         Panel caja;
-        TextBox titulo, atributos, metodos, simbolos_izq, simbolos_der;
+        TextBox titulo, atributos, metodos;
 
-        public Interfaz(int x, int y)
+        public ClaseM(int x, int y)
         {
             this.x = x;
             this.y = y;
             p = new Pen(Color.Black);
 
-
-
             this.titulo = new System.Windows.Forms.TextBox();
             this.atributos = new System.Windows.Forms.TextBox();
             this.metodos = new System.Windows.Forms.TextBox();
-            this.simbolos_der = new System.Windows.Forms.TextBox();
-            this.simbolos_izq = new System.Windows.Forms.TextBox();
 
 
-            this.simbolos_der.Location = new System.Drawing.Point(112, 5);
-            this.simbolos_der.Multiline = true;
-            this.simbolos_der.Name = "textBox1";
-            this.simbolos_der.Text = ">>";
-            this.simbolos_der.Enabled = false;
-            this.simbolos_der.Size = new System.Drawing.Size(23, altura);
-
-            this.simbolos_izq.Location = new System.Drawing.Point(5, 5);
-            this.simbolos_izq.Multiline = true;
-            this.simbolos_izq.Name = "textBox1";
-            this.simbolos_izq.Text = "<<";
-            this.simbolos_izq.Enabled = false;
-            this.simbolos_izq.Size = new System.Drawing.Size(23, altura);
-
-            this.titulo.Location = new System.Drawing.Point(30, 5);
+            this.titulo.Location = new System.Drawing.Point(5, 5);
             this.titulo.Multiline = true;
             this.titulo.Name = "textBox1";
-            this.titulo.Size = new System.Drawing.Size(anchura - 50, altura);
+            this.titulo.Size = new System.Drawing.Size(anchura, altura);
 
             this.atributos.Location = new System.Drawing.Point(5, altura + 7);
             this.atributos.Multiline = true;
@@ -65,8 +46,6 @@ namespace UMLGraph
             caja.Controls.Add(titulo);
             caja.Controls.Add(atributos);
             caja.Controls.Add(metodos);
-            caja.Controls.Add(simbolos_der);
-            caja.Controls.Add(simbolos_izq);
             caja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             caja.Location = new System.Drawing.Point(x, y);
             caja.Name = "panel";
@@ -98,5 +77,4 @@ namespace UMLGraph
             return caja;
         }
     }
-
-    }
+}

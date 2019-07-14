@@ -157,5 +157,10 @@ namespace UMLGraph.Grupos.Grupo3.Interfaz
 
 
         }
+
+        private void Button3_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

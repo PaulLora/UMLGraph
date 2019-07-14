@@ -62,6 +62,9 @@
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
+    <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
+    <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
+    <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Agregacion.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Clase.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Composicion.cs" />
