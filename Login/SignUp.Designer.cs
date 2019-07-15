@@ -200,6 +200,8 @@
             this.txtNomUsuario.Size = new System.Drawing.Size(147, 20);
             this.txtNomUsuario.TabIndex = 7;
             this.txtNomUsuario.Text = "Nombre de usuario";
+            this.txtNomUsuario.TextChanged += new System.EventHandler(this.TxtNomUsuario_TextChanged);
+            this.txtNomUsuario.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TxtNomUsuario_MouseUp);
             // 
             // txtClave
             // 
@@ -210,6 +212,7 @@
             this.txtClave.Size = new System.Drawing.Size(147, 20);
             this.txtClave.TabIndex = 8;
             this.txtClave.Text = "Contraseña";
+            this.txtClave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TxtClave_MouseUp);
             // 
             // txtConfirmacionClave
             // 
@@ -220,6 +223,7 @@
             this.txtConfirmacionClave.Size = new System.Drawing.Size(147, 20);
             this.txtConfirmacionClave.TabIndex = 9;
             this.txtConfirmacionClave.Text = "Confirmar contraseña";
+            this.txtConfirmacionClave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TxtConfirmacionClave_MouseUp);
             // 
             // SignUp
             // 

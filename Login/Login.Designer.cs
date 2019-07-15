@@ -139,6 +139,8 @@
             this.txtClave.Size = new System.Drawing.Size(147, 20);
             this.txtClave.TabIndex = 15;
             this.txtClave.Text = "Contraseña";
+            this.txtClave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TxtClave_MouseMove);
+            this.txtClave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TxtClave_MouseUp);
             // 
             // txtNomUsuario
             // 
@@ -149,6 +151,8 @@
             this.txtNomUsuario.Size = new System.Drawing.Size(147, 20);
             this.txtNomUsuario.TabIndex = 14;
             this.txtNomUsuario.Text = "Nombre de usuario";
+            this.txtNomUsuario.TextChanged += new System.EventHandler(this.TxtNomUsuario_TextChanged);
+            this.txtNomUsuario.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TxtNomUsuario_MouseUp);
             // 
             // pictureBox3
             // 
