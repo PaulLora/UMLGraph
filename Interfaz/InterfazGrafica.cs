@@ -23,6 +23,7 @@ namespace UMLGraph
         InterfazGR3 gr3;
         //Strign para chequear cual grupo fue seleccionado
         String selected = "GRX";
+      
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
@@ -35,8 +36,9 @@ namespace UMLGraph
             this.WindowState = FormWindowState.Maximized;
             //En las lineas siguientes creo una lista de grupos para que se pueda seleccionar GR1,GR2,...
             var grupos = new List<Groups>();//Se creo una clase Groups sencilla que guarda un name y un value
-            grupos.Add(new Groups() { Name = "Grupo X", Value = "GRX" });//Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los sigueintes grupos
+            grupos.Add(new Groups() { Name = "Grupo X", Value = "GRX" });//Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los siguientes grupos
             grupos.Add(new Groups() { Name = "Grupo 3", Value = "GR3" });
+            grupos.Add(new Groups() { Name = "Grupo 5", Value = "GR5" });
             grupos.Add(new Groups() { Name = "Grupo 6", Value = "GR6" });
             //Se llena el comboBox
             this.CmbSelecGrupo.DataSource = grupos;
@@ -48,7 +50,7 @@ namespace UMLGraph
 
         List<Clase> listaClases = new List<Clase>();
         List<Interfaz> listaInterfaces = new List<Interfaz>();
-        List<Interfaz> listaClasM = new List<Interfaz>();
+        //List<InterfazM> listaClasM = new List<InterfazM>();
         Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
 
         
@@ -89,7 +91,7 @@ namespace UMLGraph
             MessageBox.Show("Recuerda que el nombre de las clases es en singular.\n" +
                    "Fíjate que los atributos y métodos correspondan a la clase");
             //Codigo original dle programa se activara si el elemento seleccionado es GRX
-            if (selected.Equals("GRX"))
+            if (selected.Equals("GRX") || selected.Equals("GR5"))
             {
                 //Se añade una nueva clase a la lista
                 listaClases.Add(new Clase(160, 120));
@@ -104,7 +106,7 @@ namespace UMLGraph
                 listaClases.Last().getCaja().MouseMove += Ctr_MouseMove;
             }
             //Parte anexada del Grupo 3 se activa si es GR3
-            else if (selected.Equals("GR3"))
+            else if (selected.Equals("GR3") )
             {
                 //Se crea un panel local
                 Panel panel = new Panel();
@@ -113,7 +115,10 @@ namespace UMLGraph
                 //agrego a la lista de paneles al nuevo panel
                 gr3.paneles.Add(panel);
             }
+
            
+           
+
 
         }
 
@@ -132,7 +137,7 @@ namespace UMLGraph
 
         private void BtnInterfaz_Click(object sender, EventArgs e)
         {
-            if (selected.Equals("GRX"))
+            if (selected.Equals("GRX") || selected.Equals("GR5"))
             {
                 //Se añade una nueva clase a la lista
                 listaInterfaces.Add(new Interfaz(160, 120));
@@ -148,12 +153,12 @@ namespace UMLGraph
             }
 
             else if (selected.Equals("GR6"))
-            {
-                listaClasM.Add(new Interfaz(160, 120));
+            { 
+                //listaClasM.Add(new InterfazM(160, 120));
                 this.Controls.Add(listaClases.Last().getCaja());
-                listaClasM.Last().getCaja().MouseDown += Ctr_MouseDown;
-                listaClasM.Last().getCaja().MouseUp += Ctr_MouseUp;
-                listaClasM.Last().getCaja().MouseMove += Ctr_MouseMove;
+                //listaClasM.Last().getCaja().MouseDown += Ctr_MouseDown;
+                //listaClasM.Last().getCaja().MouseUp += Ctr_MouseUp;
+              //  listaClasM.Last().getCaja().MouseMove += Ctr_MouseMove;
             }
 
 
@@ -217,6 +222,8 @@ namespace UMLGraph
         {
 
         }
+      
+        
 
         private void CmbSelecGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -227,6 +234,7 @@ namespace UMLGraph
                 Controls.Add(gr3.masterPanel);
                 this.selected = "GR3";
             }
+          
         }
 
         private void BtnRelacion_Click(object sender, EventArgs e)
@@ -247,6 +255,10 @@ namespace UMLGraph
                 //Agregamos la figura_relacion local a la lista y a la lista de formas
                 gr3.relaciones.Add(tmp);
                 gr3.Formas.Formas.Add(tmp);
+            }
+            else if (selected.Equals("GR5"))
+            {
+                
             }
         }
     }

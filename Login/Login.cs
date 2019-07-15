@@ -119,5 +119,26 @@ namespace UMLGraph
 
 
         }
+
+        private void TxtNomUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtNomUsuario_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtNomUsuario.Text = "";
+
+        }
+
+        private void TxtClave_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void TxtClave_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtClave.Text = "";
+        }
     }
 }
