@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Grupos",
+    "\\Grupos\\Grupo6",
+    "\\Grupos\\Grupo6\\FigurasGr6",
+    "\\Grupos\\GrupoX",
+    "\\Grupos\\GrupoX\\Figuras",
+    "\\Interfaz"
   ],
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -48,7 +48,7 @@ namespace UMLGraph
 
         List<Clase> listaClases = new List<Clase>();
         List<Interfaz> listaInterfaces = new List<Interfaz>();
-        List<InterfazM> listaClasM = new List<InterfazM>();
+        List<Interfaz> listaClasM = new List<Interfaz>();
         Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
 
         
@@ -149,7 +149,7 @@ namespace UMLGraph
 
             else if (selected.Equals("GR6"))
             {
-                listaClasM.Add(new InterfazM(160, 120));
+                listaClasM.Add(new Interfaz(160, 120));
                 this.Controls.Add(listaClases.Last().getCaja());
                 listaClasM.Last().getCaja().MouseDown += Ctr_MouseDown;
                 listaClasM.Last().getCaja().MouseUp += Ctr_MouseUp;
