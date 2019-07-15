@@ -69,16 +69,40 @@ namespace UMLGraph
 
         private void BtnRegistrarse_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("asd");
+            MessageBox.Show("Registro");
             if (string.Equals(this.txtClave.Text, this.txtConfirmacionClave.Text))
             {
-                MessageBox.Show("Usuario registrado correctamente.\nRegrese al inicio para poder ingresar");
+                MessageBox.Show("Usuario registrado correctamente.\nRegresando al inicio para poder ingresar");
                 IngresarUsuario(this.txtNomUsuario.Text, this.txtClave.Text);
+                this.Hide();
+                new Inicio().Show();
+
             }
             else
             {
                 MessageBox.Show("La confirmacion de clave y la clave deben ser iguales");
             }
+        }
+
+        private void TxtNomUsuario_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TxtNomUsuario_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtNomUsuario.Text = "";
+
+        }
+
+        private void TxtClave_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtClave.Text = "";
+        }
+
+        private void TxtConfirmacionClave_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtConfirmacionClave.Text = "";
         }
     }
 }
