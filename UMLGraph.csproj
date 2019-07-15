@@ -47,14 +47,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enunciado\Enunciado.cs" />
-    <Compile Include="Figuras\Agregacion.cs" />
-    <Compile Include="Figuras\Clase.cs" />
-    <Compile Include="Figuras\Composicion.cs" />
-    <Compile Include="Figuras\Dependencia.cs" />
-    <Compile Include="Figuras\Figura.cs" />
-    <Compile Include="Figuras\Herencia.cs" />
-    <Compile Include="Figuras\Interfaz.cs" />
-    <Compile Include="Figuras\Relacion.cs" />
+    <Compile Include="Grupos\Groups.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Forma.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Lista_Formas.cs" />
+    <Compile Include="Grupos\Grupo3\Interfaz\InterfazGR3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo3\Interfaz\LlenarClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo3\Interfaz\LlenarClase.Designer.cs">
+      <DependentUpon>LlenarClase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
+    <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
+    <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
+    <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Agregacion.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Clase.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Composicion.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Dependencia.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Figura.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Herencia.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Interfaz.cs" />
+    <Compile Include="Grupos\GrupoX\Figuras\Relacion.cs" />
     <Compile Include="Interfaz\InterfazGrafica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
+      <DependentUpon>LlenarClase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazGrafica.resx">
       <DependentUpon>InterfazGrafica.cs</DependentUpon>
     </EmbeddedResource>

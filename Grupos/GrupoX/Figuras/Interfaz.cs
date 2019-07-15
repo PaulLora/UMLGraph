@@ -25,7 +25,6 @@ namespace UMLGraph
 
 
 
-
             this.titulo = new System.Windows.Forms.TextBox();
             this.atributos = new System.Windows.Forms.TextBox();
             this.metodos = new System.Windows.Forms.TextBox();

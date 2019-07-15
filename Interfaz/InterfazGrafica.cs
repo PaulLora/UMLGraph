@@ -8,11 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using UMLGraph.Grupos;
+using UMLGraph.Grupos.Grupo3.Interfaz;
+using UMLGraph.Grupos.Grupo3;
+using UMLGraph.Grupos.Grupo3.Figuras;
+using UMLGraph.Grupos.Grupo6.FigurasGr6;
 
 namespace UMLGraph
 {
     public partial class InterfazGrafica : Form
     {
+        //Se creo una clase que contenga las varialbes minimas necesarias para el funcionamiento del código
+        //Del grupo diferente en este caso la llame InterfazGR3 pero no es un interface en si mismo
+        InterfazGR3 gr3;
+        //Strign para chequear cual grupo fue seleccionado
+        String selected = "GRX";
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
@@ -20,10 +30,25 @@ namespace UMLGraph
             lblEnunciado.Text = en.EnunciadoTxt;
             lblNumEjericio.Text = en.NumEjercicio.ToString();
             lblUsuario.Text = usuario;
+            /////////////////////////////////////////////
+            //Mi codigo funcionaba mejor maximizado por lo que agrege esa linea
+            this.WindowState = FormWindowState.Maximized;
+            //En las lineas siguientes creo una lista de grupos para que se pueda seleccionar GR1,GR2,...
+            var grupos = new List<Groups>();//Se creo una clase Groups sencilla que guarda un name y un value
+            grupos.Add(new Groups() { Name = "Grupo X", Value = "GRX" });//Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los sigueintes grupos
+            grupos.Add(new Groups() { Name = "Grupo 3", Value = "GR3" });
+            grupos.Add(new Groups() { Name = "Grupo 6", Value = "GR6" });
+            //Se llena el comboBox
+            this.CmbSelecGrupo.DataSource = grupos;
+            this.CmbSelecGrupo.DisplayMember = "Name";//Se define que será mostrado y seleccionamos el atributo name
+            this.CmbSelecGrupo.ValueMember = "Value";//Se define cual sera el valor de lo mostrado y seleccionamos el atributo value
+            //Instancio la interfaz, la mia necesita los tamanios de la ventana por lo que le envio eso
+            gr3 = new InterfazGR3(new Size(this.Width * 3, this.Height * 3));
         }
 
         List<Clase> listaClases = new List<Clase>();
         List<Interfaz> listaInterfaces = new List<Interfaz>();
+        List<InterfazM> listaClasM = new List<InterfazM>();
         Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
 
         
@@ -62,18 +87,34 @@ namespace UMLGraph
         private void btnClase_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Recuerda que el nombre de las clases es en singular.\n" +
-                "Fíjate que los atributos y métodos correspondan a la clase");
-            //Se añade una nueva clase a la lista
-            listaClases.Add(new Clase(160, 120));
+                   "Fíjate que los atributos y métodos correspondan a la clase");
+            //Codigo original dle programa se activara si el elemento seleccionado es GRX
+            if (selected.Equals("GRX"))
+            {
+                //Se añade una nueva clase a la lista
+                listaClases.Add(new Clase(160, 120));
 
-            //Aqui se añade el panel de la clase a los controles del Form
-            this.Controls.Add(listaClases.Last().getCaja());
-            
+                //Aqui se añade el panel de la clase a los controles del Form
+                this.Controls.Add(listaClases.Last().getCaja());
 
-            //Este paso es para que el picture box se pueda mover arrastrando con el mouse
-            listaClases.Last().getCaja().MouseDown += Ctr_MouseDown;
-            listaClases.Last().getCaja().MouseUp += Ctr_MouseUp;
-            listaClases.Last().getCaja().MouseMove += Ctr_MouseMove;
+
+                //Este paso es para que el picture box se pueda mover arrastrando con el mouse
+                listaClases.Last().getCaja().MouseDown += Ctr_MouseDown;
+                listaClases.Last().getCaja().MouseUp += Ctr_MouseUp;
+                listaClases.Last().getCaja().MouseMove += Ctr_MouseMove;
+            }
+            //Parte anexada del Grupo 3 se activa si es GR3
+            else if (selected.Equals("GR3"))
+            {
+                //Se crea un panel local
+                Panel panel = new Panel();
+                //Aplicamos la funcion crearpanel que inicializa todo lo que la clase debe tener
+                gr3.CrearPanel(ref panel);
+                //agrego a la lista de paneles al nuevo panel
+                gr3.paneles.Add(panel);
+            }
+           
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -91,18 +132,30 @@ namespace UMLGraph
 
         private void BtnInterfaz_Click(object sender, EventArgs e)
         {
+            if (selected.Equals("GRX"))
+            {
+                //Se añade una nueva clase a la lista
+                listaInterfaces.Add(new Interfaz(160, 120));
 
-            //Se añade una nueva clase a la lista
-            listaInterfaces.Add(new Interfaz(160, 120));
-
-            //Aqui se añade el panel de la clase a los controles del Form
-            this.Controls.Add(listaInterfaces.Last().getCaja());
+                //Aqui se añade el panel de la clase a los controles del Form
+                this.Controls.Add(listaInterfaces.Last().getCaja());
 
 
-            //Este paso es para que el picture box se pueda mover arrastrando con el mouse
-            listaInterfaces.Last().getCaja().MouseDown += Ctr_MouseDown;
-            listaInterfaces.Last().getCaja().MouseUp += Ctr_MouseUp;
-            listaInterfaces.Last().getCaja().MouseMove += Ctr_MouseMove;
+                //Este paso es para que el picture box se pueda mover arrastrando con el mouse
+                listaInterfaces.Last().getCaja().MouseDown += Ctr_MouseDown;
+                listaInterfaces.Last().getCaja().MouseUp += Ctr_MouseUp;
+                listaInterfaces.Last().getCaja().MouseMove += Ctr_MouseMove;
+            }
+
+            else if (selected.Equals("GR6"))
+            {
+                listaClasM.Add(new InterfazM(160, 120));
+                this.Controls.Add(listaClases.Last().getCaja());
+                listaClasM.Last().getCaja().MouseDown += Ctr_MouseDown;
+                listaClasM.Last().getCaja().MouseUp += Ctr_MouseUp;
+                listaClasM.Last().getCaja().MouseMove += Ctr_MouseMove;
+            }
+
 
 
         }
@@ -158,6 +211,43 @@ namespace UMLGraph
             this.WindowState = FormWindowState.Maximized;
             btnMaximizar.Visible = false;
             btnRestaurar.Visible = true;
+        }
+
+        private void InterfazGrafica_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmbSelecGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Console.WriteLine(CmbSelecGrupo.GetItemText(CmbSelecGrupo.SelectedItem));
+            //Determinamos que item fue seleccionado y si pertenece a un grupo determinado
+            if (CmbSelecGrupo.GetItemText(CmbSelecGrupo.SelectedItem).Equals("Grupo 3"))
+            {
+                Controls.Add(gr3.masterPanel);
+                this.selected = "GR3";
+            }
+        }
+
+        private void BtnRelacion_Click(object sender, EventArgs e)
+        {
+            if (selected.Equals("GRX"))
+            {
+
+            }
+            //Parte anexada del Grupo 3 se activa si es GR3
+            else if (selected.Equals("GR3"))
+            {
+                //Habilitamos drawing bandera que sirve para guardar los puntos
+                gr3.drawing = true;
+                //Creamos una figura_relacion local
+                Figura_Relacion tmp = new Figura_Relacion();
+                //Inicializamos la lista de puntos donde se guardara para dibuajr la linea
+                tmp.RelPuntos = new List<Point>();
+                //Agregamos la figura_relacion local a la lista y a la lista de formas
+                gr3.relaciones.Add(tmp);
+                gr3.Formas.Formas.Add(tmp);
+            }
         }
     }
 }
