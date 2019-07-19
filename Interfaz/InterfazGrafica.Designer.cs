@@ -307,7 +307,7 @@
             // btbCerrarSesion
             // 
             this.btbCerrarSesion.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btbCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btbCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbCerrarSesion.Location = new System.Drawing.Point(14, 76);
             this.btbCerrarSesion.Name = "btbCerrarSesion";
             this.btbCerrarSesion.Size = new System.Drawing.Size(114, 23);
