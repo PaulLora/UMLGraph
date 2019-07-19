@@ -184,13 +184,14 @@
             this.panel1.Controls.Add(this.btnDependencia);
             this.panel1.Controls.Add(this.btnComposicion);
             this.panel1.Location = new System.Drawing.Point(0, 130);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(140, 470);
             this.panel1.TabIndex = 14;
             // 
             // CmbSelecGrupo
             // 
+            this.CmbSelecGrupo.BackColor = System.Drawing.SystemColors.Menu;
             this.CmbSelecGrupo.FormattingEnabled = true;
             this.CmbSelecGrupo.Items.AddRange(new object[] {
             "Grupo 5"});
@@ -208,7 +209,7 @@
             this.panel2.Controls.Add(this.lblNumEjericio);
             this.panel2.Controls.Add(this.lblEnunciado);
             this.panel2.Location = new System.Drawing.Point(144, 25);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(856, 103);
             this.panel2.TabIndex = 15;
@@ -305,13 +306,14 @@
             // 
             // btbCerrarSesion
             // 
+            this.btbCerrarSesion.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btbCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btbCerrarSesion.Location = new System.Drawing.Point(14, 76);
             this.btbCerrarSesion.Name = "btbCerrarSesion";
             this.btbCerrarSesion.Size = new System.Drawing.Size(114, 23);
             this.btbCerrarSesion.TabIndex = 21;
             this.btbCerrarSesion.Text = "Cerrar Sesión";
-            this.btbCerrarSesion.UseVisualStyleBackColor = true;
+            this.btbCerrarSesion.UseVisualStyleBackColor = false;
             this.btbCerrarSesion.Click += new System.EventHandler(this.BtbCerrarSesion_Click);
             // 
             // pictureBox1
