@@ -1,13 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Grupos",
     "\\Grupos\\Grupo6",
     "\\Grupos\\Grupo6\\FigurasGr6",
     "\\Grupos\\GrupoX",
     "\\Grupos\\GrupoX\\Figuras",
-    "\\Interfaz"
+    "\\Interfaz",
+    "\\Login"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\Login\\Inicio.resx",
   "PreviewInSolutionExplorer": false
 }
