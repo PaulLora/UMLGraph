@@ -37,9 +37,11 @@ namespace UMLGraph
             //En las lineas siguientes creo una lista de grupos para que se pueda seleccionar GR1,GR2,...
             var grupos = new List<Groups>();//Se creo una clase Groups sencilla que guarda un name y un value
             grupos.Add(new Groups() { Name = "Grupo X", Value = "GRX" });//Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los siguientes grupos
+            grupos.Add(new Groups() { Name = "Grupo 1", Value = "GR1" });
             grupos.Add(new Groups() { Name = "Grupo 3", Value = "GR3" });
             grupos.Add(new Groups() { Name = "Grupo 5", Value = "GR5" });
             grupos.Add(new Groups() { Name = "Grupo 6", Value = "GR6" });
+            
             //Se llena el comboBox
             this.CmbSelecGrupo.DataSource = grupos;
             this.CmbSelecGrupo.DisplayMember = "Name";//Se define que será mostrado y seleccionamos el atributo name
@@ -161,7 +163,10 @@ namespace UMLGraph
               //  listaClasM.Last().getCaja().MouseMove += Ctr_MouseMove;
             }
 
-
+            else if (selected.Equals("GR1"))
+            {
+                MessageBox.Show("Hola somos grupo 1");
+            }
 
         }
 
@@ -234,7 +239,13 @@ namespace UMLGraph
                 Controls.Add(gr3.masterPanel);
                 this.selected = "GR3";
             }
-          
+            if (CmbSelecGrupo.GetItemText(CmbSelecGrupo.SelectedItem).Equals("Grupo 1"))
+            {
+                Controls.Add(gr3.masterPanel);
+                this.selected = "GR1";
+                MessageBox.Show("Hola somos grupo 1");
+            }
+
         }
 
         private void BtnRelacion_Click(object sender, EventArgs e)
@@ -259,6 +270,11 @@ namespace UMLGraph
             else if (selected.Equals("GR5"))
             {
                 
+            }
+
+            else if (selected.Equals("GR1"))
+            {
+                MessageBox.Show("Hola somos grupo 1");
             }
         }
     }
