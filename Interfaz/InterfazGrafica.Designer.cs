@@ -191,6 +191,7 @@
             // 
             // CmbSelecGrupo
             // 
+            this.CmbSelecGrupo.BackColor = System.Drawing.SystemColors.Menu;
             this.CmbSelecGrupo.FormattingEnabled = true;
             this.CmbSelecGrupo.Items.AddRange(new object[] {
             "Grupo 5"});
