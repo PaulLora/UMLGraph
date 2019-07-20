@@ -1,13 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Enunciado",
     "\\Grupos",
+    "\\Grupos\\Grupo3",
     "\\Grupos\\Grupo6",
     "\\Grupos\\Grupo6\\FigurasGr6",
     "\\Grupos\\GrupoX",
     "\\Grupos\\GrupoX\\Figuras",
     "\\Interfaz"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\Grupos\\GrupoX\\Figuras\\Relacion.cs",
   "PreviewInSolutionExplorer": false
 }
