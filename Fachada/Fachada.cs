@@ -11,8 +11,8 @@ namespace UMLGraph
     {
         public Panel EjecutarEnunciado1(Panel panel)
         {
-            panel.Dispose();
-        return panel;
+            panel.Controls.Clear();
+            return panel;
         }
         public void EjecutarEnunciado2()
         {
@@ -26,7 +26,7 @@ namespace UMLGraph
         }
         public Panel EjecutarEnunciado4(Panel panel)
         {
-            //panel.Dispose();
+            panel.Controls.Clear();
             GraficaGrupo4 graph4 = new GraficaGrupo4(panel);
             panel = graph4.dibujar();
             return panel;

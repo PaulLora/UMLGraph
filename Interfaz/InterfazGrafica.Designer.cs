@@ -446,27 +446,27 @@
             this.panel1.Controls.Add(this.btnAgregacion);
             this.panel1.Controls.Add(this.btnHerencia);
             this.panel1.Controls.Add(this.btnInterfaz);
-            this.panel1.Location = new System.Drawing.Point(11, 12);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 202);
+            this.panel1.Size = new System.Drawing.Size(140, 204);
             this.panel1.TabIndex = 14;
             this.panel1.Visible = false;
             // 
             // pnlDibujar
             // 
-            this.pnlDibujar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDibujar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDibujar.Controls.Add(this.panel1);
             this.pnlDibujar.Location = new System.Drawing.Point(0, 131);
             this.pnlDibujar.Name = "pnlDibujar";
-            this.pnlDibujar.Size = new System.Drawing.Size(997, 473);
+            this.pnlDibujar.Size = new System.Drawing.Size(1000, 475);
             this.pnlDibujar.TabIndex = 18;
             // 
             // InterfazGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.pnlDibujar);
@@ -475,7 +475,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InterfazGrafica";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UMLGraph";
             this.Load += new System.EventHandler(this.InterfazGrafica_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InterfazGrafica_MouseDown);

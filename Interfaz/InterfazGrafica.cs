@@ -171,9 +171,9 @@ namespace UMLGraph
 
         private void BtbCerrarSesion_Click(object sender, EventArgs e)
         {
-            panel1.Hide();
-            //this.Dispose();
-            //new Inicio().Show();
+            
+            this.Dispose();
+            new Inicio().Show();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -280,6 +280,7 @@ namespace UMLGraph
 
         private void BtnEnunciado1_Click(object sender, EventArgs e)
         {
+            this.pnlDibujar.Controls.Clear();
             pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
@@ -303,6 +304,7 @@ namespace UMLGraph
 
         private void BtnEnunciado4_Click(object sender, EventArgs e)
         {
+            this.pnlDibujar.Controls.Clear();
             pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
