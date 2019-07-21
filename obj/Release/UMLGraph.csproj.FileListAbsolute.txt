@@ -9,4 +9,6 @@ C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.csproj.GenerateResourc
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.csproj.CoreCompileInputs.cache
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.exe
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.pdb
-C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Login.Inicio.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo3.Interfaz.LlenarClase.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Inicio.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.SignUp.resources
