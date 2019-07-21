@@ -49,28 +49,6 @@
   <ItemGroup>
     <Compile Include="Enunciado\Enunciado.cs" />
     <Compile Include="Grupos\Groups.cs" />
-    <Compile Include="Grupos\Grupo1\Canvas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grupos\Grupo1\Forma.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_Agregacion.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_Asociacion.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_Clase.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_ClaseAbstracta.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_Composicion.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_Herencia.cs" />
-    <Compile Include="Grupos\Grupo1\Forma_Interfaz.cs" />
-    <Compile Include="Grupos\Grupo1\GUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grupos\Grupo1\GUI.Designer.cs" />
-    <Compile Include="Grupos\Grupo1\ListaFormas.cs" />
-    <Compile Include="Grupos\Grupo1\Program.cs" />
-    <Compile Include="Grupos\Grupo1\Validacion.cs" />
-    <Compile Include="Grupos\Grupo1\ValidacionAsociacion.cs" />
-    <Compile Include="Grupos\Grupo1\ValidacionClase.cs" />
-    <Compile Include="Grupos\Grupo1\ValidacionHerencia.cs" />
-    <Compile Include="Grupos\Grupo1\ValidacionInterfaz.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Forma.cs" />
@@ -122,8 +100,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Grupos\Grupo1\Canvas.resx" />
-    <EmbeddedResource Include="Grupos\Grupo1\GUI.resx" />
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </EmbeddedResource>
