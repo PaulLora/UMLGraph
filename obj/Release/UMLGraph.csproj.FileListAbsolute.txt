@@ -12,3 +12,4 @@ C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.pdb
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo3.Interfaz.LlenarClase.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Inicio.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.SignUp.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo5.FpropiedadesClase.resources

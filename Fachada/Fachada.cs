@@ -37,10 +37,6 @@ namespace UMLGraph
             
         }
 
-        public void EjecutarEnunciado5()
-        {
-
-
         public Panel EjecutarEnunciado5(Panel panel)
 
         {

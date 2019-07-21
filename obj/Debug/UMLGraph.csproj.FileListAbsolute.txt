@@ -78,3 +78,4 @@ C:\Users\David\Source\Repos\UMLGraph4\obj\Debug\UMLGraph.csproj.CoreCompileInput
 C:\Users\David\Source\Repos\UMLGraph4\obj\Debug\UMLGraph.exe
 C:\Users\David\Source\Repos\UMLGraph4\obj\Debug\UMLGraph.pdb
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo3.Interfaz.LlenarClase.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo5.FpropiedadesClase.resources
