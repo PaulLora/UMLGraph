@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enunciado\Enunciado.cs" />
+    <Compile Include="Fachada\Fachada.cs" />
     <Compile Include="Grupos\Groups.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Grupos\GrupoX\Figuras\Herencia.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Interfaz.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Relacion.cs" />
+    <Compile Include="Grupos\GrupoX\GraficaGrupo4.cs" />
     <Compile Include="Interfaz\InterfazGrafica.cs">
       <SubType>Form</SubType>
     </Compile>
