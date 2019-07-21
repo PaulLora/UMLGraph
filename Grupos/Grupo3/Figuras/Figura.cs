@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace UMLGraph.Grupos.Grupo3.Figuras
 {
-    class Forma
+    class Figura
     {
-        public String FormaNombre { get; set; }
-        public Point FormaCentro { get; set; }
+        public String FiguraNombre { get; set; }
+        public Point FiguraCentro { get; set; }
     }
 }

@@ -16,16 +16,11 @@ using System.Drawing.Drawing2D;
 
 namespace UMLGraph.Grupos.Grupo3.Figuras
 {
-    internal class Figura_Relacion : Forma
+    internal class Figura_Relacion : Figura
     {
-        public Figura_Relacion(Point pInicial, Point pFinal)
-        {
-
-
-        }
         public Figura_Relacion()
         {
-            this.FormaNombre = "Rel" + DateTime.Now.ToString("hmmss");
+            this.FiguraNombre = "Rel" + DateTime.Now.ToString("hmmss");
         }
 
         public List<Point> RelPuntos { get; set; }
@@ -62,7 +57,7 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
             btg.DrawImage(drwRel, Point.Empty);
             try
             {
-                drwRel.Save(this.FormaNombre + ".bmp");
+                drwRel.Save(this.FiguraNombre + ".bmp");
             }
             catch { }
             return drwRel;
