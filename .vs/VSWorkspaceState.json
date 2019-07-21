@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Interfaz",
-    "\\Login"
+    "\\Grupos"
   ],
-  "SelectedNode": "\\Login\\Inicio.resx",
+  "SelectedNode": "\\UMLGraph.csproj",
   "PreviewInSolutionExplorer": false
 }
