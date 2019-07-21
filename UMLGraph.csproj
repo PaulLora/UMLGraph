@@ -52,9 +52,9 @@
     <Compile Include="Grupos\Groups.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
-    <Compile Include="Grupos\Grupo3\Figuras\Forma.cs" />
-    <Compile Include="Grupos\Grupo3\Figuras\Lista_Formas.cs" />
-    <Compile Include="Grupos\Grupo3\Interfaz\InterfazGR3.cs">
+    <Compile Include="Grupos\Grupo3\Figuras\Figura.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Lista_Figuras.cs" />
+    <Compile Include="Grupos\Grupo3\Interfaz\CanvasGR3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grupos\Grupo3\Interfaz\LlenarClase.cs">
@@ -64,6 +64,12 @@
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Lista_Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Atributo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Metodo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Nombre.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Grupos\Grupo3\Interfaz\CanvasGR3.resx">
+      <DependentUpon>CanvasGR3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </EmbeddedResource>

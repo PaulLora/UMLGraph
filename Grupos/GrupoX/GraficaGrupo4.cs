@@ -48,7 +48,7 @@ namespace UMLGraph
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlPrincipal.Controls.Add(this.btnClase);
             this.pnlPrincipal.Controls.Add(this.btnInterfaz);
-            this.pnlPrincipal.Location = new System.Drawing.Point(11, 12);
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 150);
             this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(140, 202);
