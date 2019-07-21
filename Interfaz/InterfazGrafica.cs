@@ -171,9 +171,9 @@ namespace UMLGraph
 
         private void BtbCerrarSesion_Click(object sender, EventArgs e)
         {
-            
-            this.Dispose();
+			this.Dispose();
             new Inicio().Show();
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -280,8 +280,8 @@ namespace UMLGraph
 
         private void BtnEnunciado1_Click(object sender, EventArgs e)
         {
-            this.pnlDibujar.Controls.Clear();
-            pnlEjercicios.Visible = false;
+			this.pnlDibujar.Controls.Clear();
+			pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
             lblEnunciado.Text = "";
@@ -292,22 +292,22 @@ namespace UMLGraph
 
         private void BtnEnunciado2_Click(object sender, EventArgs e)
         {
-            pnlEjercicios.Visible = false;
+			pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
         }
 
         private void BtnEnunciado3_Click(object sender, EventArgs e)
         {
-            pnlEjercicios.Visible = false;
+			pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
         }
 
         private void BtnEnunciado4_Click(object sender, EventArgs e)
         {
-            this.pnlDibujar.Controls.Clear();
-            pnlEjercicios.Visible = false;
+			pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
+            this.pnlDibujar.Controls.Clear();
             this.pnlDibujar = fachada.EjecutarEnunciado4(pnlDibujar);
             lblEnunciado.Text = en.EnunciadoTxt;
         }
@@ -315,13 +315,18 @@ namespace UMLGraph
         private void BtnEnunciado5_Click(object sender, EventArgs e)
         {
             pnlEjercicios.Visible = false;
+			Enunciado en = new Enunciado(4, "Se requiere un sistema para reservar habitaciones en un hotel.\nElabore el diagrama de clases para dicho sistema");
             lblEnunciado.Visible = true;
+            lblEnunciado.Text = en.EnunciadoTxt;
+            this.pnlDibujar.Controls.Clear();
+            this.pnlDibujar = fachada.EjecutarEnunciado5(pnlDibujar);
         }
 
         private void BtnEnunciado6_Click(object sender, EventArgs e)
         {
             pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
+			this.pnlDibujar.Controls.Clear();
         }
     }
 }

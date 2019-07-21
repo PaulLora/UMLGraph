@@ -1,8 +1,14 @@
+    
 {
   "ExpandedNodes": [
     "",
-    "\\Grupos"
+    "\\Grupos\\Grupo6",
+    "\\Grupos\\Grupo6\\FigurasGr6",
+    "\\Grupos\\GrupoX",
+    "\\Grupos\\GrupoX\\Figuras",
+    "\\Interfaz",
+    "\\Login"
   ],
-  "SelectedNode": "\\UMLGraph.csproj",
+  "SelectedNode": "\\Login\\Inicio.resx",
   "PreviewInSolutionExplorer": false
 }

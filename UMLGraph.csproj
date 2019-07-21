@@ -64,6 +64,16 @@
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
+    <Compile Include="Grupos\Grupo5\FpropiedadesClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\FpropiedadesClase.Designer.cs">
+      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\GraficaGrupo5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Asociacion5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Clase5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Formas.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
@@ -105,6 +115,9 @@
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo5\FpropiedadesClase.resx">
+      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazGrafica.resx">
       <DependentUpon>InterfazGrafica.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +153,53 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Grupos\Grupo1\Forma\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregacion2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asociacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asociacion1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asociacion11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Composicion3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Composion4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puntero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
