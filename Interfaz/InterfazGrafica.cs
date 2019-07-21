@@ -12,7 +12,8 @@ using UMLGraph.Grupos;
 using UMLGraph.Grupos.Grupo3.Interfaz;
 using UMLGraph.Grupos.Grupo3;
 using UMLGraph.Grupos.Grupo3.Figuras;
-using UMLGraph.Grupos.Grupo6.FigurasGr6;
+//using UMLGraph.Grupos.Grupo6.Modelo;
+using UMLGraph.Grupos.GrupoX.Figuras;
 
 namespace UMLGraph
 {
@@ -27,7 +28,7 @@ namespace UMLGraph
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
-            btnBorrarLienzo.Visible = false;
+            //btnBorrarLienzo.Visible = false;
             lblEnunciado.Text = "";
             lblUsuario.Text = usuario;
             /////////////////////////////////////////////
@@ -67,13 +68,13 @@ namespace UMLGraph
             Control ctr = (Control)sender;
 
             //Si down es true se esta clickeando el mouse, ademas se verifica que no se pueda arrastrar la figura mas alla del espacio permitido
-            if (down
-                && e.X + ctr.Left - inicial.X >= this.panel1.Width
-                && e.Y + ctr.Top - inicial.Y >= panel2.Height)
-            {
-                ctr.Left = e.X + ctr.Left - inicial.X;
-                ctr.Top = e.Y + ctr.Top - inicial.Y;
-            }
+            //if (down
+            //    && e.X + ctr.Left - inicial.X >= this.panel1.Width
+            //    && e.Y + ctr.Top - inicial.Y >= panel2.Height)
+            //{
+            //    ctr.Left = e.X + ctr.Left - inicial.X;
+            //    ctr.Top = e.Y + ctr.Top - inicial.Y;
+            //}
         }
 
         private void Ctr_MouseUp(object sender, MouseEventArgs e) => down = false;
@@ -149,11 +150,7 @@ namespace UMLGraph
 
             else if (selected.Equals("GR6"))
             { 
-                //listaClasM.Add(new InterfazM(160, 120));
-                this.Controls.Add(listaClases.Last().getCaja());
-                //listaClasM.Last().getCaja().MouseDown += Ctr_MouseDown;
-                //listaClasM.Last().getCaja().MouseUp += Ctr_MouseUp;
-              //  listaClasM.Last().getCaja().MouseMove += Ctr_MouseMove;
+
             }
 
             else if (selected.Equals("GR1"))
@@ -171,9 +168,9 @@ namespace UMLGraph
 
         private void BtbCerrarSesion_Click(object sender, EventArgs e)
         {
-			this.Dispose();
-            new Inicio().Show();
-
+            //panel1.Hide();
+            //this.Dispose();
+            //new Inicio().Show();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -280,8 +277,7 @@ namespace UMLGraph
 
         private void BtnEnunciado1_Click(object sender, EventArgs e)
         {
-			this.pnlDibujar.Controls.Clear();
-			pnlEjercicios.Visible = false;
+            pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
             lblEnunciado.Text = "";
@@ -292,22 +288,21 @@ namespace UMLGraph
 
         private void BtnEnunciado2_Click(object sender, EventArgs e)
         {
-			pnlEjercicios.Visible = false;
+            pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
         }
 
         private void BtnEnunciado3_Click(object sender, EventArgs e)
         {
-			pnlEjercicios.Visible = false;
+            pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
         }
 
         private void BtnEnunciado4_Click(object sender, EventArgs e)
         {
-			pnlEjercicios.Visible = false;
+            pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
-            this.pnlDibujar.Controls.Clear();
             this.pnlDibujar = fachada.EjecutarEnunciado4(pnlDibujar);
             lblEnunciado.Text = en.EnunciadoTxt;
         }
@@ -315,18 +310,39 @@ namespace UMLGraph
         private void BtnEnunciado5_Click(object sender, EventArgs e)
         {
             pnlEjercicios.Visible = false;
-			Enunciado en = new Enunciado(4, "Se requiere un sistema para reservar habitaciones en un hotel.\nElabore el diagrama de clases para dicho sistema");
             lblEnunciado.Visible = true;
-            lblEnunciado.Text = en.EnunciadoTxt;
-            this.pnlDibujar.Controls.Clear();
-            this.pnlDibujar = fachada.EjecutarEnunciado5(pnlDibujar);
         }
 
         private void BtnEnunciado6_Click(object sender, EventArgs e)
         {
             pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
-			this.pnlDibujar.Controls.Clear();
+            
+
+            //Panel pnl_dibujar = new Panel();
+            //pnl_dibujar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
+            //pnl_dibujar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            //pnl_dibujar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            //pnl_dibujar.Location = new System.Drawing.Point(2, 131);
+            //pnl_dibujar.Margin = new System.Windows.Forms.Padding(2);
+            //pnl_dibujar.Name = "pnlPrincipal";
+            //pnl_dibujar.Size = new System.Drawing.Size(997, 473);
+            //pnl_dibujar.TabIndex = 14;
+            //pnl_dibujar.Visible = true;
+            ////pnl_dibujar.Controls.Add(this);
+            //pnl_dibujar.Show();
+
+
+            //this.pnlDibujar.Controls.Add(pnl_dibujar);
+            this.pnlDibujar = fachada.EjecutarEnunciado6(pnlDibujar);
+            //fachada.EjecutarEnunciado6(pnl_dibujar);
+
+
+        }
+
+        private void PnlDibujar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
