@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazGrafica));
+            this.CmbSelecGrupo = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEnunciado = new System.Windows.Forms.Label();
             this.pnlEjercicios = new System.Windows.Forms.Panel();
@@ -60,6 +61,20 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // CmbSelecGrupo
+            // 
+            this.CmbSelecGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CmbSelecGrupo.BackColor = System.Drawing.SystemColors.Menu;
+            this.CmbSelecGrupo.FormattingEnabled = true;
+            this.CmbSelecGrupo.Items.AddRange(new object[] {
+            "Grupo 5"});
+            this.CmbSelecGrupo.Location = new System.Drawing.Point(591, 4);
+            this.CmbSelecGrupo.Name = "CmbSelecGrupo";
+            this.CmbSelecGrupo.Size = new System.Drawing.Size(258, 21);
+            this.CmbSelecGrupo.TabIndex = 12;
+            this.CmbSelecGrupo.Visible = false;
+            this.CmbSelecGrupo.SelectedIndexChanged += new System.EventHandler(this.CmbSelecGrupo_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -333,11 +348,11 @@
             this.pnlDibujar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDibujar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlDibujar.Location = new System.Drawing.Point(0, 130);
-            this.pnlDibujar.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDibujar.Location = new System.Drawing.Point(0, 131);
             this.pnlDibujar.Name = "pnlDibujar";
             this.pnlDibujar.Size = new System.Drawing.Size(997, 470);
             this.pnlDibujar.TabIndex = 18;
+            this.pnlDibujar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlDibujar_Paint);
             // 
             // InterfazGrafica
             // 

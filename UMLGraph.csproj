@@ -90,11 +90,14 @@
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
-    <Compile Include="Grupos\Grupo5\FpropiedadesClase.cs">
+    <Compile Include="Grupos\Grupo6\Modelo\Clase.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Figura.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Relacion.cs" />
+    <Compile Include="Grupos\Grupo6\Vista\Formulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupos\Grupo5\FpropiedadesClase.Designer.cs">
-      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    <Compile Include="Grupos\Grupo6\Vista\Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo6\Modelo\Clase.cs" />
     <Compile Include="Grupos\Grupo6\Modelo\Figura.cs" />
@@ -118,6 +121,12 @@
     <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
+    <Compile Include="Grupos\Grupo6\Vista\FormularioRelacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo6\Vista\FormularioRelacion.Designer.cs">
+      <DependentUpon>FormularioRelacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grupos\Grupo6\Vista\PantallaTrabajoGr6.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Agregacion.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Clase.cs" />
@@ -166,8 +175,11 @@
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupos\Grupo5\FpropiedadesClase.resx">
-      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    <EmbeddedResource Include="Grupos\Grupo6\Vista\Formulario.resx">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo6\Vista\FormularioRelacion.resx">
+      <DependentUpon>FormularioRelacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo6\Vista\Formulario.resx">
       <DependentUpon>Formulario.cs</DependentUpon>

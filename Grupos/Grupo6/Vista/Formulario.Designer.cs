@@ -52,9 +52,9 @@
             this.groupBox1.Controls.Add(this.txt_atributos);
             this.groupBox1.Controls.Add(this.txt_titulo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 179);
+            this.groupBox1.Size = new System.Drawing.Size(253, 191);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos";
@@ -63,7 +63,7 @@
             // btn_crear
             // 
             this.btn_crear.BackColor = System.Drawing.Color.White;
-            this.btn_crear.Location = new System.Drawing.Point(6, 150);
+            this.btn_crear.Location = new System.Drawing.Point(19, 162);
             this.btn_crear.Name = "btn_crear";
             this.btn_crear.Size = new System.Drawing.Size(217, 23);
             this.btn_crear.TabIndex = 6;
@@ -74,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 99);
+            this.label3.Location = new System.Drawing.Point(16, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 5;
@@ -83,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 46);
+            this.label2.Location = new System.Drawing.Point(16, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             // txt_metodos
             // 
-            this.txt_metodos.Location = new System.Drawing.Point(70, 99);
+            this.txt_metodos.Location = new System.Drawing.Point(83, 111);
             this.txt_metodos.Multiline = true;
             this.txt_metodos.Name = "txt_metodos";
             this.txt_metodos.Size = new System.Drawing.Size(153, 45);
@@ -108,7 +108,7 @@
             // 
             // txt_atributos
             // 
-            this.txt_atributos.Location = new System.Drawing.Point(70, 46);
+            this.txt_atributos.Location = new System.Drawing.Point(83, 52);
             this.txt_atributos.Multiline = true;
             this.txt_atributos.Name = "txt_atributos";
             this.txt_atributos.Size = new System.Drawing.Size(153, 47);
@@ -117,6 +117,7 @@
             // txt_titulo
             // 
             this.txt_titulo.Location = new System.Drawing.Point(70, 19);
+            this.txt_titulo.Location = new System.Drawing.Point(83, 19);
             this.txt_titulo.Name = "txt_titulo";
             this.txt_titulo.Size = new System.Drawing.Size(153, 20);
             this.txt_titulo.TabIndex = 0;
@@ -125,9 +126,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(-3, -1);
+            this.panel1.Location = new System.Drawing.Point(1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 204);
+            this.panel1.Size = new System.Drawing.Size(253, 209);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
@@ -135,17 +136,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(254, 202);
-            this.ControlBox = false;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(254, 188);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(333, 1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Location = new System.Drawing.Point(2, 600);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Formulario";
             this.ShowIcon = false;
-            this.Text = "Formulario";
+            this.Load += new System.EventHandler(this.Formulario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

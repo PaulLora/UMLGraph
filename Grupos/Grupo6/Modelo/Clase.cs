@@ -5,29 +5,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using UMLGraph.Grupos.Grupo6.Vista;
 
 namespace UMLGraph.Grupos.Grupo6.Modelo
 {
     class Clase : Figura
-    {
+    {   
+        // Escuchar cuando ocurre evento y manejar el cmabio de posicion
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        // envia mensaje cuando captura un evento
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        private PantallaTrabajoGr6 pantallaTrabajo;
         /************************* Atributos *****************************/
         private String idClase;
         private String titulo;
         private List<String> atributos;
         private List<String> metodos;
+        private Panel panelContenedor;
 
         /************************* Constructores *****************************/
         public Clase()
         {
+        	this.LocalizacionX = 70;
+        	this.LocalizacionY = 60;
+        	this.Ancho = 175;
+        	this.Alto = 210;
         }
 
-        public Clase(string idClase, string titulo, List<string> atributos, List<string> metodos)
+        public Clase(PantallaTrabajoGr6 pantallaTrabajoRecibida, string idClase, string titulo, List<string> atributos, List<string> metodos)
         {
+            this.LocalizacionX = 70;
+            this.LocalizacionY = 60;
+            this.Ancho = 175;
+            this.Alto = 210;
             this.idClase = idClase;
             this.titulo = titulo;
             this.atributos = atributos;
             this.metodos = metodos;
+            this.pantallaTrabajo = pantallaTrabajoRecibida;
         }
 
         /************************* GETTERS AND SETTERS *****************************/
@@ -35,9 +54,13 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         public string Titulo { get => titulo; set => titulo = value; }
         public List<string> Atributos { get => atributos; set => atributos = value; }
         public List<string> Metodos { get => metodos; set => metodos = value; }
-
+        public Panel GetPanelContenedor()
+        {
+            return this.panelContenedor;
+        }
+        
         /************************* MÉTODOS *****************************/
-        public Panel crearPanel()
+        public void crearPanel()
         {
             Panel panelContenedor = new System.Windows.Forms.Panel();
 
@@ -47,10 +70,9 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             Label lbl_metodos = new System.Windows.Forms.Label();
 
             //IdCLase
-            //lbl_idClase.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            lbl_idClase.Location = new Point(10, 10);
+            lbl_idClase.Location = new Point(60, 8);
             lbl_idClase.UseMnemonic = true;
-            lbl_idClase.Size = new Size(150, 15);
+            lbl_idClase.Size = new Size(40, 15);
             lbl_idClase.BackColor = Color.Transparent;
             //lbl_idClase.
             lbl_idClase.TextAlign = ContentAlignment.MiddleCenter;
@@ -91,45 +113,35 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             Button btn_editarClase = new Button();
             btn_editarClase.Location = new System.Drawing.Point(10, 175);
             btn_editarClase.Size = new System.Drawing.Size(150, 25);
-            btn_editarClase.BackColor = Color.Cyan;
+            btn_editarClase.BackColor = Color.LightSteelBlue;
             btn_editarClase.Text = "EDITAR CLASE";
             btn_editarClase.TextAlign = ContentAlignment.MiddleCenter;
-
-            //btn_editarClase.Image = Image.FromFile(@"C:\Users\Joel\source\repos\UMLGr6\Graficos\editar.png");
             //Configuracion Panel
-            panelContenedor.Location = new System.Drawing.Point(70, 60);
-            panelContenedor.Size = new System.Drawing.Size(175, 210);
+            panelContenedor.Location = new System.Drawing.Point(this.LocalizacionX, this.LocalizacionY);
+            panelContenedor.Size = new System.Drawing.Size(this.Ancho, this.Alto);
             panelContenedor.Name = this.idClase;
-            panelContenedor.BackColor = Color.DarkSalmon;
+            panelContenedor.BackColor = Color.Wheat;
             //Agregamos Atributos metodos al panel
             panelContenedor.Controls.Add(lbl_idClase);
             panelContenedor.Controls.Add(lbl_titulo);
             panelContenedor.Controls.Add(lbl_atributos);
             panelContenedor.Controls.Add(lbl_metodos);
             panelContenedor.Controls.Add(btn_editarClase);
+            panelContenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moverFigura);
 
-            return panelContenedor;
+            this.panelContenedor = panelContenedor;
         }
-
 
         /************************* MÉTODOS HEREDADOS *****************************/
-        public override void dibujarFigura(Panel espaciotrabajo, Panel panelContenedor)
+        public override void dibujarFigura(Panel espaciotrabajo)
         {
-            espaciotrabajo.Controls.Add(panelContenedor);
+            espaciotrabajo.Controls.Add(this.panelContenedor);
         }
-
-        public override void dibujarFigura(Panel panelContenedor)
+        public override void moverFigura(Object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        public override void moverFigura(Panel panelContenedor, MouseEventArgs e)
-        {
-            MessageBox.Show(this.idClase + " " + e.X);
-            /************** Revisar ***********************************/
-            //panelContenedor.Location =  new System.Drawing.Point(e.X, e.Y);
-            panelContenedor.Left += e.X;
-            panelContenedor.Top += e.Y;
+            ReleaseCapture();
+            SendMessage(this.panelContenedor.Handle, 0x112, 0xf012, 0);
+            this.pantallaTrabajo.actulizarRelaciones();
         }
     }
 }

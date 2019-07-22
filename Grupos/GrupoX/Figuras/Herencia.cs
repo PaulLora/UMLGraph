@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMLGraph
+namespace UMLGraph.Grupos.GrupoX.Figuras
 
 {
     class Herencia:Relacion

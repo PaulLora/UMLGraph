@@ -10,8 +10,7 @@ using UMLGraph.Grupos.Grupo3.Interfaz;
 using UMLGraph.Grupos.Grupo6.Vista;
 using NClass.GUI;
 using UMLGraph.Grupos;
-
-
+using UMLGraph.Grupos.Grupo6.Vista;
 
 namespace UMLGraph
 {
@@ -21,9 +20,6 @@ namespace UMLGraph
         
         public Panel EjecutarEnunciado1(Panel panel)
         {
-            //CanvasGR3   
-            //panel.Controls.Clear();
-           // MessageBox.Show("ENTRO");
             new UMLGraph.Grupos.Grupo1.GUI1().Show();
             return panel;
         }
@@ -50,19 +46,17 @@ namespace UMLGraph
         }
         public Panel EjecutarEnunciado4(Panel panel) //Este método referencia al subsistema del grupo 4 (Paúl), el método recibe el pnlDibujar y se devolverá el mismo panel con los controles llenos.
         {
-
             panel.Controls.Clear(); //Limpia el pnlDibujar. Sirve para el cambio de grupo a grupo.
             GraficaGrupo4 graph4 = new GraficaGrupo4(panel); 
             panel = graph4.dibujar(); //Llena el panel con todos los controles
-            return panel;
-            
+            return panel;      
         }
         public Panel EjecutarEnunciado5(Panel panel)
         {       
             GraficaGrupo5 graph5 = new GraficaGrupo5(panel);
-
-            return panel;
+              return panel;           
         }
+
         public Panel EjecutarEnunciado6(Panel areaTrabajo)
         {
 
