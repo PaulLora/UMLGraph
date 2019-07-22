@@ -48,12 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enunciado\Enunciado.cs" />
+    <Compile Include="Fachada\Fachada.cs" />
     <Compile Include="Grupos\Groups.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
-    <Compile Include="Grupos\Grupo3\Figuras\Forma.cs" />
-    <Compile Include="Grupos\Grupo3\Figuras\Lista_Formas.cs" />
-    <Compile Include="Grupos\Grupo3\Interfaz\InterfazGR3.cs">
+    <Compile Include="Grupos\Grupo3\Figuras\Figura.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Lista_Figuras.cs" />
+    <Compile Include="Grupos\Grupo3\Interfaz\CanvasGR3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grupos\Grupo3\Interfaz\LlenarClase.cs">
@@ -63,6 +64,23 @@
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
+    <Compile Include="Grupos\Grupo5\FpropiedadesClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\FpropiedadesClase.Designer.cs">
+      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\GraficaGrupo5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Asociacion5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Clase5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Formas.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Lista_Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Atributo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Metodo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Nombre.cs" />
+
     <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
@@ -74,6 +92,7 @@
     <Compile Include="Grupos\GrupoX\Figuras\Herencia.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Interfaz.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Relacion.cs" />
+    <Compile Include="Grupos\GrupoX\GraficaGrupo4.cs" />
     <Compile Include="Interfaz\InterfazGrafica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +119,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Grupos\Grupo3\Interfaz\CanvasGR3.resx">
+      <DependentUpon>CanvasGR3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo5\FpropiedadesClase.resx">
+      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazGrafica.resx">
       <DependentUpon>InterfazGrafica.cs</DependentUpon>
@@ -138,6 +163,53 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Grupos\Grupo1\Forma\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregacion2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asociacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asociacion1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asociacion11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clase5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Composicion3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Composion4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puntero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace UMLGraph
 
 {
-    class Clase:Figura
+    class Clase : Figura
     {
 
         Graphics g;

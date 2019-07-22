@@ -15,14 +15,14 @@ using System.IO;
 
 namespace UMLGraph.Grupos.Grupo3.Figuras
 {
-    class Lista_Formas
+    class Lista_Figuras
     {
-        public List<Forma> Formas { get; set; }
+        public List<Figura> Figuras { get; set; }
         public Size CanvasSize { get; set; }
         public void Dibujar()
         {
             Bitmap previousBtm = new Bitmap(CanvasSize.Width, CanvasSize.Height);
-            foreach (Figura_Relacion rel in Formas.OfType<Figura_Relacion>())//Creo un nuevo Bitmap para ir dobujando sobre el en el foreach lo que hago es dibujar cada linea hasta obtener una imagen "final", perteneciente solo a las relaciones 
+            foreach (Figura_Relacion rel in Figuras.OfType<Figura_Relacion>())//Creo un nuevo Bitmap para ir dobujando sobre el en el foreach lo que hago es dibujar cada linea hasta obtener una imagen "final", perteneciente solo a las relaciones 
             {
                 rel.BtmRelacion = rel.DrawToBitmap(previousBtm);
                 previousBtm = rel.BtmRelacion;
@@ -31,17 +31,17 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
         }
         public String GetNewBackground()
         {
-            return this.Formas.Last().FormaNombre + ".bmp";
+            return this.Figuras.Last().FiguraNombre + ".bmp";
         }
 
-        public Lista_Formas(Size tam)
+        public Lista_Figuras(Size tam)
         {
             this.CanvasSize = tam;
-            this.Formas = new List<Forma>();
+            this.Figuras = new List<Figura>();
         }
-        public Lista_Formas()
+        public Lista_Figuras()
         {
-            this.Formas = new List<Forma>();
+            this.Figuras = new List<Figura>();
         }
 
 

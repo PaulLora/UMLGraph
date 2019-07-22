@@ -20,25 +20,25 @@ namespace UMLGraph
     {
         //Se creo una clase que contenga las varialbes minimas necesarias para el funcionamiento del código
         //Del grupo diferente en este caso la llame InterfazGR3 pero no es un interface en si mismo
-        InterfazGR3 gr3;
+        CanvasGR3 gr3;
         //Strign para chequear cual grupo fue seleccionado
-        String selected = "GRX";
-      
+        String selected = "GR4";
+        private Fachada fachada = new Fachada();
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
             btnBorrarLienzo.Visible = false;
-            lblEnunciado.Text = en.EnunciadoTxt;
-            lblNumEjericio.Text = en.NumEjercicio.ToString();
+            lblEnunciado.Text = "";
             lblUsuario.Text = usuario;
             /////////////////////////////////////////////
             //Mi codigo funcionaba mejor maximizado por lo que agrege esa linea
             this.WindowState = FormWindowState.Maximized;
             //En las lineas siguientes creo una lista de grupos para que se pueda seleccionar GR1,GR2,...
             var grupos = new List<Groups>();//Se creo una clase Groups sencilla que guarda un name y un value
-            grupos.Add(new Groups() { Name = "Grupo X", Value = "GRX" });//Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los siguientes grupos
+            //Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los siguientes grupos
             grupos.Add(new Groups() { Name = "Grupo 1", Value = "GR1" });
             grupos.Add(new Groups() { Name = "Grupo 3", Value = "GR3" });
+            grupos.Add(new Groups() { Name = "Grupo 4", Value = "GR4" });
             grupos.Add(new Groups() { Name = "Grupo 5", Value = "GR5" });
             grupos.Add(new Groups() { Name = "Grupo 6", Value = "GR6" });
             
@@ -47,13 +47,13 @@ namespace UMLGraph
             this.CmbSelecGrupo.DisplayMember = "Name";//Se define que será mostrado y seleccionamos el atributo name
             this.CmbSelecGrupo.ValueMember = "Value";//Se define cual sera el valor de lo mostrado y seleccionamos el atributo value
             //Instancio la interfaz, la mia necesita los tamanios de la ventana por lo que le envio eso
-            gr3 = new InterfazGR3(new Size(this.Width * 3, this.Height * 3));
+            gr3 = new CanvasGR3(new Size(this.Width * 3, this.Height * 3));
         }
 
         List<Clase> listaClases = new List<Clase>();
         List<Interfaz> listaInterfaces = new List<Interfaz>();
         //List<InterfazM> listaClasM = new List<InterfazM>();
-        Enunciado en = new Enunciado(1, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
+        
 
         
         //down es para saber si se esta clickeando algo
@@ -92,8 +92,8 @@ namespace UMLGraph
         {
             MessageBox.Show("Recuerda que el nombre de las clases es en singular.\n" +
                    "Fíjate que los atributos y métodos correspondan a la clase");
-            //Codigo original dle programa se activara si el elemento seleccionado es GRX
-            if (selected.Equals("GRX") || selected.Equals("GR5"))
+            //Codigo original dle programa se activara si el elemento seleccionado es GR4
+            if (selected.Equals("GR4") || selected.Equals("GR5"))
             {
                 //Se añade una nueva clase a la lista
                 listaClases.Add(new Clase(160, 120));
@@ -111,35 +111,28 @@ namespace UMLGraph
             else if (selected.Equals("GR3") )
             {
                 //Se crea un panel local
-                Panel panel = new Panel();
+                //Panel panel = new Panel();
+                //panel.Dispose();
+                
                 //Aplicamos la funcion crearpanel que inicializa todo lo que la clase debe tener
-                gr3.CrearPanel(ref panel);
+                gr3.CrearPanel();
                 //agrego a la lista de paneles al nuevo panel
-                gr3.paneles.Add(panel);
+                //gr3.paneles.Add(panel);
             }
-
-           
-           
-
-
-        }
+}
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
-
         private void Button9_Click(object sender, EventArgs e)
         {
             //listaClases.Clear();
             //this.Controls.Add(listaClases.Last().getCaja());
         }
-
         private void BtnInterfaz_Click(object sender, EventArgs e)
         {
-            if (selected.Equals("GRX") || selected.Equals("GR5"))
+            if (selected.Equals("GR4") || selected.Equals("GR5"))
             {
                 //Se añade una nueva clase a la lista
                 listaInterfaces.Add(new Interfaz(160, 120));
@@ -178,8 +171,9 @@ namespace UMLGraph
 
         private void BtbCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.Hide();
+			this.Dispose();
             new Inicio().Show();
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -236,21 +230,20 @@ namespace UMLGraph
             //Determinamos que item fue seleccionado y si pertenece a un grupo determinado
             if (CmbSelecGrupo.GetItemText(CmbSelecGrupo.SelectedItem).Equals("Grupo 3"))
             {
-                Controls.Add(gr3.masterPanel);
+                Controls.Add(gr3.CanvasPanel);
                 this.selected = "GR3";
             }
             if (CmbSelecGrupo.GetItemText(CmbSelecGrupo.SelectedItem).Equals("Grupo 1"))
             {
-                Controls.Add(gr3.masterPanel);
+                Controls.Add(gr3.CanvasPanel);
                 this.selected = "GR1";
                 MessageBox.Show("Hola somos grupo 1");
             }
-
         }
 
         private void BtnRelacion_Click(object sender, EventArgs e)
         {
-            if (selected.Equals("GRX"))
+            if (selected.Equals("GR4"))
             {
 
             }
@@ -265,7 +258,7 @@ namespace UMLGraph
                 tmp.RelPuntos = new List<Point>();
                 //Agregamos la figura_relacion local a la lista y a la lista de formas
                 gr3.relaciones.Add(tmp);
-                gr3.Formas.Formas.Add(tmp);
+                gr3.Figuras.Figuras.Add(tmp);
             }
             else if (selected.Equals("GR5"))
             {
@@ -276,6 +269,77 @@ namespace UMLGraph
             {
                 MessageBox.Show("Hola somos grupo 1");
             }
+        }
+
+        private void BtnEnunciados_Click(object sender, EventArgs e)
+        {
+            pnlEjercicios.Visible = true;
+            lblEnunciado.Visible = false;
+            
+        }
+
+        private void BtnEnunciado1_Click(object sender, EventArgs e)
+        {
+			this.pnlDibujar.Controls.Clear();
+			pnlEjercicios.Visible = false;
+            lblEnunciado.Visible = true;
+            this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
+            lblEnunciado.Text = "";
+
+
+
+        }
+
+        private void BtnEnunciado2_Click(object sender, EventArgs e)
+        {
+			pnlEjercicios.Visible = false;
+            lblEnunciado.Visible = true;
+        }
+
+        private void BtnEnunciado3_Click(object sender, EventArgs e)
+        {
+			pnlEjercicios.Visible = false;
+            lblEnunciado.Visible = true;
+            Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
+            Controls.Remove(this.pnlDibujar);
+            this.pnlDibujar = fachada.EjecutarEnunciado3(ref pnlDibujar);
+            Controls.Add(this.pnlDibujar);
+            lblEnunciado.Text = en.EnunciadoTxt;
+        }
+
+        private void BtnEnunciado4_Click(object sender, EventArgs e)
+        {
+			pnlEjercicios.Visible = false;
+            lblEnunciado.Visible = true;
+            Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
+            this.pnlDibujar.Controls.Clear();
+            Controls.Remove(this.pnlDibujar);
+            this.pnlDibujar = fachada.EjecutarEnunciado4(ref pnlDibujar);
+            Controls.Add(this.pnlDibujar);
+            lblEnunciado.Text = en.EnunciadoTxt;
+        }
+
+        private void BtnEnunciado5_Click(object sender, EventArgs e)
+        {
+            pnlEjercicios.Visible = false;
+			Enunciado en = new Enunciado(4, "Se requiere un sistema para reservar habitaciones en un hotel.\nElabore el diagrama de clases para dicho sistema");
+            lblEnunciado.Visible = true;
+            lblEnunciado.Text = en.EnunciadoTxt;
+            this.pnlDibujar.Controls.Clear();
+            this.pnlDibujar = fachada.EjecutarEnunciado5(pnlDibujar);
+
+        }
+
+        private void BtnEnunciado6_Click(object sender, EventArgs e)
+        {
+            pnlEjercicios.Visible = false;
+            lblEnunciado.Visible = true;
+			this.pnlDibujar.Controls.Clear();
+        }
+
+        private void PnlDibujar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
