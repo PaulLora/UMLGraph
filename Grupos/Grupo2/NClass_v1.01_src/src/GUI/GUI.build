@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<project name="NClass.GUI" default="compile">
+	<target name="compile">
+		<resgen input="Properties/Resources.resx" output="NClass.GUI.Properties.Resources.resources" usesourcepath="true" />
+		<csc target="winexe" output="${build.dir}/${project.name}.exe" optimize="true" noconfig="true">
+			<sources>
+				<include name="**/*.cs" />
+				<include name="../CommonAssemblyInfo.cs" />
+			</sources>
+			<resources>
+				<include name="**/*.resx" />
+				<include name="NClass.GUI.Properties.Resources.resources" />
+				<exclude name="Properties/Resources.resx" />
+			</resources>
+			<references>
+				<include name="System.dll" />
+				<include name="System.Xml.dll" />
+				<include name="System.Drawing.dll" />
+				<include name="System.Windows.Forms.dll" />
+				<include name="${build.dir}/Core.dll" />
+				<include name="${build.dir}/GUI.Diagram.dll" />
+				<include name="${build.dir}/Translations.dll" />
+			</references>
+		</csc>
+		<delete file="GUI.Properties.Resources.resources" failonerror="false" />
+	</target>
+</project>

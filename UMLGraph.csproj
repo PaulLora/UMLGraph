@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>UMLGraph</RootNamespace>
     <AssemblyName>UMLGraph</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,11 +51,36 @@
     <Compile Include="Enunciado\Enunciado.cs" />
     <Compile Include="Fachada\Fachada.cs" />
     <Compile Include="Grupos\Groups.cs" />
+    <Compile Include="Grupos\Grupo1\Canvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo1\Figuras\Forma.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_Agregacion.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_Asociacion.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_Clase.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_ClaseAbstracta.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_Composicion.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_Herencia.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\Forma_Interfaz.cs" />
+    <Compile Include="Grupos\Grupo1\Figuras\ListaFormas.cs" />
+    <Compile Include="Grupos\Grupo1\GUI1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo1\GUI1.Designer.cs">
+      <DependentUpon>GUI1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo1\Validacion\Validacion.cs" />
+    <Compile Include="Grupos\Grupo1\Validacion\ValidacionAsociacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo1\Validacion\ValidacionClase.cs" />
+    <Compile Include="Grupos\Grupo1\Validacion\ValidacionHerencia.cs" />
+    <Compile Include="Grupos\Grupo1\Validacion\ValidacionInterfaz.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
-    <Compile Include="Grupos\Grupo3\Figuras\Forma.cs" />
-    <Compile Include="Grupos\Grupo3\Figuras\Lista_Formas.cs" />
-    <Compile Include="Grupos\Grupo3\Interfaz\InterfazGR3.cs">
+    <Compile Include="Grupos\Grupo3\Figuras\Figura.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Lista_Figuras.cs" />
+    <Compile Include="Grupos\Grupo3\Interfaz\CanvasGR3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grupos\Grupo3\Interfaz\LlenarClase.cs">
@@ -70,13 +96,29 @@
     <Compile Include="Grupos\Grupo5\FpropiedadesClase.Designer.cs">
       <DependentUpon>FpropiedadesClase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grupos\Grupo6\Modelo\Clase.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Figura.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Relacion.cs" />
+    <Compile Include="Grupos\Grupo6\Vista\Formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo6\Vista\Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grupos\Grupo5\GraficaGrupo5.cs" />
     <Compile Include="Grupos\Grupo5\Figuras\Asociacion5.cs" />
     <Compile Include="Grupos\Grupo5\Figuras\Clase5.cs" />
     <Compile Include="Grupos\Grupo5\Figuras\Formas.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Lista_Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Atributo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Metodo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Nombre.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\ClaseM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\RelacionM.cs" />
     <Compile Include="Grupos\Grupo6\FigurasGr6\Figura.cs" />
+    <Compile Include="Grupos\Grupo6\Vista\PantallaTrabajoGr6.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Agregacion.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Clase.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Composicion.cs" />
@@ -112,11 +154,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Grupos\Grupo1\Canvas.resx">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo1\GUI1.resx">
+      <DependentUpon>GUI1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo3\Interfaz\CanvasGR3.resx">
+      <DependentUpon>CanvasGR3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo5\FpropiedadesClase.resx">
       <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo6\Vista\Formulario.resx">
+      <DependentUpon>Formulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazGrafica.resx">
       <DependentUpon>InterfazGrafica.cs</DependentUpon>
@@ -154,7 +208,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Grupos\Grupo1\Forma\" />
+    <None Include="Resources\cerrar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Agregacion2.PNG" />
@@ -200,6 +254,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Grupos\Grupo2\NClass_v1.01_src\src\GUI\GUI.csproj">
+      <Project>{a2918ce1-6894-4fc9-a864-4651769d0274}</Project>
+      <Name>GUI</Name>
+    </ProjectReference>
+    <None Include="Resources\maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Grupos\Grupo1\Forma\" />
+    <Folder Include="Grupos\Grupo2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

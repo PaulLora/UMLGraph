@@ -8,6 +8,7 @@ using System.Drawing.Drawing2D;
 public class Asociacion5
 {
     GraphicsPath gp;
+    GraphicsPath gp1;
     /// <summary>
     /// Obtiene o establece el punto inicial.
     /// </summary>
@@ -27,8 +28,13 @@ public class Asociacion5
     public Asociacion5(Point ptI, Point ptM , Point ptF)
     {     
         gp = new GraphicsPath();
-        Point[] vertices = {ptI,ptM,ptF};
-        gp.AddLine(ptI, ptF);
+       
+       
+        
+
+      gp.AddLine(ptI, ptF);
+
+       
         gp.CloseFigure();
     }
     public void DrawAsociacion(Graphics g, Point puntoInicial,Point puntoFinal)
@@ -57,7 +63,7 @@ public class Asociacion5
     }
     public void Dibujar(Graphics e)
     {
-        Pen pen = new Pen(Color.DarkBlue, 4);
+        Pen pen = new Pen(Color.Black, 4);
         e.SmoothingMode = SmoothingMode.AntiAlias;
         e.DrawPath(pen,gp);
     }

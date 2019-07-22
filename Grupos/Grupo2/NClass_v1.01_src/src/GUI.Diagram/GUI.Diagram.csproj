@@ -1,0 +1,327 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F50E572B-4BF9-4DA7-853E-D6B0A0354704}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NClass.GUI.Diagram</RootNamespace>
+    <AssemblyName>GUI.Diagram</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connections\AssociationConnection.cs">
+    </Compile>
+    <Compile Include="Connections\RealizationConnection.cs" />
+    <Compile Include="Connections\Nesting.cs" />
+    <Compile Include="Connections\CommentConnection.cs" />
+    <Compile Include="Connections\DependencyConnection.cs" />
+    <Compile Include="Connections\Generalization.cs" />
+    <Compile Include="Connections\PreviewConnection.cs" />
+    <Compile Include="Connections\TerminalNode.cs" />
+    <Compile Include="ConnectionCreated.cs" />
+    <Compile Include="DiagramControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RelationRemoved.cs" />
+    <Compile Include="EntityRemoved.cs" />
+    <Compile Include="Icons.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Shapes\ClassShape.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MembersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MembersDialog.designer.cs">
+      <DependentUpon>MembersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\EntityShape.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IDiagramElement.cs" />
+    <Compile Include="IDiagramVisualizer.cs" />
+    <Compile Include="Connections\Connection.cs">
+    </Compile>
+    <Compile Include="Shapes\OperationContainerShape.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shapes\TypeShape.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8CF10505-3C2E-4E45-AB90-21613237B412}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\MembersDialog.resx">
+      <DependentUpon>MembersDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\constructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enum_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\implements.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interface_24bits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_const.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_constructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_readonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internal_writeonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overrides.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parameter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_const.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_constructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_destructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_readonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private_writeonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_const.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_constructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_readonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protected_writeonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_const.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_constructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_readonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protint_writeonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_const.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_constructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_readonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public_writeonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_by_access.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_by_kind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\struct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class.png" />
+    <None Include="Resources\delegate.png" />
+    <None Include="Resources\format.png" />
+    <None Include="Resources\image1.png" />
+    <None Include="Resources\interface_32bits.png" />
+    <None Include="Resources\new_entity.png" />
+    <None Include="Resources\note.png" />
+    <None Include="Resources\enum.png" />
+    <None Include="Resources\edit_members.png" />
+    <Content Include="Resources\sort_by_name.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

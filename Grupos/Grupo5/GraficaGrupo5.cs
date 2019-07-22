@@ -236,7 +236,7 @@ namespace UMLGraph.Grupos.Grupo5
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 
 
-
+            toolAsociacion.Enabled = false;
          
             pnlPrincipal.Controls.Add(this.AreaDraw);
             pnlPrincipal.Controls.Add(this.ToolHerramientas);
@@ -378,23 +378,7 @@ namespace UMLGraph.Grupos.Grupo5
                     {
                         //if el segundo punto esta dentro de, entonces que mande mensaje
                         //y deje de dibujar                        
-                        foreach (Asociacion5 item in Acoleccion)
-                        {
-                            if (item.Dentro(e.Location) | item.Dentro(objaso.PF))
-                            {
-                                MessageBox.Show("No puede dibujar dentro de una figura.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                clic = false;
-                                objaso.PI = new Point(0, 0);
-                                objaso.PF = new Point(0, 0);
-
-
-
-                                toolselec = ToolSelec.puntero;
-                                toolAsociacion.Checked = false;
-                                toolPuntero.Checked = true;
-                                goto exit;
-                            }
-                        }
+                       
                         g = AreaDraw.CreateGraphics();
                         objaso.PF = e.Location;
                         g.Clear(Color.White);
@@ -491,13 +475,14 @@ namespace UMLGraph.Grupos.Grupo5
                                            };
 
 
-                         FpropiedadesClase frm = new FpropiedadesClase(this);
+                        FpropiedadesClase frm = new FpropiedadesClase(this);
                          frm.ShowDialog();
 
                         Ccoleccion.Add(new Clase5(rects, puntoMedio, nombre, atributos, metodos));
+                        if (Ccoleccion.Count >= 2) toolAsociacion.Enabled = true;
 
                         AreaDraw.Invalidate();
-
+                       
 
 
 

@@ -1,0 +1,49 @@
+<ClassProject>
+  <Language>Java</Language>
+  <Entities>
+    <Entity name="Clock" type="CSharpClass">
+      <Access>Public</Access>
+      <Operation name="Clock" type="CSharpConstructor">protected Clock()</Operation>
+      <Operation name="GetTime" type="CSharpMethod">public DateTime GetTime()</Operation>
+      <Operation name="Stop" type="CSharpMethod">public void Stop()</Operation>
+      <Operation name="Synchronize" type="CSharpMethod">public abstract void Synchronize()</Operation>
+      <Field name="time" type="CSharpField">private DateTime time</Field>
+      <Modifier>Abstract</Modifier>
+    </Entity>
+    <Entity name="ITimer" type="CSharpInterface">
+      <Access>Public</Access>
+      <Operation name="GetTime" type="CSharpMethod">DateTime GetTime()</Operation>
+    </Entity>
+    <Entity name="MyClock" type="CSharpClass">
+      <Access>Public</Access>
+      <Operation name="Synchronize" type="CSharpMethod">public override void Synchronize()</Operation>
+      <Modifier>None</Modifier>
+    </Entity>
+  </Entities>
+  <Relations>
+    <Relation type="Generalization" first="2" second="0" />
+    <Relation type="Realization" first="0" second="1" />
+  </Relations>
+  <Positions>
+    <Shape>
+      <Location left="39" top="43" />
+      <Size width="162" height="216" />
+    </Shape>
+    <Shape>
+      <Location left="326" top="43" />
+      <Size width="162" height="216" />
+    </Shape>
+    <Shape>
+      <Location left="39" top="313" />
+      <Size width="162" height="113" />
+    </Shape>
+    <Connection>
+      <StartNode isHorizontal="False" location="82" />
+      <EndNode isHorizontal="False" location="82" />
+    </Connection>
+    <Connection>
+      <StartNode isHorizontal="True" location="117" />
+      <EndNode isHorizontal="True" location="117" />
+    </Connection>
+  </Positions>
+</ClassProject>
