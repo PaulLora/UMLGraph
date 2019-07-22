@@ -73,6 +73,12 @@
     <Compile Include="Grupos\Grupo6\Vista\Formulario.Designer.cs">
       <DependentUpon>Formulario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grupos\Grupo6\Vista\FormularioRelacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo6\Vista\FormularioRelacion.Designer.cs">
+      <DependentUpon>FormularioRelacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grupos\Grupo6\Vista\PantallaTrabajoGr6.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Agregacion.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Clase.cs" />
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo6\Vista\Formulario.resx">
       <DependentUpon>Formulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo6\Vista\FormularioRelacion.resx">
+      <DependentUpon>FormularioRelacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazGrafica.resx">
       <DependentUpon>InterfazGrafica.cs</DependentUpon>

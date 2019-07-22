@@ -30,11 +30,21 @@ namespace UMLGraph.Grupos.Grupo6.Vista
 
         private void Btn_crear_Click(object sender, EventArgs e)
         {
-            this.titulo = this.txt_titulo.Text;
-            this.atributos = this.txt_atributos.Text;
-            this.metodos = this.txt_metodos.Text;
-            pantallaTrabajoGr6.setDatosClase(this.titulo, this.atributos, this.metodos);
-            this.Hide();
+            //Verificar si existe una clase con el mismo nombre
+            Object clase = pantallaTrabajoGr6.existeClase(this.txt_titulo.Text);
+            if ( clase == null)
+            {
+                this.titulo = this.txt_titulo.Text;
+                this.atributos = this.txt_atributos.Text;
+                this.metodos = this.txt_metodos.Text;
+                pantallaTrabajoGr6.setDatosClase(this.titulo, this.atributos, this.metodos);
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Ya existe una clase con este nombre");
+            }
+            
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
