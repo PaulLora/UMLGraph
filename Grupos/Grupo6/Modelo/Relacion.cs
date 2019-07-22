@@ -52,8 +52,27 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             this.Grafico = espaciotrabajo.CreateGraphics();
             this.Bolígrafo = new Pen(Color.Black, 2);
 
-            float x = punto1.X + (punto2.X - punto1.X);
-            float y = punto1.Y + (punto2.Y - punto1.Y);
+            //calculo centrico para nombre de relacion
+            float x = 0;
+            float y = 0;
+
+            if (punto1.X > punto2.X)
+            {
+                x = punto2.X + ((punto1.X - punto2.X) / 2);
+            }
+            else
+            {
+                x = punto1.X + ((punto2.X - punto1.X) / 2);
+            }
+            if (punto1.Y > punto2.Y)
+            {
+                y = punto2.Y + ((punto1.Y - punto2.Y) / 2);
+            }
+            else
+            {
+                y = punto1.Y + ((punto2.Y - punto1.Y) / 2);
+            }
+
             this.Grafico.DrawString(this.nombreRelacion, new Font("Arial", 10), new SolidBrush(Color.Black), x, y);
             this.Grafico.DrawLine(this.Bolígrafo, punto1, punto2);
         }

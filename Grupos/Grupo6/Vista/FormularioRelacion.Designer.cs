@@ -49,9 +49,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_NompreClaseHijo);
             this.groupBox1.Controls.Add(this.txt_NompreClasePadre);
-            this.groupBox1.Location = new System.Drawing.Point(6, 12);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(232, 141);
+            this.groupBox1.Size = new System.Drawing.Size(232, 130);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Creacion de Clase";
@@ -125,13 +125,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(244, 165);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(234, 132);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(2, 234);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Location = new System.Drawing.Point(2, 400);
             this.Name = "FormularioRelacion";
-            this.Text = "FormularioRelacion";
             this.Load += new System.EventHandler(this.FormularioRelacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -51,5 +51,10 @@ namespace UMLGraph.Grupos.Grupo6.Vista
         {
 
         }
+
+        private void Formulario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
