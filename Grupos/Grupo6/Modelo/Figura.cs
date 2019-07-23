@@ -11,7 +11,6 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
     abstract class Figura
     {
         //Atributs
-
         private int localizacionX;
         private int localizacionY;
         private int ancho;
@@ -25,6 +24,7 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         public int Alto { get => alto; set => alto = value; }
         public Graphics Grafico { get => grafico; set => grafico = value; }
         public Pen Bolígrafo { get => bolígrafo; set => bolígrafo = value; }
+
 
         //Metodos
         public abstract void dibujarFigura(Panel espaciotrabajo);

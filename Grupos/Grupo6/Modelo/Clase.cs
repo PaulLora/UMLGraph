@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using UMLGraph.Grupos.Grupo6.Vista;
 
 namespace UMLGraph.Grupos.Grupo6.Modelo
@@ -20,6 +20,7 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private PantallaTrabajoGr6 pantallaTrabajo;
+
         /************************* Atributos *****************************/
         private String idClase;
         private String titulo;
@@ -30,10 +31,10 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         /************************* Constructores *****************************/
         public Clase()
         {
-        	this.LocalizacionX = 70;
-        	this.LocalizacionY = 60;
-        	this.Ancho = 175;
-        	this.Alto = 210;
+            this.LocalizacionX = 70;
+            this.LocalizacionY = 60;
+            this.Ancho = 175;
+            this.Alto = 210;
         }
 
         public Clase(PantallaTrabajoGr6 pantallaTrabajoRecibida, string idClase, string titulo, List<string> atributos, List<string> metodos)
@@ -58,7 +59,6 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         {
             return this.panelContenedor;
         }
-        
         /************************* MÉTODOS *****************************/
         public void crearPanel()
         {
@@ -130,6 +130,7 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             panelContenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moverFigura);
 
             this.panelContenedor = panelContenedor;
+
         }
 
         /************************* MÉTODOS HEREDADOS *****************************/

@@ -44,12 +44,14 @@ namespace UMLGraph.Grupos.Grupo6.Vista
             {
                 MessageBox.Show("Ya existe una clase con este nombre");
             }
+            
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
         private void Formulario_Load(object sender, EventArgs e)
         {
 

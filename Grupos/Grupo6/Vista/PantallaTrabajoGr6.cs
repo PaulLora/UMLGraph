@@ -25,7 +25,6 @@ namespace UMLGraph.Grupos.Grupo6.Vista
         Panel pnl_aux = new Panel();
         ///Lista para guardar clase
         List<Clase> clases = new List<Clase>();
-
         List<Relacion> relaciones = new List<Relacion>();
 
         public PantallaTrabajoGr6 (Panel panel)
@@ -85,16 +84,20 @@ namespace UMLGraph.Grupos.Grupo6.Vista
             panel.Location = new System.Drawing.Point(2, 131);
             //this.pnl_areaTrabajo.TabIndex = 14;
             //this.pnl_areaTrabajo.Visible = true;
+
             this.pnl_aux.Controls.Add(this.pnl_herramienta);
             this.pnl_aux.Controls.Add(this.pnl_areaTrabajo);
 
             this.actulizarRelaciones();
+
         }
 
         public Panel dibujarPnl_areaTrabajo()
         {
+
             return this.pnl_aux;
         }
+
 
         private void btn_clase_Click(object sender, EventArgs e)
         {
@@ -214,5 +217,9 @@ namespace UMLGraph.Grupos.Grupo6.Vista
 
             }
         }
+
+
+
+
     }
 }
