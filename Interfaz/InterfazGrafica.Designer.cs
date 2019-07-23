@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazGrafica));
-            this.CmbSelecGrupo = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEnunciado = new System.Windows.Forms.Label();
             this.pnlEjercicios = new System.Windows.Forms.Panel();
@@ -61,20 +60,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CmbSelecGrupo
-            // 
-            this.CmbSelecGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CmbSelecGrupo.BackColor = System.Drawing.SystemColors.Menu;
-            this.CmbSelecGrupo.FormattingEnabled = true;
-            this.CmbSelecGrupo.Items.AddRange(new object[] {
-            "Grupo 5"});
-            this.CmbSelecGrupo.Location = new System.Drawing.Point(591, 4);
-            this.CmbSelecGrupo.Name = "CmbSelecGrupo";
-            this.CmbSelecGrupo.Size = new System.Drawing.Size(258, 21);
-            this.CmbSelecGrupo.TabIndex = 12;
-            this.CmbSelecGrupo.Visible = false;
-            this.CmbSelecGrupo.SelectedIndexChanged += new System.EventHandler(this.CmbSelecGrupo_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -182,7 +167,7 @@
             this.btnEnunciado4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnEnunciado4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnunciado4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnunciado4.Location = new System.Drawing.Point(259, 0);
+            this.btnEnunciado4.Location = new System.Drawing.Point(250, 3);
             this.btnEnunciado4.Name = "btnEnunciado4";
             this.btnEnunciado4.Size = new System.Drawing.Size(75, 27);
             this.btnEnunciado4.TabIndex = 19;
@@ -352,7 +337,6 @@
             this.pnlDibujar.Name = "pnlDibujar";
             this.pnlDibujar.Size = new System.Drawing.Size(997, 470);
             this.pnlDibujar.TabIndex = 18;
-            this.pnlDibujar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlDibujar_Paint);
             // 
             // InterfazGrafica
             // 

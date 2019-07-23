@@ -10,8 +10,7 @@ using UMLGraph.Grupos.Grupo3.Figuras;
 using UMLGraph.Grupos.Grupo6.Modelo;
 using UMLGraph.Grupos.GrupoX.Figuras;
 using UMLGraph.Grupos.Grupo3.Interfaz;
-//using UMLGraph.Grupos.Grupo6.Modelo;
-using UMLGraph.Grupos.GrupoX.Figuras;
+
 
 namespace UMLGraph
 {
@@ -21,149 +20,16 @@ namespace UMLGraph
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
-            //btnBorrarLienzo.Visible = false;
-            lblEnunciado.Text = "";
             lblUsuario.Text = usuario;
-            /////////////////////////////////////////////
-            //Mi codigo funcionaba mejor maximizado por lo que agrege esa linea
-            this.WindowState = FormWindowState.Maximized;
-            //En las lineas siguientes creo una lista de grupos para que se pueda seleccionar GR1,GR2,...
-            var grupos = new List<Groups>();//Se creo una clase Groups sencilla que guarda un name y un value
-            //Agregue los gurpos el codigo original es el X de esta forma deberian agregarse los siguientes grupos
-            grupos.Add(new Groups() { Name = "Grupo 1", Value = "GR1" });
-            grupos.Add(new Groups() { Name = "Grupo 3", Value = "GR3" });
-            grupos.Add(new Groups() { Name = "Grupo 4", Value = "GR4" });
-            grupos.Add(new Groups() { Name = "Grupo 5", Value = "GR5" });
-            grupos.Add(new Groups() { Name = "Grupo 6", Value = "GR6" });
-            
-            //Se llena el comboBox
-            this.CmbSelecGrupo.DataSource = grupos;
-            this.CmbSelecGrupo.DisplayMember = "Name";//Se define que será mostrado y seleccionamos el atributo name
-            this.CmbSelecGrupo.ValueMember = "Value";//Se define cual sera el valor de lo mostrado y seleccionamos el atributo value
-            //Instancio la interfaz, la mia necesita los tamanios de la ventana por lo que le envio eso
-            gr3 = new InterfazGR3(new Size(this.Width * 3, this.Height * 3));
-        }
-
-        List<Clase> listaClases = new List<Clase>();
-        List<Interfaz> listaInterfaces = new List<Interfaz>();
-        //List<InterfazM> listaClasM = new List<InterfazM>();
-        
-
-        
-        //down es para saber si se esta clickeando algo
-        bool down = false;
-        //inicial es para definir el punto donde esta el mouse cuando hace click
-        Point inicial;
-
-        //Todo lo que tenga Mouse es para mover las figuras
-        private void Ctr_MouseMove(object sender, MouseEventArgs e)
-        {
-            Control ctr = (Control)sender;
-
-            //Si down es true se esta clickeando el mouse, ademas se verifica que no se pueda arrastrar la figura mas alla del espacio permitido
-            //if (down
-            //    && e.X + ctr.Left - inicial.X >= this.panel1.Width
-            //    && e.Y + ctr.Top - inicial.Y >= panel2.Height)
-            //{
-            //    ctr.Left = e.X + ctr.Left - inicial.X;
-            //    ctr.Top = e.Y + ctr.Top - inicial.Y;
-            //}
-        }
-
-        private void Ctr_MouseUp(object sender, MouseEventArgs e) => down = false;
-
-        List<Point> lista = new List<Point>();
-        private void Ctr_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                down = true;
-                inicial = e.Location;
-            }
-        }
-
-        private void btnClase_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Recuerda que el nombre de las clases es en singular.\n" +
-                   "Fíjate que los atributos y métodos correspondan a la clase");
-            //Codigo original dle programa se activara si el elemento seleccionado es GR4
-            if (selected.Equals("GR4") || selected.Equals("GR5"))
-            {
-                //Se añade una nueva clase a la lista
-                listaClases.Add(new Clase(160, 120));
-
-                //Aqui se añade el panel de la clase a los controles del Form
-                this.Controls.Add(listaClases.Last().getCaja());
-
-
-                //Este paso es para que el picture box se pueda mover arrastrando con el mouse
-                listaClases.Last().getCaja().MouseDown += Ctr_MouseDown;
-                listaClases.Last().getCaja().MouseUp += Ctr_MouseUp;
-                listaClases.Last().getCaja().MouseMove += Ctr_MouseMove;
-            }
-            //Parte anexada del Grupo 3 se activa si es GR3
-            else if (selected.Equals("GR3") )
-            {
-                //Se crea un panel local
-                Panel panel = new Panel();
-                panel.Dispose();
-                
-                //Aplicamos la funcion crearpanel que inicializa todo lo que la clase debe tener
-                gr3.CrearPanel(ref panel);
-                //agrego a la lista de paneles al nuevo panel
-                gr3.paneles.Add(panel);
-            }
-}
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void Button9_Click(object sender, EventArgs e)
-        {
-            //listaClases.Clear();
-            //this.Controls.Add(listaClases.Last().getCaja());
-        }
-        private void BtnInterfaz_Click(object sender, EventArgs e)
-        {
-            if (selected.Equals("GR4") || selected.Equals("GR5"))
-            {
-                //Se añade una nueva clase a la lista
-                listaInterfaces.Add(new Interfaz(160, 120));
-
-                //Aqui se añade el panel de la clase a los controles del Form
-                this.Controls.Add(listaInterfaces.Last().getCaja());
-
-
-                //Este paso es para que el picture box se pueda mover arrastrando con el mouse
-                listaInterfaces.Last().getCaja().MouseDown += Ctr_MouseDown;
-                listaInterfaces.Last().getCaja().MouseUp += Ctr_MouseUp;
-                listaInterfaces.Last().getCaja().MouseMove += Ctr_MouseMove;
-            }
-
-            else if (selected.Equals("GR6"))
-            { 
-
-            }
-
-            else if (selected.Equals("GR1"))
-            {
-                MessageBox.Show("Hola somos grupo 1");
-            }
-
-        }
-
-        private void BtnDependencia_Click(object sender, EventArgs e)
-        {
-            Dependencia dep = new Dependencia(160,120);
-        //    dep.dibujar(e);
+            WindowState = FormWindowState.Maximized;
         }
 
         private void BtbCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Dispose();
             new Inicio().Show();
-		}
+
+        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
@@ -214,19 +80,19 @@ namespace UMLGraph
 
         private void BtnEnunciado1_Click(object sender, EventArgs e)
         {
-			pnlDibujar.Controls.Clear();
             pnlEjercicios.Visible = false;
+            this.pnlDibujar.Controls.Clear();
             lblEnunciado.Visible = true;
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
             this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
-			lblEnunciado.Text = "Problema Grafique el diagrama ded clase de un sistema ATM";
+            lblEnunciado.Text = "Problema Grafique el diagrama ded clase de un sistema ATM";
 
         }
 
         private void BtnEnunciado2_Click(object sender, EventArgs e)
         {
             pnlEjercicios.Visible = false;
-			Enunciado en = new Enunciado(4, "Se requiere un sistema para reservar habitaciones en un hotel.\nElabore el diagrama de clases para dicho sistema");
+            Enunciado en = new Enunciado(4, "Se requiere un sistema para reservar habitaciones en un hotel.\nElabore el diagrama de clases para dicho sistema");
             lblEnunciado.Visible = true;
             lblEnunciado.Text = en.EnunciadoTxt;
             pnlDibujar.Controls.Clear();
@@ -243,7 +109,7 @@ namespace UMLGraph
             Controls.Remove(this.pnlDibujar);
             this.pnlDibujar = fachada.EjecutarEnunciado3(ref pnlDibujar);
             Controls.Add(this.pnlDibujar);
-			lblEnunciado.Text = en.EnunciadoTxt;
+            lblEnunciado.Text = en.EnunciadoTxt;
         }
 
         private void BtnEnunciado4_Click(object sender, EventArgs e)
@@ -251,9 +117,9 @@ namespace UMLGraph
             pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
-			this.pnlDibujar.BackgroundImage = base.BackgroundImage;
+            this.pnlDibujar.BackgroundImage = base.BackgroundImage;
             this.pnlDibujar.Controls.Clear();
-			this.pnlDibujar = fachada.EjecutarEnunciado4(pnlDibujar);
+            this.pnlDibujar = fachada.EjecutarEnunciado4(pnlDibujar);
             lblEnunciado.Text = en.EnunciadoTxt;
         }
 
@@ -262,12 +128,12 @@ namespace UMLGraph
             pnlEjercicios.Visible = false;
             this.pnlDibujar.Controls.Clear();
             Enunciado en = new Enunciado(4, "Se requiere un sistema para reservar habitaciones en un hotel.\nElabore el diagrama de clases para dicho sistema");
-			lblEnunciado.Visible = true;
+            lblEnunciado.Visible = true;
             lblEnunciado.Text = en.EnunciadoTxt;
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
-            
+
             this.pnlDibujar = fachada.EjecutarEnunciado5(pnlDibujar);
-		}
+        }
 
         private void BtnEnunciado6_Click(object sender, EventArgs e)
         {
@@ -275,11 +141,21 @@ namespace UMLGraph
             pnlEjercicios.Visible = false;
             lblEnunciado.Visible = true;
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
+            //Panel pnl_dibujar = new Panel();
+            //pnl_dibujar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
+            //pnl_dibujar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            //pnl_dibujar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            //pnl_dibujar.Location = new System.Drawing.Point(2, 131);
+            //pnl_dibujar.Margin = new System.Windows.Forms.Padding(2);
+            //pnl_dibujar.Name = "pnlPrincipal";
+            //pnl_dibujar.Size = new System.Drawing.Size(997, 473);
+            //pnl_dibujar.TabIndex = 14;
+            //pnl_dibujar.Visible = true;
+            ////pnl_dibujar.Controls.Add(this);
+            //pnl_dibujar.Show();
+            //this.pnlDibujar.Controls.Add(pnl_dibujar);
             this.pnlDibujar = fachada.EjecutarEnunciado6(pnlDibujar);
-        }
-
-        private void PnlDibujar_Paint(object sender, PaintEventArgs e)
-        {
+            //fachada.EjecutarEnunciado6(pnl_dibujar);
         }
     }
 }

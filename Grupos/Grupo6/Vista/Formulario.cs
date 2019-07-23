@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UMLGraph.Grupos.Grupo6.Modelo;
+using UMLGraph.Grupos.Grupo6;
 
 namespace UMLGraph.Grupos.Grupo6.Vista
 {
@@ -32,7 +32,7 @@ namespace UMLGraph.Grupos.Grupo6.Vista
         {
             //Verificar si existe una clase con el mismo nombre
             Object clase = pantallaTrabajoGr6.existeClase(this.txt_titulo.Text);
-            if ( clase == null)
+            if (clase == null)
             {
                 this.titulo = this.txt_titulo.Text;
                 this.atributos = this.txt_atributos.Text;
@@ -44,7 +44,7 @@ namespace UMLGraph.Grupos.Grupo6.Vista
             {
                 MessageBox.Show("Ya existe una clase con este nombre");
             }
-            
+
         }
 
         private void GroupBox1_Enter(object sender, EventArgs e)

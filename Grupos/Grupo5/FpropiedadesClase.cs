@@ -18,17 +18,17 @@ namespace UMLGraph.Grupos.Grupo5
             InitializeComponent();
             opener = parentForm;
         }
-      
-        
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-                
-                opener.nombre = txtNombre.Text;
-                opener.atributos = txtAtributos.Text;
-                opener.metodos = txtMetodos.Text;
 
-                this.Close();
-           
+            opener.nombre = txtNombre.Text;
+            opener.atributos = txtAtributos.Text;
+            opener.metodos = txtMetodos.Text;
+
+            this.Close();
+
         }
     }
 

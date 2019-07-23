@@ -198,5 +198,12 @@ C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\UMLGraph.pdb
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Canvas.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo1.GUI1.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo3.Interfaz.CanvasGR3.resources
-C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.Formulario.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.FormularioRelacion.resources
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\NClass.exe
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\Core.dll
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\GUI.Diagram.dll
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\NClass.pdb
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\NClass.exe.config
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\Core.pdb
+C:\Users\bryan\source\repos\UMLGraph\bin\Debug\GUI.Diagram.pdb
+C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.csproj.CopyComplete

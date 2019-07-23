@@ -11,7 +11,7 @@ using UMLGraph.Grupos.Grupo6.Vista;
 namespace UMLGraph.Grupos.Grupo6.Modelo
 {
     class Clase : Figura
-    {   
+    {
         // Escuchar cuando ocurre evento y manejar el cmabio de posicion
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
