@@ -250,7 +250,7 @@ namespace NClass.GUI
             else
             {
                 txtName.Text = null;
-                txtName.Enabled = false;
+                //txtName.Enabled = false;
                 cboAccess.Text = null;
                 cboAccess.Enabled = false;
                 cboModifier.Text = null;
@@ -387,7 +387,11 @@ namespace NClass.GUI
         #region Diagram menu eventhandlers
         private void mnuNewClass_Click(object sender, EventArgs e)
         {
-            project.AddClass("NewClass");
+            if (txtName.Text != null)
+            {
+                project.AddClass("NewClass");
+            }
+            MessageBox.Show("Ingrese el nombre de la clase");
         }
 
         private void mnuNewAssociation_Click(object sender, EventArgs e)
