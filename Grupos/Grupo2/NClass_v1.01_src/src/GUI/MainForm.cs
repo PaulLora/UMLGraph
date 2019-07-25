@@ -387,11 +387,20 @@ namespace NClass.GUI
         #region Diagram menu eventhandlers
         private void mnuNewClass_Click(object sender, EventArgs e)
         {
+            Validaciones validar = new Validaciones();
             if (txtName.Text != null)
             {
-                project.AddClass("NewClass");
+                string valido = Validaciones.ValidaNombre(txtName.Text);
+                if (valido == "bien")
+                {
+                    project.AddClass(txtName.Text);
+                }
+                MessageBox.Show(valido);
             }
-            MessageBox.Show("Ingrese el nombre de la clase");
+            else
+            {
+                MessageBox.Show("Ingrese el nombre de la clase");
+            }
         }
 
         private void mnuNewAssociation_Click(object sender, EventArgs e)
