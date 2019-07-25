@@ -301,6 +301,7 @@
             this.cboType.Size = new System.Drawing.Size(287, 24);
             this.cboType.Sorted = true;
             this.cboType.TabIndex = 2;
+            this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             this.cboType.TextChanged += new System.EventHandler(this.MemberChanged);
             this.cboType.Validating += new System.ComponentModel.CancelEventHandler(this.cboType_Validating);
             // 

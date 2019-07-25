@@ -117,7 +117,8 @@ namespace NClass.GUI.Diagram
 
 		private void FillCollections(Language language)
 		{
-			cboAccess.Items.Clear();
+            cboType.Items.Clear();
+            cboAccess.Items.Clear();
 			cboModifier.Items.Clear();
 
 			if (language == Language.CSharp) {
@@ -144,7 +145,16 @@ namespace NClass.GUI.Diagram
 				cboModifier.Items.Add("Abstract");
 				cboModifier.Items.Add("Final");
 			}
-		}
+            cboType.Items.Add("int");
+            cboType.Items.Add("long");
+            cboType.Items.Add("string");
+            cboType.Items.Add("char");
+            cboType.Items.Add("decimal");
+            cboType.Items.Add("double");
+            cboType.Items.Add("float");
+            cboType.Items.Add("bool");
+            cboType.Items.Add("byte");
+        }
 
 		private void FillMembersList()
 		{
@@ -226,8 +236,18 @@ namespace NClass.GUI.Diagram
 			txtName.Text = member.Name;
 			cboType.Text = member.Type;
 
-			// Access selection
-			for (int i = 0; i < accessOrder.Length; i++) {
+            //// Type selection
+            //for (int i = 0; i < accessOrder.Length; i++)
+            //{
+            //    if (accessOrder[i] == member.AccessModifier)
+            //    {
+            //        cboType.SelectedIndex = i;
+            //        break;
+            //    }
+            //}
+
+            // Access selection
+            for (int i = 0; i < accessOrder.Length; i++) {
 				if (accessOrder[i] == member.AccessModifier) {
 					cboAccess.SelectedIndex = i;
 					break;
@@ -439,8 +459,13 @@ namespace NClass.GUI.Diagram
 				}
 			}
 		}
-
-		private void cboModifier_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            member.Type = cboType.SelectedItem.ToString();
+            RefreshValues();
+            Changed = true;
+        }
+        private void cboModifier_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			int index = cboModifier.SelectedIndex;
 
@@ -588,5 +613,5 @@ namespace NClass.GUI.Diagram
 		{
 			this.Close();
 		}
-	}
+    }
 }

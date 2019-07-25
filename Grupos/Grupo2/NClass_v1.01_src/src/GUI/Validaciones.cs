@@ -10,6 +10,10 @@ namespace NClass.GUI
     {
         public static string ValidaNombre(string name)
         {
+            if (name.Equals(""))
+            {
+                return "Nombre vacio";
+            }
             if (name.Contains(" "))
             {
                 return "Nombre contiene espacios";

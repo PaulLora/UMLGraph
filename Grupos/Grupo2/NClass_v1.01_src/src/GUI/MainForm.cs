@@ -395,7 +395,10 @@ namespace NClass.GUI
                 {
                     project.AddClass(txtName.Text);
                 }
-                MessageBox.Show(valido);
+                else
+                {
+                    MessageBox.Show(valido);
+                }
             }
             else
             {
