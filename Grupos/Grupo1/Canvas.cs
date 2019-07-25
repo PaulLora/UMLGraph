@@ -24,6 +24,7 @@ namespace UMLGraph
            panelMaster = new Panel();
            panelMaster.Location = new System.Drawing.Point(200, 28);
            panelMaster.Size = new System.Drawing.Size(800, 800);
+           panelMaster.Dock = DockStyle.Fill;
            panelMaster.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
            GUI.Controls.Add(panelMaster);
         }

@@ -330,12 +330,11 @@
             // 
             // pnlDibujar
             // 
-            this.pnlDibujar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDibujar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlDibujar.Location = new System.Drawing.Point(0, 131);
+            this.pnlDibujar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDibujar.Location = new System.Drawing.Point(0, 130);
             this.pnlDibujar.Name = "pnlDibujar";
-            this.pnlDibujar.Size = new System.Drawing.Size(997, 470);
+            this.pnlDibujar.Size = new System.Drawing.Size(1000, 470);
             this.pnlDibujar.TabIndex = 18;
             // 
             // InterfazGrafica
