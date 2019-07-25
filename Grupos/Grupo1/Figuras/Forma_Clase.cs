@@ -16,7 +16,6 @@ namespace UMLGraph
         bool down = false;
         Point inicial;
         List<Panel> listaPaneles = new List<Panel>(); //Un alista de paneles es una lista de clases
-        String hola = "";
         public Panel dynamicPanel;
         Canvas limpiar;
         public Forma_Clase()
@@ -28,50 +27,46 @@ namespace UMLGraph
         public void dibujar(Canvas canvas)
         {
             dynamicPanel = new Panel();
-            //Panel dynamicPanel = new Panel() ;
-            dynamicPanel.Location = new System.Drawing.Point(250, 370);
+            
+            dynamicPanel.Location = new System.Drawing.Point(250,100);
             dynamicPanel.Name = "Panel1";
-            dynamicPanel.Size = new System.Drawing.Size(228, 255);
+            dynamicPanel.Size = new System.Drawing.Size(150, 200);
             dynamicPanel.BackColor = Color.LightSkyBlue;
 
             TextBox textBox1 = new TextBox();
             textBox1.Location = new Point(10, 10);
             textBox1.Text = "Nombre de la clase";
-            //textBox1.MouseEnter += new System.EventHandler(this.Buttons_MouseEnter);
-            textBox1.Size = new Size(200, 30);
+            textBox1.Size = new Size(130, 30);
             dynamicPanel.Controls.Add(textBox1);
-            //dynamicPanel.Controls.ContainsKey("textBox1");
             //CONTROL 0
 
             CheckBox checkBox1 = new CheckBox();
-            checkBox1.Location = new Point(10, 235);
+            checkBox1.Location = new Point(10, 180);
             checkBox1.Text = "Check Me";
-            checkBox1.Size = new Size(180, 20);
+            checkBox1.Size = new Size(100, 20);
             checkBox1.UseVisualStyleBackColor = true;
             //Utilizado para validar que el check este en visto no 
-            // checkBox1.Checked = false;
             checkBox1.CheckedChanged += new System.EventHandler(CheckBox_CheckedChanged);
-            //checkBox1.Checked = false;
             dynamicPanel.Controls.Add(checkBox1);
             //CONTROL 1
             RichTextBox rich = new RichTextBox();
             rich.Location = new Point(10, 50);
             rich.Text = "Atributos";
-            rich.Size = new Size(200, 120);
+            rich.Size = new Size(130, 50);
             dynamicPanel.Controls.Add(rich);
             //CONTROL 2
             RichTextBox rich2 = new RichTextBox();
-            rich2.Location = new Point(10, 180);
+            rich2.Location = new Point(10, 110);
             rich2.Text = "Metodos";
-            rich2.Size = new Size(200, 50);
+            rich2.Size = new Size(130, 50);
             dynamicPanel.Controls.Add(rich2);
             //Agrego A la lista de paneles la clase creada
             listaPaneles.Add(dynamicPanel);
             //Servira para identifivcar la clase
             Label numeroClas = new Label();
             numeroClas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            numeroClas.Location = new Point(200, 235);
-            numeroClas.Text = "" + listaPaneles.Count();
+            numeroClas.Location = new Point(130, 180);
+            numeroClas.Text = "";// + listaPaneles.Count();
             numeroClas.Size = new Size(200, 20);
             //agrego el identificador de clase
             dynamicPanel.Controls.Add(numeroClas);
@@ -90,9 +85,6 @@ namespace UMLGraph
 
         }
 
-
-
-
         //CUANDO PIDE LA REVISIÓN LLAMA A LA CLASE VALIDACION CLASE
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -109,14 +101,7 @@ namespace UMLGraph
                 {
                     case 1:
                         MessageBox.Show("La clase es válida");
-                        //La idea sería que si la clase es válida se bloquee el check box o se pinte el panel de otro color
-                        //ListaFormas.listaClases.Add(dynamicPanel);
-                        ListaFormas.listaClases.Add(dynamicPanel);
-                        int tamaño = ListaFormas.listaClases.Count();
-                        MessageBox.Show("En la lista de clases existe:" + Convert.ToString(tamaño) + " elementos");
-                        //tex.Enabled = false;
-                        //rich.Enabled = false;
-                        //rich1.Enabled = false;
+
                         check.Enabled = false;
                         break;
                     case 2:
@@ -128,85 +113,20 @@ namespace UMLGraph
                         check.Checked = false;
                         break;
                     case 4:
-                        MessageBox.Show("Por lo general, los metodos son verbos, asegúrese de escribir un verbo ");
+                        MessageBox.Show("Los atrbutos no pueden ser verbos, asegúrese de escribir un verbo ");
                         check.Checked = false;
+                        break;
+
+                    case 5:
+                        MessageBox.Show("Para escribir un método, asegúrese de escribir con la siguiente sintaxis \n Verbo(); o Verbo_Sustantivo();");
                         break;
                 }
             }
 
         }
 
-        /*
-        private void CheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-            CheckBox check = (CheckBox)dynamicPanel.Controls[1];
-            //Si le da clic en chek valida esto retorna un true o un false dependiendo de lo que use 
-            //CheckBox hola2 = (CheckBox)listaPaneles[0].Controls[2];
-            //.Controls[1].Text;
-
-             if (check.Checked)
-              {
-                List<string> atributos = obtenerAtributos();
-
-                foreach (string element in atributos)
-                {
-                   
-                    MessageBox.Show("Los atributos son:"+element);
-                }
-                List<string> metodos = ObtenerMetodos();
-                foreach (string element in metodos)
-                {
-
-                    MessageBox.Show("Los metodos son:" + element);
-                }
 
 
-                // string nombre = dynamicPanel.Controls[0].Select(x => x.Text).ToString();
-
-                TextBox nombre = (TextBox)dynamicPanel.Controls[0];
-                string nombreClase = nombre.Text;
-                MessageBox.Show("El nombre de la clase es"+nombreClase);
-                int res = new ValidacionClase().validar(nombreClase, atributos, metodos);
-                switch (res)
-                {
-                    case 1:
-                        MessageBox.Show("La clase es válida");
-                        //La idea sería que si la clase es válida se bloquee el check box o se pinte el panel de otro color
-                        //ListaFormas.listaClases.Add(dynamicPanel);
-                        ListaFormas.listaClases.Add(dynamicPanel);
-                        int tamaño=ListaFormas.listaClases.Count();
-                        MessageBox.Show("En la lista de clases existe:"+Convert.ToString(tamaño)+" elementos");
-                        check.Enabled=false;
-
-
-                        break;
-                    case 2:
-                        MessageBox.Show("El nombre no puede ser un verbo");
-
-                        break;
-                    case 3:
-                        MessageBox.Show("Los atributos y metodos no pueden ser iguales");
-                        break;
-                    case 4:
-                        MessageBox.Show("Por lo general, los metodos son verbos, asegúrese de escribir un verbo ");
-                        break;
-
-
-
-                }
-
-
-
-            }
-           
-
-
-           
-
-
-
-        }*/
         /// <summary>
         /// Muy bien ahora empezomos con la creacion la verificacion 
         /// enviar hacer la valicacion 

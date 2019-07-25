@@ -20,48 +20,83 @@ namespace UMLGraph
         {
             MessageBox.Show("Recuerde que la interfaz solo contiene metodos");
             dynamicPanel = new Panel();
-            //Panel dynamicPanel = new Panel() ;
             dynamicPanel.Location = new System.Drawing.Point(250, 370);
             dynamicPanel.Name = "Panel1";
-            dynamicPanel.Size = new System.Drawing.Size(228, 255);
-            dynamicPanel.BackColor = Color.LightSkyBlue;
+            dynamicPanel.Size = new System.Drawing.Size(150, 205);
+            dynamicPanel.BackColor = Color.CadetBlue;
 
             TextBox textBox1 = new TextBox();
-            textBox1.Location = new Point(10, 10);
+            textBox1.Location = new Point(25, 10);
             textBox1.Text = "Nombre de la interfaz";
-            //textBox1.MouseEnter += new System.EventHandler(this.Buttons_MouseEnter);
-            textBox1.Size = new Size(200, 30);
+            textBox1.Size = new Size(100, 30);
             dynamicPanel.Controls.Add(textBox1);
             //CONTROLS[0]
 
 
 
             CheckBox checkBox1 = new CheckBox();
-            checkBox1.Location = new Point(10, 235);
+            checkBox1.Location = new Point(10, 170);
             checkBox1.Text = "Check Me";
-            checkBox1.Size = new Size(200, 20);
+            checkBox1.Size = new Size(110, 20);
             checkBox1.UseVisualStyleBackColor = true;
-            //Utilizado para validar que el check este en visto no 
-            // checkBox1.Checked = false;
             checkBox1.CheckedChanged += new System.EventHandler(CheckBox_CheckedChanged);
-            //checkBox1.Checked = false;
+
             dynamicPanel.Controls.Add(checkBox1);
 
             //CONSTROLS [1]
 
-            RichTextBox rich2 = new RichTextBox();
-            rich2.Location = new Point(10, 180);
-            rich2.Text = "Metodos";
-            rich2.Size = new Size(200, 50);
-            //MessageBox.Show(textBox1.Text);
+
+
+            RichTextBox rich = new RichTextBox();
+            rich.Location = new Point(10, 45);
+            rich.Text = "";
+            rich.Size = new Size(130, 40);
+            rich.Enabled = false;
             // CONTROLS[2]
+            dynamicPanel.Controls.Add(rich);
+            RichTextBox rich2 = new RichTextBox();
+            rich2.Location = new Point(10, 100);
+            rich2.Text = "Metodos";
+            rich2.Size = new Size(130, 50);
+            // CONTROLS[3]
             dynamicPanel.Controls.Add(rich2);
-            //Agrego A la lista de paneles lo que yo creee 
-            // listaPaneles.Add(dynamicPanel);
+
+
+
+            Label numeroClas = new Label();
+            numeroClas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            numeroClas.Location = new Point(120, 170);
+
+            numeroClas.Text = "";// + ListaFormas.listaClases.Count();
+
+            numeroClas.Size = new Size(30, 30);
+            //agrego el identificador de clase
+            dynamicPanel.Controls.Add(numeroClas);
+            // CONTROLS[4]
+
+            TextBox textBox2 = new TextBox();
+            textBox2.Location = new Point(10, 10);
+            // CONTROLS[5]
+            textBox2.Text = "<<";
+            textBox2.Size = new Size(10, 30);
+            textBox2.Enabled = false;
+
+            dynamicPanel.Controls.Add(textBox2);
+
+
+            TextBox textBox3 = new TextBox();
+            textBox3.Location = new Point(130, 10);
+            textBox3.Size = new Size(10, 30);
+            textBox3.Text = ">>";
+            textBox3.Enabled = false;
+            // CONTROLS[]
+            dynamicPanel.Controls.Add(textBox3);
+
 
 
 
             canvas.panelMaster.Controls.Add(dynamicPanel);
+
 
 
 
@@ -76,6 +111,8 @@ namespace UMLGraph
 
 
         }
+
+
         private void Ctr_MouseMove(object sender, MouseEventArgs e)
         {
             Control ctr = (Control)sender;
@@ -97,6 +134,9 @@ namespace UMLGraph
             }
         }
 
+
+        //VERIFICAR
+
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox check = (CheckBox)dynamicPanel.Controls[1];
@@ -111,16 +151,16 @@ namespace UMLGraph
                     case 1:
                         MessageBox.Show("La interfaz es válida");
                         check.Enabled = false;
+                        // ListaFormas.listaInterfaz.Add(dynamicPanel);
+                        //MessageBox.Show("Existe"+Convert.ToString(ListaFormas.listaInterfaz.Count)+" elementos de tipo interfaz");
                         break;
-                    case 2:
-                        MessageBox.Show("El nombre de la interfaz no puede ser un verbo.\n El nombre de una interfaz debe ser una representación de un conjunto de elementos");
-                        break;
-                    case 3:
-                        MessageBox.Show("Los métodos no pueden ser repetidos");
+                    default:
+                        MessageBox.Show("Corrija los errores ");
                         break;
 
                 }
             }
         }
-    }
+
+     }
 }

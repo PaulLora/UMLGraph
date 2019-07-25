@@ -24,10 +24,13 @@ namespace UMLGraph
             GUI1 form2 = new GUI1();
             form2.TopLevel = false;
             form2.Parent = panel;
+            form2.Dock = DockStyle.Fill;
             form2.Show();
             form2.BringToFront();
             panel.Location = new System.Drawing.Point(2, 131);
             return panel;
+
+
         }
 
         public Panel EjecutarEnunciado2(ref Panel panel) //Este método referencia al subsistema del grupo 2 (Gaby)

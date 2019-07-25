@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,80 +18,47 @@ namespace UMLGraph
         }
 
 
-        public ValidacionClase()
-        {
-
-        }
-
-
-
         public int validar()
         {
             List<string> atributos = formaClase.obtenerAtributos();
             List<string> metodos = formaClase.ObtenerMetodos();
             TextBox nombre1 = (TextBox)formaClase.dynamicPanel.Controls[0];
-
-            //TextBox nombre = (TextBox) fdynamicPanel.Controls[0];
             string nombreClase = nombre1.Text;
 
             int valido = 1;
+            int invalido = 0;
+
 
             if (validarNombre(nombreClase) == 0)
             {
-                return 2;
+                return invalido;
             }
-
 
             if (validarRepetidos(atributos, metodos) == 0)
             {
-                return 3;
+                return invalido;
             }
-
-
             if (esMetodoAccion(atributos) == 0)
+
             {
-                return 4;
+                return invalido;
+            }
+
+            if (validarMetodo(metodos) == 0)
+            {
+                return invalido;
             }
 
 
+            ListaFormas.listaClasesInterfaz.Add(formaClase.dynamicPanel);
+            ListaFormas.listaClasesInterfaz.Last().Controls[4].Text = Convert.ToString(ListaFormas.listaClasesInterfaz.Count());
             return valido;
 
         }
 
-        
-
-        public  int validar(String nombre,List<string> atributos, List<string>metodos)
-        {
-           // List<string> atributos=formaClase.obtenerAtributos();
-            //List<string> metodos = formaClase.ObtenerMetodos();
-            //TextBox nombre1 = (TextBox)formaClase.dynamicPanel.Controls[0];
-
-            //TextBox nombre = (TextBox) fdynamicPanel.Controls[0];
-            //string nombreClase = nombre1.Text;
-
-            int valido = 1;
-
-            if (validarNombre(nombre) == 0)
-            {
-                return 2;
-            }
-           
-            
-          if (validarRepetidos(atributos,metodos) ==0)
-                {
-                    return 3;
-                }
 
 
-            if (esMetodoAccion(atributos) == 0)
-            {
-                return 4;
-            }
-                                          
-            
-            return valido;
 
-        }
 
         public int validarNombre(String nombre)
         {
@@ -98,8 +66,23 @@ namespace UMLGraph
             int tam_var = nombre.Length;
             String Var_Sub = nombre.Substring((tam_var - 2), 2);
             if (Var_Sub.Equals("ar") || Var_Sub.Equals("er") || Var_Sub.Equals("ir"))
+            {
+                MessageBox.Show("Error!El nombre de una clase no puede ser un verbo");
                 return 0;
-           
+            }
+
+
+            for (int i = 0; i < ListaFormas.listaClasesInterfaz.Count(); i++)
+            {
+
+                if (ListaFormas.listaClasesInterfaz[i].Controls[0].Text.Equals(nombre))
+                {
+                    MessageBox.Show("Error! No se puede crear 2 clases con el mismo nombre");
+                    return 0;
+
+                }
+            }
+
 
             return res;
 
@@ -115,6 +98,8 @@ namespace UMLGraph
 
                 return 0;
             }
+
+
             return res;
         }
 
@@ -130,9 +115,9 @@ namespace UMLGraph
                 if (a.Count > 1 || esVerbo(a.Text) == 0)
                 {
                     res = 0;
-                    
+                    MessageBox.Show("Error!No pueden haber atributos repetidos");
                     return res;
-                    break;
+                    // break;
 
                 }
 
@@ -143,8 +128,8 @@ namespace UMLGraph
                 System.Console.WriteLine(b);
                 if (b.Count > 1)
                 {
+                    MessageBox.Show("Error!No pueden haber métodos repetidos");
                     res = 0;
-                    System.Console.WriteLine(b.Count);
                     return res;
 
                 }
@@ -152,6 +137,8 @@ namespace UMLGraph
 
             return res;
         }
+
+
 
         public int esMetodoAccion(List<string> atributos)
         {
@@ -161,6 +148,7 @@ namespace UMLGraph
                 if (esVerbo(a) == 0)
                 {
                     res = 0;
+                    MessageBox.Show("Error!Los atributos no pueden ser verbos");
 
                     return res;
 
@@ -168,6 +156,23 @@ namespace UMLGraph
                 }
             }
             return res;
+        }
+
+
+        //VALIDAR QUE LOS MÉTODOS TENGAN LA ESTRUCTURA ();
+        public int validarMetodo(List<string> metodos)
+        {
+            String rgx = @"^[A-Za-z]+(?:ar|er|ir)((_)?[A-Za-z]+)?\(\);$";
+            for (int i = 0; i < metodos.Count(); i++)
+            {
+                if (!Regex.IsMatch(metodos[i], rgx))
+                {
+                    MessageBox.Show("Para escribir un método, asegúrese de escribir con la siguiente sintaxis \n Verbo(); o Verbo_Sustantivo();");
+                    return 0;
+                }
+            }
+            return 1;
+
         }
     }
 }

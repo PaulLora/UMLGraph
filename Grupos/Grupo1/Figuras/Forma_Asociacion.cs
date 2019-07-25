@@ -11,41 +11,48 @@ namespace UMLGraph
 {
     class Forma_Asociacion : Forma
     {
+
+        //SI SE PONE CANCELAR NO SE DEBE SALIR DEL CODIGO
+        //Existe una bandera sin usarse 
+
         List<Point> lista = new List<Point>();
         List<Panel> listaPaneles = new List<Panel>(); //Un alista de paneles es una lista de clases
         bool bandera = true;
         Canvas c;
-        Graphics g;
-        int claseA, claseB;
-        Forma_Clase clase;
+        public int claseA, claseB;
+        //Forma_Clase clase;
 
-        public Forma_Asociacion(Canvas canvas, Forma_Clase clase, List<Panel> clas, int claseA, int claseB)
+        //Forma_Clase clases = new Forma_Clase();
+        public Graphics g;
+        public Forma_Asociacion(Canvas canvas,  int claseA, int claseB)
         {
             this.claseA = claseA - 1;
             this.claseB = claseB - 1;
-            this.listaPaneles = clas;
-            this.clase = clase;
+           // this.listaPaneles = clas;
+            //this.clase = clase;
             dibujar(canvas);
         }
+
         public void dibujar(Canvas canvas)
         {
             Graphics g = canvas.panelMaster.CreateGraphics();
             this.g = g;
             if (bandera == true)
             {
-                //Guardo toda las ubicaciones de las clases
-                for (int i = 0; i < listaPaneles.Count; i++)
-                {
-                    Point pt1 = listaPaneles[i].Location;
-                    pt1.X = pt1.X + ((pt1.X * 20) / 100);
-                    pt1.Y = pt1.Y + ((pt1.Y * 20) / 100);
-                    lista.Add(pt1);
-                }
-                Pen lapiz = new Pen(Color.Black, 1);
-                g.DrawLine(lapiz, lista[claseA], lista[claseB]);
+
+                Point A = new Point();
+                A = obtenerPuntos(claseA+1);
+                Point B = new Point();
+                B = obtenerPuntos(claseB+1);
+                                             
+
+               Pen lapiz = new Pen(Color.Black, 2);
+
+                g.DrawLine(lapiz, A, B);
                 bandera = true;
             }
-            ValidacionAsociacion v = new ValidacionAsociacion(canvas, clase, listaPaneles, claseA, claseB);
+
+            //ValidacionAsociacion v = new ValidacionAsociacion(this);
         }
 
         private void Panel_MouseDown(object sender, MouseEventArgs e)
@@ -65,6 +72,35 @@ namespace UMLGraph
 
             this.listaPaneles = clase;
             return listaPaneles;
+        }
+
+
+
+        public Point obtenerPuntos(int punto)
+        {
+            Point vacio = new Point();
+            
+            
+                for (int i = 0; i < ListaFormas.listaClasesInterfaz.Count(); i++)
+                {
+                    Label txt = (Label)ListaFormas.listaClasesInterfaz[i].Controls[4];
+                    String numero = txt.Text;
+                    int numero1 = int.Parse(numero);
+                    //MessageBox.Show(Convert.ToString(numero1));
+                    if (numero1 == punto)
+                    {
+                        Point x1 = ListaFormas.listaClasesInterfaz[i].Location;
+                        x1.X = ListaFormas.listaClasesInterfaz[i].Location.X + 75;
+                        x1.Y = ListaFormas.listaClasesInterfaz[i].Location.Y + 100;
+                      return x1;
+                     
+                    }
+                }
+
+
+            
+
+            return vacio;
         }
     }
 }
