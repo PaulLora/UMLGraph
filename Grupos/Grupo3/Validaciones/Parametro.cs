@@ -23,13 +23,13 @@ namespace UMLGraph.Grupos.Grupo3.Validaciones
                 nombre = value;
             }
         }
-        public List<string> atributo
+        public List<string> Atributo
         {
             get
             { return atributos; }
         }
 
-        public List<string> metodo
+        public List<string> Metodo
         {
             get
             { return metodos; }
@@ -47,24 +47,24 @@ namespace UMLGraph.Grupos.Grupo3.Validaciones
             metodos.Add(line);
         }
 
-        public void modificarAtributo(int indice, string atributo)
+        public void ModificarAtributo(int indice, string atributo)
         {
             atributos.RemoveAt(indice);
             atributos.Insert(indice, atributo);
         }
 
-        public void eliminarAtributo(int indice)
+        public void EliminarAtributo(int indice)
         {
             atributos.RemoveAt(indice);
         }
 
-        public void modificarMetodo(int indice, string metodo)
+        public void ModificarMetodo(int indice, string metodo)
         {
             metodos.RemoveAt(indice);
             metodos.Insert(indice, metodo);
         }
 
-        public void eliminarMetodo(int indice)
+        public void EliminarMetodo(int indice)
         {
             metodos.RemoveAt(indice);
         }

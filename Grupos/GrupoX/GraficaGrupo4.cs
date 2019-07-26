@@ -41,7 +41,7 @@ namespace UMLGraph
             this.btnClase.Name = "btnClase";
             this.btnClase.Size = new System.Drawing.Size(132, 21);
             this.btnClase.TabIndex = 0;
-            this.btnClase.Text = "Dibujar clase";
+            this.btnClase.Text = "ActualizarFiguras clase";
             this.btnClase.UseVisualStyleBackColor = true;
             this.btnClase.Click += new System.EventHandler(this.btnClase_Click);
             //

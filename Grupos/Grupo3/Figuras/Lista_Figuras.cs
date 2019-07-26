@@ -15,17 +15,25 @@ using System.IO;
 
 namespace UMLGraph.Grupos.Grupo3.Figuras
 {
-    class Lista_Figuras
+    public class Lista_Figuras
     {
         public List<Figura> Figuras { get; set; }
         public Size CanvasSize { get; set; }
-        public void Dibujar()
+        public List<Control> FigurasControles { get; set; }
+        public void ActualizarFiguras()
         {
-            Bitmap previousBtm = new Bitmap(CanvasSize.Width, CanvasSize.Height);
+            
+            //Bitmap previousBtm = new Bitmap(CanvasSize.Width, CanvasSize.Height);
             foreach (Figura_Relacion rel in Figuras.OfType<Figura_Relacion>())//Creo un nuevo Bitmap para ir dobujando sobre el en el foreach lo que hago es dibujar cada linea hasta obtener una imagen "final", perteneciente solo a las relaciones 
             {
-                rel.BtmRelacion = rel.DrawToBitmap(previousBtm);
-                previousBtm = rel.BtmRelacion;
+                
+                /*rel.BtmRelacion = rel.DibujarFigura(previousBtm);
+                previousBtm = rel.BtmRelacion;*/
+                rel.DibujarFigura();
+                foreach(Control con in rel.Dibujador.RelLines)
+                {
+                    FigurasControles.Add(con);
+                }
             }
 
         }
@@ -38,10 +46,13 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
         {
             this.CanvasSize = tam;
             this.Figuras = new List<Figura>();
+            this.FigurasControles = new List<Control>();
         }
         public Lista_Figuras()
         {
             this.Figuras = new List<Figura>();
+            this.FigurasControles = new List<Control>();
+            
         }
 
 

@@ -37,6 +37,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,7 +76,12 @@
     <Compile Include="Grupos\Grupo1\Validacion\ValidacionComposicion.cs" />
     <Compile Include="Grupos\Grupo1\Validacion\ValidacionHerencia.cs" />
     <Compile Include="Grupos\Grupo1\Validacion\ValidacionInterfaz.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Agregacion.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Asociacion.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Clase.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Composicion.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Generalizacion.cs" />
+    <Compile Include="Grupos\Grupo3\Figuras\Figura_Interfaz.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura_Relacion.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Figura.cs" />
     <Compile Include="Grupos\Grupo3\Figuras\Lista_Figuras.cs" />
@@ -88,6 +94,7 @@
     <Compile Include="Grupos\Grupo3\Interfaz\LlenarClase.Designer.cs">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grupos\Grupo3\Librerias\ControlCanvas.cs" />
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
     <Compile Include="Grupos\Grupo3\Validaciones\Lista_Parametro.cs" />
     <Compile Include="Grupos\Grupo3\Validaciones\Parametro.cs" />
@@ -103,6 +110,12 @@
     <Compile Include="Grupos\Grupo5\SubsistemaGr5.cs" />
     <Compile Include="Grupos\Grupo5\Validar.cs" />
     <Compile Include="Grupos\Grupo5\Vista\Fasociacion.cs">
+    <Compile Include="Grupos\Grupo3\Librerias\Dibujador_Relacion.cs" />
+    <Compile Include="Grupos\Grupo3\Librerias\Line.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo3\SubsistemaGr3.cs" />
+    <Compile Include="Grupos\Grupo5\FpropiedadesClase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grupos\Grupo5\Vista\Fasociacion.Designer.cs">
@@ -407,6 +420,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Linter.jpg" />
+    <None Include="Resources\diamond.png" />
+    <None Include="Resources\diamond.ico" />
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilledDiamond.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
