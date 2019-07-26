@@ -249,3 +249,4 @@ C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.csproj.Cop
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.EliminarClase.resources
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.Formulario.resources
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.FormularioActualizarClase.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.GrupoX.InsertarRelacion.resources

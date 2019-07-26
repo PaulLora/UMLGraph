@@ -1,51 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UMLGraph.Grupos.GrupoX.Figuras
-    
+
 {
-    class Dependencia:Relacion
+    class Dependencia : Figura
     {
         Graphics g;
         Pen p;
-        int x, y, anchura = 130, altura = 20;
-        Panel caja;
-
-        public Dependencia(int x,int y)
+        Clase clase1, clase2;
+        Panel pnlPrincipal;
+        public Dependencia(Clase clase1, Clase clase2, Panel pnlPrincipal)
         {
-            this.x = x;
-            this.y = y;
-            p = new Pen(Color.Black);
-
-            caja = new System.Windows.Forms.Panel();
-            caja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            caja.Location = new System.Drawing.Point(x, y);
-            caja.Name = "panel";
-            caja.TabIndex = 0;
-            caja.TabStop = false;
+            this.pnlPrincipal = pnlPrincipal;
+            this.clase1 = clase1;
+            this.clase2 = clase2;
         }
-        public void dibujar(PaintEventArgs e)
+        public override void dibujar()
         {
-
-            g = caja.CreateGraphics();
-            float[] dashValues = { 5, 2, 15, 4 };
-            Pen blackPen = new Pen(Color.Black, 5);
-            blackPen.DashPattern = dashValues;
-            e.Graphics.DrawLine(blackPen, new Point(5, 5), new Point(405, 5));
-
-
+            GraphicsPath capPath = new GraphicsPath();
+            capPath.AddLine(5, -5, 0, 0);
+            capPath.AddLine(-5, -5, 0, 0);
+            g = pnlPrincipal.CreateGraphics();
+            p = new Pen(Color.Black, 3);
+            p.DashStyle = DashStyle.Dash;
+            p.CustomEndCap = new System.Drawing.Drawing2D.CustomLineCap(null, capPath);
+            if (clase1.getY() + 75 > clase2.getY() + 300)
+            {
+                g.DrawLine(this.p, new Point(clase1.getX() + 130, clase1.getY() + 65), new Point(clase2.getX() + 70, clase2.getY() + 150));
+            }
+            else if (clase1.getY() + 75 < clase2.getY() - 150)
+            {
+                g.DrawLine(this.p, new Point(clase1.getX() + 130, clase1.getY() + 65), new Point(clase2.getX() + 70, clase2.getY()));
+            }
+            else if (clase1.getY() + 75 < clase2.getY() + 300 && clase1.getY() + 75 > clase2.getY() + 150 && clase1.getX() + 70 < clase2.getX())
+            {
+                g.DrawLine(this.p, new Point(clase1.getX() + 130, clase1.getY() + 65), new Point(clase2.getX(), clase2.getY() + 75));
+            }
+            else if (clase1.getY() + 75 < clase2.getY() + 300 && clase1.getY() + 75 > clase2.getY() + 150 && clase1.getX() + 70 > clase2.getX() + 140)
+            {
+                g.DrawLine(this.p, new Point(clase1.getX() + 130, clase1.getY() + 65), new Point(clase2.getX() + 140, clase2.getY() + 75));
+            }
+            else
+            {
+                g.DrawLine(this.p, new Point(clase1.getX() + 130, clase1.getY() + 65), new Point(clase2.getX(), clase2.getY() + 75));
+            }
         }
-
-
-        public Panel getCaja()
-        {
-            return caja;
-        }
-
     }
 }
