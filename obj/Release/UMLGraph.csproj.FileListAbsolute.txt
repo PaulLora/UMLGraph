@@ -29,7 +29,6 @@ C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph5\UMLGraph\obj\R
 C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph5\UMLGraph\obj\Release\UMLGraph.csproj.CoreCompileInputs.cache
 C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph5\UMLGraph\obj\Release\UMLGraph.exe
 C:\Users\Andres\Dropbox\6toSemestre\AppAmbProp\Examples\UMLGraph5\UMLGraph\obj\Release\UMLGraph.pdb
-C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo6.Vista.Formulario.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Canvas.resources
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo1.GUI1.resources
 C:\Users\bryan\source\repos\UMLGraph\bin\Release\NClass.exe
@@ -37,3 +36,10 @@ C:\Users\bryan\source\repos\UMLGraph\bin\Release\Core.dll
 C:\Users\bryan\source\repos\UMLGraph\bin\Release\GUI.Diagram.dll
 C:\Users\bryan\source\repos\UMLGraph\bin\Release\NClass.exe.config
 C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.csproj.CopyComplete
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo5.FpropiedadesClase.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.Grupo6.Vista.FormularioRelacion.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.GrupoX.InsertarRelacion.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.GrupoX.InsertarHerencia.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.GrupoX.InsertarDependencia.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.GrupoX.InsertarComposicion.resources
+C:\Users\bryan\source\repos\UMLGraph\obj\Release\UMLGraph.Grupos.GrupoX.InsertarAgregacion.resources

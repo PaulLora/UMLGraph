@@ -131,6 +131,36 @@
     <Compile Include="Grupos\GrupoX\Figuras\Interfaz.cs" />
     <Compile Include="Grupos\GrupoX\Figuras\Relacion.cs" />
     <Compile Include="Grupos\GrupoX\GraficaGrupo4.cs" />
+    <Compile Include="Grupos\GrupoX\InsertarAgregacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarAgregacion.Designer.cs">
+      <DependentUpon>InsertarAgregacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarComposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarComposicion.Designer.cs">
+      <DependentUpon>InsertarComposicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarDependencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarDependencia.Designer.cs">
+      <DependentUpon>InsertarDependencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarHerencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarHerencia.Designer.cs">
+      <DependentUpon>InsertarHerencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarRelacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\GrupoX\InsertarRelacion.Designer.cs">
+      <DependentUpon>InsertarRelacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazGrafica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +204,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo6\Vista\FormularioRelacion.resx">
       <DependentUpon>FormularioRelacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\GrupoX\InsertarAgregacion.resx">
+      <DependentUpon>InsertarAgregacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\GrupoX\InsertarComposicion.resx">
+      <DependentUpon>InsertarComposicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\GrupoX\InsertarDependencia.resx">
+      <DependentUpon>InsertarDependencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\GrupoX\InsertarHerencia.resx">
+      <DependentUpon>InsertarHerencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\GrupoX\InsertarRelacion.resx">
+      <DependentUpon>InsertarRelacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazGrafica.resx">
       <DependentUpon>InterfazGrafica.cs</DependentUpon>

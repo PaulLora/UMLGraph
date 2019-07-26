@@ -207,3 +207,4 @@ C:\Users\bryan\source\repos\UMLGraph\bin\Debug\NClass.exe.config
 C:\Users\bryan\source\repos\UMLGraph\bin\Debug\Core.pdb
 C:\Users\bryan\source\repos\UMLGraph\bin\Debug\GUI.Diagram.pdb
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.csproj.CopyComplete
+C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.Grupos.GrupoX.InsertarRelacion.resources

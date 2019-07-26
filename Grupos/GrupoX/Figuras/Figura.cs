@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMLGraph
+namespace UMLGraph.Grupos.GrupoX.Figuras
 {
-    abstract class Figura
+    public abstract class Figura
     {
         public abstract void dibujar();
     }
