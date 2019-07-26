@@ -20,7 +20,8 @@ namespace UMLGraph.Grupos.Grupo5.Vista
         List< Clase5> Ccoleccion;
         List<Generalizacion5> Gcoleccion;
         List<ClaseInterface5> IcColeccion;
-        Asociacion5 Aselec, objaso;
+        List<RelacionInterface5> RiColeccion;
+       
         Clase5 Cselec, objcla;
         ClaseInterface5 Icselect, objicla;
         Point pos;
@@ -28,6 +29,7 @@ namespace UMLGraph.Grupos.Grupo5.Vista
         Validar va = new Validar();
         List<Asociacion5> AuxAcoleccion;
         List<Generalizacion5> AuxGcoleccion;
+        List<RelacionInterface5> AuxRiColeccion;
         ToolSelec toolselec;
 
      
@@ -64,7 +66,7 @@ namespace UMLGraph.Grupos.Grupo5.Vista
         public GraficaGrupo5(Panel pnlPrincipal)
         {
             clic = false;
-            Aselec = null;
+            
             Cselec = null;
             Icselect = null;
             objcla = new Clase5();
@@ -73,10 +75,11 @@ namespace UMLGraph.Grupos.Grupo5.Vista
             Acont = new List<Asociacion5>();
             Ccoleccion = new List<Clase5>();
             IcColeccion = new List<ClaseInterface5>();
-
+            RiColeccion = new List<RelacionInterface5>();
             AuxAcoleccion = new List<Asociacion5>();
             AuxGcoleccion = new List<Generalizacion5>();
             Gcoleccion = new List<Generalizacion5>();
+            AuxRiColeccion = new List<RelacionInterface5>();
             toolselec = ToolSelec.puntero;
             toolPuntero.Checked = true;
             toolAsociacion.Checked = false;
@@ -266,7 +269,7 @@ namespace UMLGraph.Grupos.Grupo5.Vista
             this.toolLinterfaz.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolLinterfaz.Name = "toolLInterfaz";
             this.toolLinterfaz.Size = new System.Drawing.Size(23, 22);
-            this.toolLinterfaz.Text = "Relacion Interfaz";
+            this.toolLinterfaz.Text = " Crear Relacion Interfaz";
             this.toolLinterfaz.Click += new System.EventHandler(this.toolLInterfaz_Click);
             // 
             // toolStripSeparator1
@@ -355,7 +358,7 @@ namespace UMLGraph.Grupos.Grupo5.Vista
 
             }
 
-            Aselec = null;
+           
             Cselec = null;
             clic = false;
             toolselec = ToolSelec.puntero;
@@ -393,12 +396,55 @@ namespace UMLGraph.Grupos.Grupo5.Vista
         }
         private void toolLInterfaz_Click(object sender, EventArgs e)
         {
-            toolPuntero.Checked = false;
-            toolAsociacion.Checked = false;
-            toolClase.Checked = false;
-            toolGeneralizacion.Checked = false;
-            toolLinterfaz.Checked = false;
-            toolselec = ToolSelec.puntero;
+            nClase1 = "";
+            nClase2 = "";
+            if (IcColeccion.Count == 0)
+            {
+                MessageBox.Show("No existen interfaces para relacionar");
+            }
+            else if (Ccoleccion.Count == 0)
+            {
+
+                MessageBox.Show("No existen clases para crear relación");
+            }
+            else
+            {
+                nClase1 = "";
+                nClase2 = "";
+                FLinterface frm = new FLinterface(this);
+                va = new Validar();
+                frm.ShowDialog();
+               
+                Clase5 clase2;
+                string nInterface = "<< " + nClase1 + " >>";
+                ClaseInterface5 aux1 = va.ExisteInterface(IcColeccion, nInterface);
+                
+                clase2 = va.ExisteClase(Ccoleccion, nClase2);
+                RelacionInterface5 aux = va.ValidarRelacionInterface(aux1,clase2);
+               
+                if (aux != null)
+                {
+                    MessageBox.Show("Recuerda que los metodos de la interfaz se encuentran en la clase");
+                    RiColeccion.Add(aux);
+                    Ccoleccion.Remove(clase2);
+                    Ccoleccion.Add(new Clase5(rectangulosClase(), clase2.puntoMedio, clase2.nombre, clase2.atributos, "" + clase2.metodos+""+ System.Environment.NewLine +""+ aux1.metodos));
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Ingrese nombres  existentes");
+                }
+
+                AreaDraw.Invalidate();
+                toolPuntero.Checked = false;
+                toolAsociacion.Checked = false;
+                toolClase.Checked = false;
+                toolGeneralizacion.Checked = false;
+                toolLinterfaz.Checked = false;
+                
+                toolselec = ToolSelec.puntero;
+            }
            
         }
         private void AreaDraw_MouseDown(object sender, MouseEventArgs e)
@@ -669,8 +715,8 @@ namespace UMLGraph.Grupos.Grupo5.Vista
                             else
                             {
                                 String nombreHijo = "" + nombre + ":" + nClase1;
-                                metodos = " " + metodos + " " + clase1.metodos;
-                                atributos = " " + atributos + " " + clase1.atributos;
+                                metodos = "" + metodos + " " + System.Environment.NewLine+"" + clase1.metodos;
+                                atributos = "" + atributos + ""+System.Environment.NewLine+ "" + clase1.atributos;
                                 Ccoleccion.Add(new Clase5(rectangulosClase(), new Point(objcla.puntoFinal.X, objcla.puntoFinal.Y + 25), nombreHijo, atributos, metodos));
                                 clase2 = va.ExisteClase(Ccoleccion, nombreHijo);
 
@@ -737,19 +783,8 @@ namespace UMLGraph.Grupos.Grupo5.Vista
                         AuxGcoleccion = new List<Generalizacion5>();
                         for(int i = 0; i < Gcoleccion.Count; i++)
                         {
-                            if (Gcoleccion[i].nombre.Equals(Cselec.nombre))
-                            {
-                                nClase1 = Gcoleccion[i].nombre;
-                                nClase2 = Gcoleccion[i].nombre2;
-                                Clase5 clase1 = va.ExisteClase(Ccoleccion, nClase1);
-                                Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
-                                Generalizacion5 aux = va.ValidarGeneralizacion(clase1, clase2);
-                                if (aux != null) AuxGcoleccion.Add(aux);
-
-
-                            }
-                            else if (Gcoleccion[i].nombre2.Equals(Cselec.nombre))
-                            {
+                           
+                                
                                 nClase1 = Gcoleccion[i].nombre;
                                 nClase2 = Gcoleccion[i].nombre2;
                                 Clase5 clase1 = va.ExisteClase(Ccoleccion, nClase1);
@@ -759,57 +794,39 @@ namespace UMLGraph.Grupos.Grupo5.Vista
 
 
 
-                            }
-                            else
-                            {
-                                nClase1 = Gcoleccion[i].nombre;
-                                nClase2 = Gcoleccion[i].nombre2;
-                                Clase5 clase1 = va.ExisteClase(Ccoleccion, nClase1);
-                                Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
-                                Generalizacion5 aux = va.ValidarGeneralizacion(clase1, clase2);
-                                if (aux != null) AuxGcoleccion.Add(aux);
-
-
-                            }
+                            AreaDraw.Invalidate();
                         }
                         for (int i = 0; i < Acoleccion.Count; i++)
                         {
                           
-                            if (Acoleccion[i].nombre.Equals(Cselec.nombre))
-                            {
+                          
                                 nClase1 = Acoleccion[i].nombre;
                                 nClase2 = Acoleccion[i].nombre2;
                                 Clase5 clase1 = va.ExisteClase(Ccoleccion, nClase1);
                                 Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
                                 Asociacion5 aux = va.ValidarAsociacion(clase1, clase2);
                                 if (aux != null) AuxAcoleccion.Add(aux);
-                               
-                                
-                            }
-                            else if (Acoleccion[i].nombre2.Equals(Cselec.nombre))
-                            {
-                                nClase1 = Acoleccion[i].nombre;
-                                nClase2 = Acoleccion[i].nombre2;
-                                Clase5 clase1 = va.ExisteClase(Ccoleccion, nClase1);
-                                Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
-                                Asociacion5 aux = va.ValidarAsociacion(clase1, clase2);
-                                if (aux != null) AuxAcoleccion.Add(aux);
-                              
-                            }
-                            else
-                            {
-                                nClase1 = Acoleccion[i].nombre;
-                                nClase2 = Acoleccion[i].nombre2;
-                                Clase5 clase1 = va.ExisteClase(Ccoleccion, nClase1);
-                                Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
-                                Asociacion5 aux = va.ValidarAsociacion(clase1, clase2);
-                                if (aux!=null) AuxAcoleccion.Add(aux);
-                            }
+                             
                            
+                            AreaDraw.Invalidate();
+                        }
+                        AuxRiColeccion = new List<RelacionInterface5>();
+                        for (int i = 0; i < RiColeccion.Count; i++)
+                        {
+
+                          
+                                nClase1 = RiColeccion[i].nombre;
+                                nClase2 = RiColeccion[i].nombre2;
+                                ClaseInterface5 clase1 = va.ExisteInterface(IcColeccion, nClase1);
+                                Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
+                                RelacionInterface5 aux = va.ValidarRelacionInterface(clase1, clase2);
+                            if (aux != null) AuxRiColeccion.Add(aux);
+
                             AreaDraw.Invalidate();
                         }
                         Acoleccion.Clear();
                         Gcoleccion.Clear();
+                        RiColeccion.Clear();
                         foreach (Asociacion5 item in AuxAcoleccion)
                         {
                             Acoleccion.Add(item);
@@ -817,6 +834,10 @@ namespace UMLGraph.Grupos.Grupo5.Vista
                         foreach (Generalizacion5 item in AuxGcoleccion)
                         {
                             Gcoleccion.Add(item);
+                        }
+                        foreach (RelacionInterface5 item in AuxRiColeccion)
+                       {
+                           RiColeccion.Add(item);
                         }
                         AreaDraw.Invalidate();
                         
@@ -827,19 +848,39 @@ namespace UMLGraph.Grupos.Grupo5.Vista
                         String nombre = Icselect.nombre;
                         IcColeccion.Add(new ClaseInterface5(rectangulosInterfaz(), new Point(objicla.puntoFinal.X, objicla.puntoFinal.Y + 25), Icselect.nombre, Icselect.metodos));
                         IcColeccion.Remove(Icselect);
+                        AuxRiColeccion = new List<RelacionInterface5>();
+                        for (int i = 0; i < RiColeccion.Count; i++)
+                        {
+
+
+                            nClase1 = RiColeccion[i].nombre;
+                            nClase2 = RiColeccion[i].nombre2;
+                            ClaseInterface5 clase1 = va.ExisteInterface(IcColeccion, nClase1);
+                            Clase5 clase2 = va.ExisteClase(Ccoleccion, nClase2);
+                            RelacionInterface5 aux = va.ValidarRelacionInterface(clase1, clase2);
+                            if (aux != null) AuxRiColeccion.Add(aux);
+
+                        }
+                        RiColeccion.Clear();
+                        foreach (RelacionInterface5 item in AuxRiColeccion)
+                        {
+                            RiColeccion.Add(item);
+                        }
                         AreaDraw.Invalidate();
                     }
                     
-                       
+                    
+                    
 
-                    break;
+
+
+                        break;
                     #endregion
             }
-            //reestrableciendo valores
             nombre = "";
             metodos = "";
             atributos = "";
-            Aselec = null;
+           
             Cselec = null;
             Icselect = null;
             clic = false;
@@ -849,6 +890,7 @@ namespace UMLGraph.Grupos.Grupo5.Vista
             toolGeneralizacion.Checked = false;
             toolInterfaz.Checked = false;
             toolClase.Checked = false;
+            toolLinterfaz.Checked = false;
         }
       
        
@@ -868,6 +910,10 @@ namespace UMLGraph.Grupos.Grupo5.Vista
                 item.Dibujar(e.Graphics);
             }
             foreach (Generalizacion5 item in Gcoleccion)
+            {
+                item.Dibujar(e.Graphics);
+            }
+            foreach (RelacionInterface5 item in RiColeccion)
             {
                 item.Dibujar(e.Graphics);
             }

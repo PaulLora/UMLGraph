@@ -266,3 +266,4 @@ C:\Users\andyr\Desktop\UMLGraph-master\obj\Debug\UMLGraph.Grupos.Grupo5.Vista.Fc
 C:\Users\andyr\Desktop\UMLGraph-master\obj\Debug\UMLGraph.Grupos.Grupo5.Vista.Fclase.resources
 C:\Users\andyr\Desktop\UMLGraph-master\obj\Debug\UMLGraph.Grupos.Grupo5.Vista.Fgeneralizacion.resources
 C:\Users\andyr\Desktop\UMLGraph-master\obj\Debug\UMLGraph.Grupos.Grupo5.Vista.Fasociacion.resources
+C:\Users\andyr\Desktop\UMLGraph-master\obj\Debug\UMLGraph.Grupos.Grupo5.Vista.FLinterface.resources

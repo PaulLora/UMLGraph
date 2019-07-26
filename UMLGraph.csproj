@@ -100,6 +100,7 @@
     <Compile Include="Grupos\Grupo5\Figuras\ClaseInterface5.cs" />
     <Compile Include="Grupos\Grupo5\Figuras\Figura5.cs" />
     <Compile Include="Grupos\Grupo5\Figuras\Generalizacion5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\RelacionInterface5.cs" />
     <Compile Include="Grupos\Grupo5\SubsistemaGr5.cs" />
     <Compile Include="Grupos\Grupo5\Validar.cs" />
     <Compile Include="Grupos\Grupo5\Vista\Fasociacion.cs">
@@ -125,6 +126,12 @@
     </Compile>
     <Compile Include="Grupos\Grupo5\Vista\Fgeneralizacion.Designer.cs">
       <DependentUpon>Fgeneralizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\FLinterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\FLinterface.Designer.cs">
+      <DependentUpon>FLinterface.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo5\Vista\GraficaGrupo5.cs" />
     <Compile Include="Grupos\Grupo6\Modelo\Clase.cs" />
@@ -205,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo5\Vista\Fgeneralizacion.resx">
       <DependentUpon>Fgeneralizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo5\Vista\FLinterface.resx">
+      <DependentUpon>FLinterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo6\Vista\FormularioRelacion.resx">
       <DependentUpon>FormularioRelacion.cs</DependentUpon>

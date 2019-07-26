@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using UMLGraph.Grupos.Grupo5.Figuras;
 
 namespace UMLGraph.Grupos.Grupo5
 {
@@ -23,7 +23,19 @@ namespace UMLGraph.Grupos.Grupo5
             return claseEncontrada;
 
         }
-       
+        public ClaseInterface5 ExisteInterface(List<ClaseInterface5> Ccoleccion, string nombre)
+        {
+            ClaseInterface5 claseEncontrada = null;
+            foreach (ClaseInterface5 item in Ccoleccion)
+            {
+                if (item.nombre.Equals(nombre))
+                    claseEncontrada = item;
+
+            }
+            return claseEncontrada;
+
+        }
+
         public Asociacion5  ValidarAsociacion(Clase5 clase1, Clase5 clase2)//clases unidas
         {
             Asociacion5 item=null;
@@ -47,6 +59,32 @@ namespace UMLGraph.Grupos.Grupo5
             return item;
 
         }
+        public RelacionInterface5 ValidarRelacionInterface(ClaseInterface5 cla1, Clase5 cla2)//clases unidas
+        {
+            RelacionInterface5 item = null;
+            if (cla1 != null && cla2 != null)
+            {
+                Point aux;
+                Point clase1 = cla1.puntoFinal;
+                Point clase2 = cla2.puntoFinal;
+                if (clase1.X > clase2.X)
+                {
+                    aux = clase1;
+                    clase1 = clase2;
+                    clase2 = aux;
+
+
+                }
+                Point puntoInicial = new Point(clase1.X + 150, clase1.Y - 50);
+                Point puntoFinal = new Point(clase2.X, clase2.Y - 50);
+                Point ptMedio = new Point(puntoInicial.X - (puntoFinal.X - puntoInicial.X), puntoFinal.Y);
+                item = new RelacionInterface5(puntoInicial, ptMedio, puntoFinal, cla1.nombre, cla2.nombre);
+
+            }
+            return item;
+
+        }
+
         public Generalizacion5 ValidarGeneralizacion(Clase5 clase1, Clase5 clase2)
         {
             Generalizacion5 item = null;
