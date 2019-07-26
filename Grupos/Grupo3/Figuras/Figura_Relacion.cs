@@ -13,22 +13,25 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Drawing.Drawing2D;
+using UMLGraph.Grupos.Grupo3.Librerias;
 
 namespace UMLGraph.Grupos.Grupo3.Figuras
 {
-    internal class Figura_Relacion : Figura
+    public class Figura_Relacion : Figura
     {
         public Figura_Relacion()
         {
             this.FiguraNombre = "Rel" + DateTime.Now.ToString("hmmss");
+            Dibujador = new Dibujador_Relacion();
         }
-
+        
         public List<Point> RelPuntos { get; set; }
 
         public Panel RelIni { get; set; }
         public Panel RelFin { get; set; }
         public Bitmap BtmRelacion { get; set; }
 
+        public Dibujador_Relacion Dibujador{ get; set; }
 
         public bool isFull { get; set; }
 
@@ -42,7 +45,7 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
             //this.PosRectNombre = new Point(this.RectNombre.X, this.RectNombre.Y);
 
         }
-        public Bitmap DrawToBitmap(Bitmap drwRel)
+        public Bitmap DibujarFigura(Bitmap drwRel)
         {
             int w = drwRel.Height;
             int h = drwRel.Height;
@@ -61,6 +64,16 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
             }
             catch { }
             return drwRel;
+        }
+        public new void DibujarFigura()
+        {
+            if (isFull)
+            {
+                Dibujador = new Dibujador_Relacion();
+                Dibujador.RelIni = RelIni.Location;
+                Dibujador.RelFin = RelFin.Location;
+                Dibujador.CrearLineas();
+            }
         }
     }
 }

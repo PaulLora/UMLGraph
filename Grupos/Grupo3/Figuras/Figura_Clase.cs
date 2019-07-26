@@ -19,7 +19,10 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
 {
     internal class Figura_Clase : Figura
     {
+        public String nombre { get; set; } = "None";// = llenarClase.NombreClase;//obtengo nombre clase
 
+        public List<string> atributos { get; set; } = new List<string>(); //llenarClase.Atributos;//obtengo atributos
+        public List<string> metodos { get; set; } = new List<string>();// obtengo metodos
         public Rectangle RectNombre { get; set; }
         public Rectangle RectAtributos { get; set; }
         public Rectangle RectMetodos { get; set; }
@@ -29,7 +32,10 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
         public Point PosRectNombre { get; set; }
         public Point PosRectAtributos { get; set; }
         public Point PosRectMetodos { get; set; }
-
+        public List<Line> HeadLinkeablePoints { get; set; }
+        public List<Line> BottomLinkeablePoints { get; set; }
+        public List<Line> LeftLinkeablePoints { get; set; }
+        public List<Line> RightLinkeablePoints { get; set; }
         public Bitmap BtmClase { get; set; }
         public Panel Contenedor { get; set; }
         public bool Dragging { get; set; }
@@ -72,7 +78,13 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
         public Figura_Clase()
         {
             this.FiguraNombre = "Cls" + DateTime.Now.ToString("hmmss");
+            this.HeadLinkeablePoints = new List<Line>();
+            this.BottomLinkeablePoints = new List<Line>();
+            this.LeftLinkeablePoints = new List<Line>();
+            this.RightLinkeablePoints = new List<Line>();
+            Contenedor = new Panel();
         }
+
         public void Adapt(Size tam)//adapta el tamaño aumentando el alto
         {
             this.SizeRectNombre = tam;
@@ -116,15 +128,16 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
             //Se guarda la imagen
 
         }
-        public void Dibujar()
+        public new void DibujarFigura()
         {
             MenuItem[] menuItems = new MenuItem[]{new MenuItem("Modificar",MenuItem_Click),//hacemos esto para definir como se comportaran luego
-                    new MenuItem("Reiniciar",MenuItem_Click), new MenuItem("Exit",MenuItem_Click)};
+                    new MenuItem("Borrar",MenuItem_Click)};
             ContextMenu buttonMenu = new ContextMenu(menuItems);
-            Contenedor = new Panel();
+            
             Contenedor.Location = new System.Drawing.Point(570, 370);
-            Contenedor.Name = "Panel "; //+ paneles.Count;//se poodria cambiar por parametro aunque no me parecee necesario
+            Contenedor.Name = this.FiguraNombre + "Panel"; //+ paneles.Count;//se poodria cambiar por parametro aunque no me parecee necesario
             Contenedor.Size = new System.Drawing.Size(228, 201);
+            
             PrepararBitmap(Contenedor.Size);
             //Figuras.Figuras.Add(fig);
             Contenedor.BackgroundImage = Image.FromFile(this.FiguraNombre + ".bmp");
@@ -147,11 +160,18 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
             if (mi.Text == "Modificar")//Comportamiento para el info
             {
                 // aqui se debria abrir el nuevo Form ingresar los datos y setearlos
-                String nombre = "None";// = llenarClase.NombreClase;//obtengo nombre clase
 
-                List<string> atributos = new List<string>(); //llenarClase.Atributos;//obtengo atributos
-                List<string> metodos = new List<string>();// obtengo metodos
                 llenarClase = new LlenarClase();
+                llenarClase.txtNombreClase.Text = nombre;
+                foreach (String var in atributos)
+                {
+                    llenarClase.listaAtributos.Items.Add(var);
+                }
+                foreach (String var in metodos)
+                {
+                    llenarClase.listaMetodos.Items.Add(var);
+                }
+
                 //llenarClase.FormClosed += LlenarClase_FormClosed;
                 llenarClase.ShowDialog();
 
@@ -221,6 +241,7 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
 
                 }
                 dx = 0;
+                ctr.Controls.Clear();
                 foreach (Label lbl in contenido)
                 {
                     Console.WriteLine(lbl.Text);
@@ -228,14 +249,57 @@ namespace UMLGraph.Grupos.Grupo3.Figuras
                 }
 
             }
-            else if (mi.Text == "Reiniciar")//Comportamiento para el info2
+            else if (mi.Text == "Borrar")//Comportamiento para el info2
             {
-                //foreach (Control item in paneles)
-                //{
-                //    //this.Controls.Remove(item);
-                //}
+                // In the properties or any place you what to notify of change:
+                DeleteEvent?.Invoke(this.Contenedor);
+
             }
         }
+        // Delegate type for the event handler
+        public delegate void EventHandler(object sendere);
 
+        // Declare the event.
+        public event EventHandler DeleteEvent;
+
+
+        public List<Control> ReturnControls()
+        {
+            List<Control> tmp = new List<Control>();
+            int sep = Contenedor.Width / 4;
+            for (int i = 0; i < Contenedor.Width; i += sep)
+            {
+                HeadLinkeablePoints.Add(new Line { Location = new Point(Contenedor.Location.X + sep, Contenedor.Location.Y) });
+                BottomLinkeablePoints.Add(new Line { Location = new Point(Contenedor.Location.X + sep, Contenedor.Location.Y + Contenedor.Height) });
+                //Contenedor.Controls.Add(new Line { Location = new Point(Contenedor.Location.X + sep, Contenedor.Location.Y) });
+                //Contenedor.Controls.Add(new Line { Location = new Point(Contenedor.Location.X + sep, Contenedor.Location.Y + Contenedor.Height) });
+            }
+            sep = Contenedor.Height / 4;
+            for (int i = 0; i < Contenedor.Height; i += sep)
+            {
+                LeftLinkeablePoints.Add(new Line { Location = new Point(Contenedor.Location.X, Contenedor.Location.Y + sep) });
+                RightLinkeablePoints.Add(new Line { Location = new Point(Contenedor.Location.X + Contenedor.Width, Contenedor.Location.Y + sep), Height = 200 });
+                //Contenedor.Controls.Add(new Line { Location = new Point(Contenedor.Location.X, Contenedor.Location.Y + sep) });
+                //Contenedor.Controls.Add(new Line { Location = new Point(Contenedor.Location.X + Contenedor.Width, Contenedor.Location.Y + sep) });
+            }
+            tmp.Add(Contenedor);
+            foreach(Control con in HeadLinkeablePoints)
+            {
+                tmp.Add(con);
+            }
+            foreach(Control con in BottomLinkeablePoints)
+            {
+                tmp.Add(con);
+            }
+            foreach(Control con in LeftLinkeablePoints)
+            {
+                tmp.Add(con);
+            }
+            foreach(Control con in RightLinkeablePoints)
+            {
+                tmp.Add(con);
+            }
+            return tmp;
+        } 
     }
 }

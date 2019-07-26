@@ -10,13 +10,13 @@ using UMLGraph.Grupos.Grupo3.Figuras;
 using UMLGraph.Grupos.Grupo6.Modelo;
 using UMLGraph.Grupos.GrupoX.Figuras;
 using UMLGraph.Grupos.Grupo3.Interfaz;
-
+using UMLGraph.Grupos.Grupo3;
 
 namespace UMLGraph
 {
     public partial class InterfazGrafica : Form
     {
-        private Fachada fachada = new Fachada();
+        //private Fachada fachada = new Fachada();
         public InterfazGrafica(String usuario)
         {
             InitializeComponent();
@@ -84,7 +84,7 @@ namespace UMLGraph
             this.pnlDibujar.Controls.Clear();
             lblEnunciado.Visible = true;
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
-            this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
+            //this.pnlDibujar = fachada.EjecutarEnunciado1(pnlDibujar);
             lblEnunciado.Text = "Problema Grafique el diagrama ded clase de un sistema ATM";
 
         }
@@ -96,7 +96,7 @@ namespace UMLGraph
             lblEnunciado.Visible = true;
             lblEnunciado.Text = en.EnunciadoTxt;
             pnlDibujar.Controls.Clear();
-            this.pnlDibujar = fachada.EjecutarEnunciado2(ref pnlDibujar);
+            //this.pnlDibujar = fachada.EjecutarEnunciado2(ref pnlDibujar);
         }
 
         private void BtnEnunciado3_Click(object sender, EventArgs e)
@@ -107,7 +107,8 @@ namespace UMLGraph
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
             this.pnlDibujar.Controls.Clear();
             Controls.Remove(this.pnlDibujar);
-            this.pnlDibujar = fachada.EjecutarEnunciado3(ref pnlDibujar);
+            SubsistemaGr3 Gr3 = new SubsistemaGr3();
+            this.pnlDibujar = Gr3.EjecutarEnunciado(pnlDibujar);
             Controls.Add(this.pnlDibujar);
             lblEnunciado.Text = en.EnunciadoTxt;
         }
@@ -119,7 +120,7 @@ namespace UMLGraph
             Enunciado en = new Enunciado(4, "Se requiere un sistema para retirar dinero de un cajero.\nElabore el diagrama de clases para dicho sistema");
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
             this.pnlDibujar.Controls.Clear();
-            this.pnlDibujar = fachada.EjecutarEnunciado4(pnlDibujar);
+            //this.pnlDibujar = fachada.EjecutarEnunciado4(pnlDibujar);
             lblEnunciado.Text = en.EnunciadoTxt;
         }
 
@@ -132,7 +133,7 @@ namespace UMLGraph
             lblEnunciado.Text = en.EnunciadoTxt;
             this.pnlDibujar.BackgroundImage = base.BackgroundImage;
 
-            this.pnlDibujar = fachada.EjecutarEnunciado5(pnlDibujar);
+            //this.pnlDibujar = fachada.EjecutarEnunciado5(pnlDibujar);
         }
 
         private void BtnEnunciado6_Click(object sender, EventArgs e)
@@ -154,7 +155,7 @@ namespace UMLGraph
             ////pnl_dibujar.Controls.Add(this);
             //pnl_dibujar.Show();
             //this.pnlDibujar.Controls.Add(pnl_dibujar);
-            this.pnlDibujar = fachada.EjecutarEnunciado6(pnlDibujar);
+            //this.pnlDibujar = fachada.EjecutarEnunciado6(pnlDibujar);
             //fachada.EjecutarEnunciado6(pnl_dibujar);
         }
     }

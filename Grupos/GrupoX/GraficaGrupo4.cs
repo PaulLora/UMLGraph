@@ -28,7 +28,7 @@ namespace UMLGraph
             this.btnClase.Name = "btnClase";
             this.btnClase.Size = new System.Drawing.Size(132, 21);
             this.btnClase.TabIndex = 0;
-            this.btnClase.Text = "Dibujar clase";
+            this.btnClase.Text = "ActualizarFiguras clase";
             this.btnClase.UseVisualStyleBackColor = true;
             this.btnClase.Click += new System.EventHandler(this.btnClase_Click);
 
@@ -38,7 +38,7 @@ namespace UMLGraph
             this.btnInterfaz.Name = "btnInterfaz";
             this.btnInterfaz.Size = new System.Drawing.Size(132, 21);
             this.btnInterfaz.TabIndex = 4;
-            this.btnInterfaz.Text = "Dibujar interfaz";
+            this.btnInterfaz.Text = "ActualizarFiguras interfaz";
             this.btnInterfaz.UseVisualStyleBackColor = true;
             this.btnInterfaz.Click += new System.EventHandler(this.BtnInterfaz_Click);
             // panel1

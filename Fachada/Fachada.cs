@@ -16,63 +16,8 @@ using UMLGraph.Grupos;
 namespace UMLGraph
 {
     //Esta es la clase fachada desde la cual cada método direcciona a cada subsitema del grupo que corresponda
-    class Fachada
+    public interface Fachada
     {
-
-        public Panel EjecutarEnunciado1(Panel panel)
-        {
-            GUI1 form2 = new GUI1();
-            form2.TopLevel = false;
-            form2.Parent = panel;
-            form2.Show();
-            form2.BringToFront();
-            panel.Location = new System.Drawing.Point(2, 131);
-            return panel;
-        }
-
-        public Panel EjecutarEnunciado2(ref Panel panel) //Este método referencia al subsistema del grupo 2 (Gaby)
-        {
-            MainForm project = new MainForm();
-            project.TopLevel = false;
-            project.AutoScroll = true;
-            project.Width = 1500;//panel.Width;
-            project.Height = 900;//panel.Height;
-            panel.Controls.Add(project);
-            panel.Location = new System.Drawing.Point(2, 131);
-            project.Show();
-            return panel;
-        }
-        public Panel EjecutarEnunciado3(ref Panel panel)
-        {
-
-            panel.Controls.Clear();
-            CanvasGR3 gr3;
-            gr3 = new CanvasGR3(new Size(panel.Width * 3, panel.Height * 3));
-            return gr3.CanvasPanel;
-
-        }
-        public Panel EjecutarEnunciado4(Panel panel) //Este método referencia al subsistema del grupo 4 (Paúl), el método recibe el pnlDibujar y se devolverá el mismo panel con los controles llenos.
-        {
-
-            panel.Controls.Clear(); //Limpia el pnlDibujar. Sirve para el cambio de grupo a grupo.
-            GraficaGrupo4 graph4 = new GraficaGrupo4(panel);
-            panel = graph4.dibujar(); //Llena el panel con todos los controles
-            return panel;
-
-        }
-        public Panel EjecutarEnunciado5(Panel panel)
-        {
-            GraficaGrupo5 graph5 = new GraficaGrupo5(panel);
-
-            return panel;
-        }
-        public Panel EjecutarEnunciado6(Panel areaTrabajo)
-        {
-
-            PantallaTrabajoGr6 gr6 = new PantallaTrabajoGr6(areaTrabajo);
-            areaTrabajo = gr6.dibujarPnl_areaTrabajo();
-            return areaTrabajo;
-        }
-
+        Panel EjecutarEnunciado(Panel panel);
     }
 }
