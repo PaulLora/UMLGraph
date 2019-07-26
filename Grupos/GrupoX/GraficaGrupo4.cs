@@ -153,6 +153,7 @@ namespace UMLGraph
         private void BtnInterfaz_Click(object sender, EventArgs e)
         {
             //Se añade una nueva clase a la lista
+
             listaInterfaces.Add(new Interfaz(160, 150, "I" + this.contadorInterfaces));
             contadorInterfaces++;
 

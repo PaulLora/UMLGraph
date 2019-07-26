@@ -250,7 +250,8 @@ namespace NClass.GUI
             else
             {
                 txtName.Text = null;
-                //txtName.Enabled = false;
+                txtName.Enabled = false;
+
                 cboAccess.Text = null;
                 cboAccess.Enabled = false;
                 cboModifier.Text = null;

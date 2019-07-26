@@ -145,6 +145,7 @@ namespace NClass.GUI.Diagram
 				cboModifier.Items.Add("Abstract");
 				cboModifier.Items.Add("Final");
 			}
+
             cboType.Items.Add("int");
             cboType.Items.Add("long");
             cboType.Items.Add("string");
@@ -155,6 +156,7 @@ namespace NClass.GUI.Diagram
             cboType.Items.Add("bool");
             cboType.Items.Add("byte");
         }
+
 
 		private void FillMembersList()
 		{
@@ -614,4 +616,5 @@ namespace NClass.GUI.Diagram
 			this.Close();
 		}
     }
+
 }

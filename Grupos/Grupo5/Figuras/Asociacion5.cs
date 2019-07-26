@@ -4,51 +4,75 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using UMLGraph.Grupos.Grupo5.Figuras;
 
-public class Asociacion5
+class Asociacion5 : Figura5
 {
     GraphicsPath gp;
-    GraphicsPath gp1;
-    /// <summary>
-    /// Obtiene o establece el punto inicial.
-    /// </summary>
-    public Point PI { get; set; }
     Point puntoMedio;
-    /// <summary>
-    /// Obtiene o establece el punto final.
-    /// </summary>
-    public Point PF { get; set; }
-    public Asociacion5(){}
-    /// <summary>
-    /// Crea un figura del objeto GraphicsPath
-    /// </summary>
-    /// <param name="ptI"></param>
-    /// <param name="ptM"></param>
-    /// <param name="ptF"></param>
-    public Asociacion5(Point ptI, Point ptM , Point ptF)
-    {     
-        gp = new GraphicsPath();
-       
-       
-        
-
-      gp.AddLine(ptI, ptF);
-
-       
-        gp.CloseFigure();
-    }
-    public void DrawAsociacion(Graphics g, Point puntoInicial,Point puntoFinal)
+    public String nombre2;
+   
+    
+ 
+    public Asociacion5(Point puntoInicial, Point puntoMedio , Point puntoFinal,String nombre,String nombre2):base(puntoInicial,puntoFinal,nombre)
     {
-        Pen pen = new Pen(Color.Black,4);
-        g.SmoothingMode = SmoothingMode.AntiAlias;
-        g.DrawLine(pen, puntoInicial, puntoFinal);
-        
-        g.Dispose();
-        pen.Dispose();
-    }    
+        this.puntoInicial = puntoInicial;
+        this.puntoMedio= puntoMedio;
+        this.puntoFinal = new Point(puntoFinal.X,puntoFinal.Y);
+        this.nombre = nombre;
+        this.nombre2 = nombre2;
+       
+        AsociacionDibujar();
+    }
+    private void AsociacionDibujar()
+    {
+
+        gp = new GraphicsPath();
+        gp.StartFigure();
+        if (puntoFinal.X < puntoInicial.X)
+        {
+            
+            if (puntoInicial.Y > puntoFinal.Y)
+            {
+                //clase1
+                puntoInicial = new Point(puntoInicial.X - 50, puntoInicial.Y -55 );
+                puntoFinal = new Point(puntoFinal.X + 50, puntoFinal.Y + 150);
+               
+            }
+            else
+            {
+                //clase2
+                puntoInicial = new Point(puntoInicial.X - 50, puntoInicial.Y + 150);
+                puntoFinal = new Point(puntoFinal.X +50, puntoFinal.Y - 55);
+            }
+
+
+            gp.AddLine(puntoInicial, puntoFinal);
+            gp.CloseFigure();
+           
+
+
+        }
+        else
+        {
+            gp.AddLine(puntoInicial, new Point((puntoFinal.X + puntoInicial.X) / 2, puntoInicial.Y));
+            gp.CloseFigure();
+            gp.AddLine(new Point((puntoFinal.X + puntoInicial.X) / 2, puntoInicial.Y), new Point((puntoFinal.X + puntoInicial.X) / 2, puntoFinal.Y));
+            gp.CloseFigure();
+            gp.AddLine(new Point((puntoFinal.X + puntoInicial.X) / 2, puntoFinal.Y), puntoFinal);
+        }
+      
+       
+
+
+    }
+    public Asociacion5() { }
+
+    
+
     public bool Dentro(Point p)
     {
-        if (gp.IsOutlineVisible(p,new Pen(Color.DarkViolet)))
+        if (gp.IsOutlineVisible(p, new Pen(Color.DarkViolet)))
         {
             return true;
         }
@@ -57,15 +81,13 @@ public class Asociacion5
             return gp.IsVisible(p);
         }
     }
-    public void Mover(int dx,int dy)
-    {
-        gp.Transform(new Matrix(1,0,0,1,dx,dy));
-    }
+
     public void Dibujar(Graphics e)
     {
-        Pen pen = new Pen(Color.Black, 4);
+        Pen pen = new Pen(Color.Black,1);
         e.SmoothingMode = SmoothingMode.AntiAlias;
-        e.DrawPath(pen,gp);
+        e.DrawPath(pen, gp);
     }
+
 }
  

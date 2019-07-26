@@ -31,7 +31,6 @@ namespace UMLGraph
                 MessageBox.Show("Los métodos ni los atributos pueden ser vacíos");
                 return 0;
             }
-
             int valido = 1;
             int invalido = 0;
 
@@ -78,8 +77,6 @@ namespace UMLGraph
             }
             int tam_var = nombre.Length;
             String Var_Sub = nombre.Substring((tam_var - 2), 2);
-
-
 
             if (Var_Sub.Equals("ar") || Var_Sub.Equals("er") || Var_Sub.Equals("ir"))
             {
@@ -190,9 +187,6 @@ namespace UMLGraph
             return 1;
 
         }
-
-
-
         //MÉTODO PARA OBTENER LOS METODOS DEL RICHBOX
         public List<String> ObtenerMetodos()
         {

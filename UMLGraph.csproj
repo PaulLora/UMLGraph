@@ -89,11 +89,24 @@
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo3\Librerias\ControlExtension.cs" />
-    <Compile Include="Grupos\Grupo5\FpropiedadesClase.cs">
+    <Compile Include="Grupos\Grupo3\Validaciones\Lista_Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Parametro.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Atributo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Metodo.cs" />
+    <Compile Include="Grupos\Grupo3\Validaciones\Validador_Nombre.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Asociacion5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Clase5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\ClaseInterface5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Figura5.cs" />
+    <Compile Include="Grupos\Grupo5\Figuras\Generalizacion5.cs" />
+    <Compile Include="Grupos\Grupo5\SubsistemaGr5.cs" />
+    <Compile Include="Grupos\Grupo5\Validar.cs" />
+    <Compile Include="Grupos\Grupo5\Vista\Fasociacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupos\Grupo5\FpropiedadesClase.Designer.cs">
-      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    <Compile Include="Grupos\Grupo5\Vista\Fasociacion.Designer.cs">
+      <DependentUpon>Fasociacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo5\GraficaGrupo5.cs" />
     <Compile Include="Grupos\Grupo5\Figuras\Asociacion5.cs" />
@@ -129,6 +142,34 @@
     </Compile>
     <Compile Include="Grupos\Grupo6\Vista\FormularioActualizarClase.Designer.cs">
       <DependentUpon>FormularioActualizarClase.cs</DependentUpon>
+    <Compile Include="Grupos\Grupo5\Vista\Fcinterfaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\Fcinterfaz.Designer.cs">
+      <DependentUpon>Fcinterfaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\Fclase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\Fclase.Designer.cs">
+      <DependentUpon>Fclase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\Fgeneralizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\Fgeneralizacion.Designer.cs">
+      <DependentUpon>Fgeneralizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\Grupo5\Vista\GraficaGrupo5.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Clase.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Figura.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\Relacion.cs" />
+    <Compile Include="Grupos\Grupo6\Modelo\SubsistemaGr6.cs" />
+    <Compile Include="Grupos\Grupo6\Vista\Formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\Grupo6\Vista\Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupos\Grupo6\Vista\FormularioRelacion.cs">
       <SubType>Form</SubType>
@@ -217,8 +258,20 @@
     <EmbeddedResource Include="Grupos\Grupo3\Interfaz\LlenarClase.resx">
       <DependentUpon>LlenarClase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupos\Grupo5\FpropiedadesClase.resx">
-      <DependentUpon>FpropiedadesClase.cs</DependentUpon>
+    <EmbeddedResource Include="Grupos\Grupo5\Vista\Fasociacion.resx">
+      <DependentUpon>Fasociacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo5\Vista\Fcinterfaz.resx">
+      <DependentUpon>Fcinterfaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo5\Vista\Fclase.resx">
+      <DependentUpon>Fclase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo5\Vista\Fgeneralizacion.resx">
+      <DependentUpon>Fgeneralizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Grupo6\Vista\FormularioRelacion.resx">
+      <DependentUpon>FormularioRelacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Grupo6\Vista\EliminarClase.resx">
       <DependentUpon>EliminarClase.cs</DependentUpon>
@@ -345,6 +398,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Grupos\Grupo2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generalización.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cinterfaz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Linter.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

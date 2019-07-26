@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UMLGraph.Grupos.GrupoX.Figuras
-
 {
     class Dependencia : Figura
     {

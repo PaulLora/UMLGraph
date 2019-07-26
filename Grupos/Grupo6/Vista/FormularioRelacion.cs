@@ -44,8 +44,7 @@ namespace UMLGraph.Grupos.Grupo6.Vista
 
             if (this.clasePadre != null && this.claseHijo != null)
             {
-                this.nombreRelacion = this.tipoRelacion + " ( " + this.clasePadre.Titulo + "----" + claseHijo.Titulo + " ) ";
-
+                this.nombreRelacion = this.tipoRelacion + " ( " + this.clasePadre.Titulo + "<--" + claseHijo.Titulo + " ) ";
                 pantallaTrabajo.setDatosRelacion(this.nombreRelacion, this.tipoRelacion, this.clasePadre, this.claseHijo);
                 this.Hide();
 
@@ -58,21 +57,6 @@ namespace UMLGraph.Grupos.Grupo6.Vista
             {
                 MessageBox.Show("Debe ingresar el nombre de una Clase Hijo existente del modelo");
             }
-
-            //if (this.cbox_tipoRelacion.Text.Equals("Herencia")){
-
-            //    pantallaTrabajo.heredar(this.txt_NompreClasePadre.Text, this.txt_NompreClaseHijo.Text);
-            //}
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cbox_tipoRelacion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

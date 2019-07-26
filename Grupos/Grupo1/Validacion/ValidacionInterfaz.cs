@@ -36,8 +36,6 @@ namespace UMLGraph
                 return 0;
             }
 
-
-
             if (validarNombre(nombreInterfaz) == 0)
             {
                 return 0;

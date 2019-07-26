@@ -4,62 +4,80 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using UMLGraph.Grupos.Grupo5.Figuras;
 
-public class Clase5 
+class Clase5 : Figura5
 {
     GraphicsPath gp;
-    public Point puntoInicial { get; set; }
-    public Point puntoFinal { get; set; }
+    GraphicsPath gptxt;
+
+    public String  atributos, metodos;
     public Point puntoMedio { get; set; }
-    
-
-
-    public Clase5() { }
-    public Clase5(Rectangle[] rects, Point puntoPrincipio,String nombre,String atributos,String metodos)
+    public Rectangle[] rects;
+    public Clase5(Rectangle[] rects,Point puntoInicial, String nombre, String atributos, String metodos) : base(puntoInicial,nombre)
     {
-        gp = new GraphicsPath();
-        puntoInicial = new Point(puntoPrincipio.X+30 , puntoPrincipio.Y-20);
-        Font font1 = new Font("Arial", 13, FontStyle.Bold, GraphicsUnit.Point);
-        puntoMedio = new Point(puntoPrincipio.X , puntoPrincipio.Y);
-        puntoFinal = new Point(puntoPrincipio.X, puntoPrincipio.Y+50);
-        gp.AddString(nombre, new FontFamily("Helvetica"), (int)FontStyle.Regular, 14,puntoInicial , StringFormat.GenericDefault);
-        gp.AddString(atributos, new FontFamily("Helvetica"), (int)FontStyle.Regular, 14, puntoMedio, StringFormat.GenericDefault);
-        gp.AddString(metodos, new FontFamily("Helvetica"), (int)FontStyle.Regular, 14, puntoFinal, StringFormat.GenericTypographic);
-
-        gp.AddRectangles(rects);
        
+        this.puntoInicial = new Point(puntoInicial.X + 30, puntoInicial.Y - 20);
+        this.puntoMedio = new Point(puntoInicial.X, puntoInicial.Y+5  );
+        this.puntoFinal = new Point(puntoInicial.X, puntoInicial.Y + 80);
+        this.nombre = nombre;
+        this.atributos = atributos;
+        this.metodos = metodos;
+        this.rects = rects;
+        ClaseDibujar();
+
+
+    }
+   
+
+    private void ClaseDibujar()
+    {
+        StringFormat  string_format = new StringFormat();
+        string_format.Alignment = StringAlignment.Near;
+        string_format.LineAlignment = StringAlignment.Near;
+        
+
+        gp = new GraphicsPath();
+        gptxt = new GraphicsPath();
+        gptxt.AddString(this.nombre, new FontFamily("Arial"), (int)FontStyle.Regular, 14, puntoInicial, StringFormat.GenericDefault);
+        gptxt.AddString(this.atributos, new FontFamily("Arial"), (int)FontStyle.Regular,14, puntoMedio, StringFormat.GenericDefault);
+        gptxt.AddString(this.metodos, new FontFamily("Arial"), (int)FontStyle.Regular,14, puntoFinal, StringFormat.GenericDefault);
+       
+        gp.AddRectangles(this.rects);
+
         gp.CloseFigure();
     }
-  
-    public void DrawClase(Graphics g, Point puntoInicial, Point puntoFinal)
+
+   //sobrecarga Contructor
+    public Clase5() { }
+
+    public void MostrarClase(Graphics g, Point puntoInicial, Point puntoFinal)
     {
         //Dibujando empezando de arriba hasta llegar punto inicial por la derecha
         Pen pen = new Pen(Color.Black, 2);
         g.SmoothingMode = SmoothingMode.AntiAlias;
-         puntoMedio = new Point(puntoFinal.X, puntoFinal.Y + 25);
-        Point puntoFin = new Point(puntoFinal.X, puntoFinal.Y + 75);
+        puntoMedio = new Point(puntoFinal.X, puntoFinal.Y + 30);
+        Point puntoFin = new Point(puntoFinal.X, puntoFinal.Y + 105);
 
             Rectangle[] rects =
              {
                 
-                new Rectangle(puntoFinal,new Size(100,25)),
+                new Rectangle(puntoFinal,new Size(150,30)),
 
-                new Rectangle(puntoMedio,new Size(100,50)),
+                new Rectangle(puntoMedio,new Size(150,75)),
 
-                new Rectangle(puntoFin,new Size(100,75)),
-
+                new Rectangle(puntoFin,new Size(150,100)),
                
 
-             };
-      
-        g.DrawRectangles(pen,rects);
-    
+             };      
+        g.DrawRectangles(pen,rects);    
         g.Dispose();
         pen.Dispose();
     }
+
     public bool Dentro(Point p)
     {
-        if (gp.IsOutlineVisible(p,new Pen(Color.DarkViolet)))
+        if (gp.IsOutlineVisible(p, new Pen(Color.DarkViolet)))
         {
             return true;
         }
@@ -70,12 +88,19 @@ public class Clase5
     }
     public void Mover(int dx, int dy)
     {
-        gp.Transform(new Matrix(1,0,0,1,dx,dy));
+        gp.Transform(new Matrix(1, 0, 0, 1, dx, dy));
+        gptxt.Transform(new Matrix(1, 0, 0, 1, dx, dy));
     }
     public void Dibujar(Graphics e)
     {
-        Pen pen = new Pen(Color.Black, 2);
+        //HatchBrush hBrush = new HatchBrush(
+        // HatchStyle.BackwardDiagonal ,Color.White,
+   
+        //Color.Black);
+        Pen pen = new Pen(Color.Black, 3);
+        Pen penL = new Pen(Color.Black,1);
         e.SmoothingMode = SmoothingMode.AntiAlias;
         e.DrawPath(pen, gp);
+        e.DrawPath(penL, gptxt);
     }
 }

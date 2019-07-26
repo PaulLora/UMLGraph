@@ -37,6 +37,7 @@ namespace NClass.GUI
             this.lblLanguage = new System.Windows.Forms.ToolStripStatusLabel();
             this.diagram = new NClass.GUI.Diagram.DiagramControl();
             this.diagramContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+
             this.typeDetailsToolStrip = new System.Windows.Forms.ToolStrip();
             this.lblName = new System.Windows.Forms.ToolStripLabel();
             this.txtName = new System.Windows.Forms.ToolStripTextBox();
@@ -44,6 +45,7 @@ namespace NClass.GUI
             this.cboAccess = new System.Windows.Forms.ToolStripComboBox();
             this.lblModifier = new System.Windows.Forms.ToolStripLabel();
             this.cboModifier = new System.Windows.Forms.ToolStripComboBox();
+
             this.elementsToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolNewClass = new System.Windows.Forms.ToolStripButton();
             this.toolSepEntities = new System.Windows.Forms.ToolStripSeparator();
@@ -53,6 +55,31 @@ namespace NClass.GUI
             this.toolNewGeneralization = new System.Windows.Forms.ToolStripButton();
             this.toolSepRelations = new System.Windows.Forms.ToolStripSeparator();
             this.toolDelete = new System.Windows.Forms.ToolStripButton();
+
+            this.typeDetailsToolStrip = new System.Windows.Forms.ToolStrip();
+            this.lblName = new System.Windows.Forms.ToolStripLabel();
+            this.txtName = new System.Windows.Forms.ToolStripTextBox();
+            this.lblAccess = new System.Windows.Forms.ToolStripLabel();
+            this.cboAccess = new System.Windows.Forms.ToolStripComboBox();
+            this.lblModifier = new System.Windows.Forms.ToolStripLabel();
+            this.cboModifier = new System.Windows.Forms.ToolStripComboBox();
+            this.mnuAddNewElementContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewClassContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewStructContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewInterfaceContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewEnumContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewDelegateContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewCommentContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSepElementContext = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuNewAssociationContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewCompositionContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewAggregationContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewGeneralizationContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewRealizationContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewDependencyContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewNestingContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewCommentRelationContext = new System.Windows.Forms.ToolStripMenuItem();
+
             this.mnuMembersFormatContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuShowTypeContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuShowParametersContext = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +114,7 @@ namespace NClass.GUI
             this.statusStrip.SuspendLayout();
             this.typeDetailsToolStrip.SuspendLayout();
             this.elementsToolStrip.SuspendLayout();
+
             this.SuspendLayout();
             // 
             // toolStripContainer
@@ -236,6 +264,7 @@ namespace NClass.GUI
             this.toolSepRelations,
             this.toolDelete});
             this.elementsToolStrip.Location = new System.Drawing.Point(6, 0);
+
             this.elementsToolStrip.Name = "elementsToolStrip";
             this.elementsToolStrip.Size = new System.Drawing.Size(168, 27);
             this.elementsToolStrip.TabIndex = 5;
@@ -538,16 +567,33 @@ namespace NClass.GUI
 		private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
 		private System.Windows.Forms.PrintDialog printDialog;
 		private System.Windows.Forms.PageSetupDialog pageSetupDialog;
+
+		private System.Windows.Forms.ToolStrip typeDetailsToolStrip;
+		private System.Windows.Forms.ToolStripLabel lblName;
+		private System.Windows.Forms.ToolStripTextBox txtName;
+		private System.Windows.Forms.ToolStripLabel lblAccess;
+		private System.Windows.Forms.ToolStripComboBox cboAccess;
+		private System.Windows.Forms.ToolStripLabel lblModifier;
+		private System.Windows.Forms.ToolStripComboBox cboModifier;
 		private System.Windows.Forms.ToolStrip elementsToolStrip;
 		private System.Windows.Forms.ToolStripButton toolNewClass;
 		private System.Windows.Forms.ToolStripButton toolDelete;
 		private System.Windows.Forms.ContextMenuStrip diagramContextMenuStrip;
 		private GUI.Diagram.DiagramControl diagram;
 		private System.Windows.Forms.SaveFileDialog saveAsImageDialog;
+
+		private System.Windows.Forms.ToolStripMenuItem mnuAddNewElementContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuMembersFormatContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuSelectAllContext;
 		private System.Windows.Forms.ToolStripSeparator mnuSepSelectAll;
 		private System.Windows.Forms.ToolStripMenuItem mnuSaveAsImageContext;
+
+		private System.Windows.Forms.ToolStripMenuItem mnuNewClassContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewStructContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewInterfaceContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewEnumContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewDelegateContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewCommentContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowTypeContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowParametersContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowParameterNamesContext;
@@ -558,6 +604,7 @@ namespace NClass.GUI
 		private System.Windows.Forms.ToolStripButton toolNewComposition;
 		private System.Windows.Forms.ToolStripButton toolNewAggregation;
 		private System.Windows.Forms.ToolStripSeparator toolSepRelations;
+
         private System.Windows.Forms.ToolStripButton toolNewGeneralization;
         private System.Windows.Forms.ToolStrip typeDetailsToolStrip;
         private System.Windows.Forms.ToolStripLabel lblName;
@@ -566,5 +613,16 @@ namespace NClass.GUI
         private System.Windows.Forms.ToolStripComboBox cboAccess;
         private System.Windows.Forms.ToolStripLabel lblModifier;
         private System.Windows.Forms.ToolStripComboBox cboModifier;
+
+		private System.Windows.Forms.ToolStripSeparator mnuSepElementContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewAssociationContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewCompositionContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewAggregationContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewGeneralizationContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewRealizationContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewDependencyContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewNestingContext;
+		private System.Windows.Forms.ToolStripMenuItem mnuNewCommentRelationContext;
+        private System.Windows.Forms.ToolStripButton toolNewGeneralization;
     }
 }

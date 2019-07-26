@@ -68,7 +68,6 @@
             this.cbox_tipoRelacion.Size = new System.Drawing.Size(140, 21);
             this.cbox_tipoRelacion.TabIndex = 7;
             this.cbox_tipoRelacion.Text = "Relacion";
-            this.cbox_tipoRelacion.SelectedIndexChanged += new System.EventHandler(this.Cbox_tipoRelacion_SelectedIndexChanged);
             // 
             // btn_relacionar
             // 
@@ -94,19 +93,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Clase Destino";
+            this.label2.Text = "Clase Hijo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Clase Origen";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.label1.Text = "Clase Padre";
             // 
             // txt_NompreClaseHijo
             // 

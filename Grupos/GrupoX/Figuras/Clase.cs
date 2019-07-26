@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UMLGraph.Grupos.GrupoX.Figuras
-
 {
     public class Clase : Figura
     {

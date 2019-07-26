@@ -116,7 +116,6 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             btn_editarClase.BackColor = Color.LightSteelBlue;
             btn_editarClase.Text = "EDITAR CLASE";
             btn_editarClase.TextAlign = ContentAlignment.MiddleCenter;
-            btn_editarClase.Click += new System.EventHandler(Btn_editar_Click);
             //Configuracion Panel
             panelContenedor.Location = new System.Drawing.Point(this.LocalizacionX, this.LocalizacionY);
             panelContenedor.Size = new System.Drawing.Size(this.Ancho, this.Alto);
@@ -132,11 +131,6 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
 
             this.panelContenedor = panelContenedor;
 
-        }
-        private void Btn_editar_Click(object sender, EventArgs e)
-        {
-            FormularioActualizarClase formularioActualizar = new FormularioActualizarClase(this.pantallaTrabajo, this.idClase, this.titulo, this.atributos, this.metodos);
-            formularioActualizar.Show();
         }
 
         /************************* MÉTODOS HEREDADOS *****************************/
