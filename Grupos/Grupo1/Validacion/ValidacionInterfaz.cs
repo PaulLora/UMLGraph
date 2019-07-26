@@ -30,6 +30,12 @@ namespace UMLGraph
                 metodos.Add(cortes[i]);
             }
 
+            if (metodos.Contains(""))
+            {
+                MessageBox.Show("Se necesita escribir al menos un método");
+                return 0;
+            }
+
 
 
             if (validarNombre(nombreInterfaz) == 0)
@@ -59,6 +65,11 @@ namespace UMLGraph
         public int validarNombre(String nombre)
         {
             int res = 1;
+            if (nombre.Equals(""))
+            {
+                MessageBox.Show("La clase no puede ser vacía");
+                return 0;
+            }
             int tam_var = nombre.Length;
             String Var_Sub = nombre.Substring((tam_var - 2), 2);
             if (Var_Sub.Equals("ar") || Var_Sub.Equals("er") || Var_Sub.Equals("ir"))
