@@ -113,6 +113,7 @@
             this.txt_atributos.Name = "txt_atributos";
             this.txt_atributos.Size = new System.Drawing.Size(153, 47);
             this.txt_atributos.TabIndex = 1;
+            this.txt_atributos.Enter += new System.EventHandler(this.Txt_atributos_Enter);
             // 
             // txt_titulo
             // 
@@ -120,6 +121,7 @@
             this.txt_titulo.Name = "txt_titulo";
             this.txt_titulo.Size = new System.Drawing.Size(153, 20);
             this.txt_titulo.TabIndex = 0;
+            this.txt_titulo.TextChanged += new System.EventHandler(this.Txt_titulo_TextChanged);
             // 
             // panel1
             // 

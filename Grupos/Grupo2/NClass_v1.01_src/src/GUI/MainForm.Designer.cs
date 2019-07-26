@@ -37,6 +37,13 @@ namespace NClass.GUI
             this.lblLanguage = new System.Windows.Forms.ToolStripStatusLabel();
             this.diagram = new NClass.GUI.Diagram.DiagramControl();
             this.diagramContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.typeDetailsToolStrip = new System.Windows.Forms.ToolStrip();
+            this.lblName = new System.Windows.Forms.ToolStripLabel();
+            this.txtName = new System.Windows.Forms.ToolStripTextBox();
+            this.lblAccess = new System.Windows.Forms.ToolStripLabel();
+            this.cboAccess = new System.Windows.Forms.ToolStripComboBox();
+            this.lblModifier = new System.Windows.Forms.ToolStripLabel();
+            this.cboModifier = new System.Windows.Forms.ToolStripComboBox();
             this.elementsToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolNewClass = new System.Windows.Forms.ToolStripButton();
             this.toolSepEntities = new System.Windows.Forms.ToolStripSeparator();
@@ -46,29 +53,6 @@ namespace NClass.GUI
             this.toolNewGeneralization = new System.Windows.Forms.ToolStripButton();
             this.toolSepRelations = new System.Windows.Forms.ToolStripSeparator();
             this.toolDelete = new System.Windows.Forms.ToolStripButton();
-            this.typeDetailsToolStrip = new System.Windows.Forms.ToolStrip();
-            this.lblName = new System.Windows.Forms.ToolStripLabel();
-            this.txtName = new System.Windows.Forms.ToolStripTextBox();
-            this.lblAccess = new System.Windows.Forms.ToolStripLabel();
-            this.cboAccess = new System.Windows.Forms.ToolStripComboBox();
-            this.lblModifier = new System.Windows.Forms.ToolStripLabel();
-            this.cboModifier = new System.Windows.Forms.ToolStripComboBox();
-            this.mnuAddNewElementContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewClassContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewStructContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewInterfaceContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewEnumContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewDelegateContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewCommentContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSepElementContext = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuNewAssociationContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewCompositionContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewAggregationContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewGeneralizationContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewRealizationContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewDependencyContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewNestingContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewCommentRelationContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMembersFormatContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuShowTypeContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuShowParametersContext = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,8 +85,8 @@ namespace NClass.GUI
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            this.elementsToolStrip.SuspendLayout();
             this.typeDetailsToolStrip.SuspendLayout();
+            this.elementsToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer
@@ -130,8 +114,8 @@ namespace NClass.GUI
             // 
             // toolStripContainer.TopToolStripPanel
             // 
-            this.toolStripContainer.TopToolStripPanel.Controls.Add(this.typeDetailsToolStrip);
             this.toolStripContainer.TopToolStripPanel.Controls.Add(this.elementsToolStrip);
+            this.toolStripContainer.TopToolStripPanel.Controls.Add(this.typeDetailsToolStrip);
             // 
             // statusStrip
             // 
@@ -182,6 +166,62 @@ namespace NClass.GUI
             this.diagramContextMenuStrip.Name = "diagramContextMenuStrip";
             this.diagramContextMenuStrip.Size = new System.Drawing.Size(61, 4);
             // 
+            // typeDetailsToolStrip
+            // 
+            this.typeDetailsToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.typeDetailsToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.typeDetailsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblName,
+            this.txtName,
+            this.lblAccess,
+            this.cboAccess,
+            this.lblModifier,
+            this.cboModifier});
+            this.typeDetailsToolStrip.Location = new System.Drawing.Point(174, 0);
+            this.typeDetailsToolStrip.Name = "typeDetailsToolStrip";
+            this.typeDetailsToolStrip.Size = new System.Drawing.Size(637, 28);
+            this.typeDetailsToolStrip.TabIndex = 5;
+            // 
+            // lblName
+            // 
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(52, 25);
+            this.lblName.Text = "Name:";
+            // 
+            // txtName
+            // 
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(200, 28);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            // 
+            // lblAccess
+            // 
+            this.lblAccess.Name = "lblAccess";
+            this.lblAccess.Size = new System.Drawing.Size(56, 25);
+            this.lblAccess.Text = "Access:";
+            // 
+            // cboAccess
+            // 
+            this.cboAccess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAccess.Enabled = false;
+            this.cboAccess.Name = "cboAccess";
+            this.cboAccess.Size = new System.Drawing.Size(121, 28);
+            this.cboAccess.SelectedIndexChanged += new System.EventHandler(this.cboAccess_SelectedIndexChanged);
+            // 
+            // lblModifier
+            // 
+            this.lblModifier.Name = "lblModifier";
+            this.lblModifier.Size = new System.Drawing.Size(69, 25);
+            this.lblModifier.Text = "Modifier:";
+            // 
+            // cboModifier
+            // 
+            this.cboModifier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModifier.Enabled = false;
+            this.cboModifier.Name = "cboModifier";
+            this.cboModifier.Size = new System.Drawing.Size(121, 28);
+            this.cboModifier.SelectedIndexChanged += new System.EventHandler(this.cboModifier_SelectedIndexChanged);
+            // 
             // elementsToolStrip
             // 
             this.elementsToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -195,7 +235,7 @@ namespace NClass.GUI
             this.toolNewGeneralization,
             this.toolSepRelations,
             this.toolDelete});
-            this.elementsToolStrip.Location = new System.Drawing.Point(3, 0);
+            this.elementsToolStrip.Location = new System.Drawing.Point(6, 0);
             this.elementsToolStrip.Name = "elementsToolStrip";
             this.elementsToolStrip.Size = new System.Drawing.Size(168, 27);
             this.elementsToolStrip.TabIndex = 5;
@@ -265,173 +305,6 @@ namespace NClass.GUI
             this.toolDelete.Name = "toolDelete";
             this.toolDelete.Size = new System.Drawing.Size(24, 24);
             this.toolDelete.Click += new System.EventHandler(this.mnuDelete_Click);
-            // 
-            // typeDetailsToolStrip
-            // 
-            this.typeDetailsToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.typeDetailsToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.typeDetailsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblName,
-            this.txtName,
-            this.lblAccess,
-            this.cboAccess,
-            this.lblModifier,
-            this.cboModifier});
-            this.typeDetailsToolStrip.Location = new System.Drawing.Point(171, 0);
-            this.typeDetailsToolStrip.Name = "typeDetailsToolStrip";
-            this.typeDetailsToolStrip.Size = new System.Drawing.Size(637, 28);
-            this.typeDetailsToolStrip.TabIndex = 5;
-            // 
-            // lblName
-            // 
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(52, 25);
-            this.lblName.Text = "Name:";
-            // 
-            // txtName
-            // 
-            this.txtName.Enabled = false;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(200, 28);
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            // 
-            // lblAccess
-            // 
-            this.lblAccess.Name = "lblAccess";
-            this.lblAccess.Size = new System.Drawing.Size(56, 25);
-            this.lblAccess.Text = "Access:";
-            // 
-            // cboAccess
-            // 
-            this.cboAccess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboAccess.Enabled = false;
-            this.cboAccess.Name = "cboAccess";
-            this.cboAccess.Size = new System.Drawing.Size(121, 28);
-            this.cboAccess.SelectedIndexChanged += new System.EventHandler(this.cboAccess_SelectedIndexChanged);
-            // 
-            // lblModifier
-            // 
-            this.lblModifier.Name = "lblModifier";
-            this.lblModifier.Size = new System.Drawing.Size(69, 25);
-            this.lblModifier.Text = "Modifier:";
-            // 
-            // cboModifier
-            // 
-            this.cboModifier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboModifier.Enabled = false;
-            this.cboModifier.Name = "cboModifier";
-            this.cboModifier.Size = new System.Drawing.Size(121, 28);
-            this.cboModifier.SelectedIndexChanged += new System.EventHandler(this.cboModifier_SelectedIndexChanged);
-            // 
-            // mnuAddNewElementContext
-            // 
-            this.mnuAddNewElementContext.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuNewClassContext,
-            this.mnuNewStructContext,
-            this.mnuNewInterfaceContext,
-            this.mnuNewEnumContext,
-            this.mnuNewDelegateContext,
-            this.mnuNewCommentContext,
-            this.mnuSepElementContext,
-            this.mnuNewAssociationContext,
-            this.mnuNewCompositionContext,
-            this.mnuNewAggregationContext,
-            this.mnuNewGeneralizationContext,
-            this.mnuNewRealizationContext,
-            this.mnuNewDependencyContext,
-            this.mnuNewNestingContext,
-            this.mnuNewCommentRelationContext});
-            this.mnuAddNewElementContext.Image = global::NClass.GUI.Properties.Resources.NewEntity;
-            this.mnuAddNewElementContext.Name = "mnuAddNewElementContext";
-            this.mnuAddNewElementContext.Size = new System.Drawing.Size(198, 26);
-            this.mnuAddNewElementContext.Text = "&Add New";
-            // 
-            // mnuNewClassContext
-            // 
-            this.mnuNewClassContext.Image = global::NClass.GUI.Properties.Resources.Class;
-            this.mnuNewClassContext.Name = "mnuNewClassContext";
-            this.mnuNewClassContext.Size = new System.Drawing.Size(169, 26);
-            this.mnuNewClassContext.Text = "&Class";
-            this.mnuNewClassContext.Click += new System.EventHandler(this.mnuNewClass_Click);
-            // 
-            // mnuNewStructContext
-            // 
-            this.mnuNewStructContext.Name = "mnuNewStructContext";
-            this.mnuNewStructContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewInterfaceContext
-            // 
-            this.mnuNewInterfaceContext.Name = "mnuNewInterfaceContext";
-            this.mnuNewInterfaceContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewEnumContext
-            // 
-            this.mnuNewEnumContext.Name = "mnuNewEnumContext";
-            this.mnuNewEnumContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewDelegateContext
-            // 
-            this.mnuNewDelegateContext.Name = "mnuNewDelegateContext";
-            this.mnuNewDelegateContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewCommentContext
-            // 
-            this.mnuNewCommentContext.Name = "mnuNewCommentContext";
-            this.mnuNewCommentContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuSepElementContext
-            // 
-            this.mnuSepElementContext.Name = "mnuSepElementContext";
-            this.mnuSepElementContext.Size = new System.Drawing.Size(166, 6);
-            // 
-            // mnuNewAssociationContext
-            // 
-            this.mnuNewAssociationContext.Image = global::NClass.GUI.Properties.Resources.Association;
-            this.mnuNewAssociationContext.Name = "mnuNewAssociationContext";
-            this.mnuNewAssociationContext.Size = new System.Drawing.Size(169, 26);
-            this.mnuNewAssociationContext.Text = "&Association";
-            this.mnuNewAssociationContext.Click += new System.EventHandler(this.mnuNewAssociation_Click);
-            // 
-            // mnuNewCompositionContext
-            // 
-            this.mnuNewCompositionContext.Image = global::NClass.GUI.Properties.Resources.Composition;
-            this.mnuNewCompositionContext.Name = "mnuNewCompositionContext";
-            this.mnuNewCompositionContext.Size = new System.Drawing.Size(169, 26);
-            this.mnuNewCompositionContext.Text = "C&omposition";
-            this.mnuNewCompositionContext.Click += new System.EventHandler(this.mnuNewComposition_Click);
-            // 
-            // mnuNewAggregationContext
-            // 
-            this.mnuNewAggregationContext.Image = global::NClass.GUI.Properties.Resources.Aggregation;
-            this.mnuNewAggregationContext.Name = "mnuNewAggregationContext";
-            this.mnuNewAggregationContext.Size = new System.Drawing.Size(169, 26);
-            this.mnuNewAggregationContext.Text = "A&ggregation";
-            this.mnuNewAggregationContext.Click += new System.EventHandler(this.mnuNewAggregation_Click);
-            // 
-            // mnuNewGeneralizationContext
-            // 
-            this.mnuNewGeneralizationContext.Name = "mnuNewGeneralizationContext";
-            this.mnuNewGeneralizationContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewRealizationContext
-            // 
-            this.mnuNewRealizationContext.Name = "mnuNewRealizationContext";
-            this.mnuNewRealizationContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewDependencyContext
-            // 
-            this.mnuNewDependencyContext.Name = "mnuNewDependencyContext";
-            this.mnuNewDependencyContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewNestingContext
-            // 
-            this.mnuNewNestingContext.Name = "mnuNewNestingContext";
-            this.mnuNewNestingContext.Size = new System.Drawing.Size(169, 26);
-            // 
-            // mnuNewCommentRelationContext
-            // 
-            this.mnuNewCommentRelationContext.Name = "mnuNewCommentRelationContext";
-            this.mnuNewCommentRelationContext.Size = new System.Drawing.Size(169, 26);
             // 
             // mnuMembersFormatContext
             // 
@@ -634,10 +507,10 @@ namespace NClass.GUI
             this.toolStripContainer.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.elementsToolStrip.ResumeLayout(false);
-            this.elementsToolStrip.PerformLayout();
             this.typeDetailsToolStrip.ResumeLayout(false);
             this.typeDetailsToolStrip.PerformLayout();
+            this.elementsToolStrip.ResumeLayout(false);
+            this.elementsToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -665,30 +538,16 @@ namespace NClass.GUI
 		private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
 		private System.Windows.Forms.PrintDialog printDialog;
 		private System.Windows.Forms.PageSetupDialog pageSetupDialog;
-		private System.Windows.Forms.ToolStrip typeDetailsToolStrip;
-		private System.Windows.Forms.ToolStripLabel lblName;
-		private System.Windows.Forms.ToolStripTextBox txtName;
-		private System.Windows.Forms.ToolStripLabel lblAccess;
-		private System.Windows.Forms.ToolStripComboBox cboAccess;
-		private System.Windows.Forms.ToolStripLabel lblModifier;
-		private System.Windows.Forms.ToolStripComboBox cboModifier;
 		private System.Windows.Forms.ToolStrip elementsToolStrip;
 		private System.Windows.Forms.ToolStripButton toolNewClass;
 		private System.Windows.Forms.ToolStripButton toolDelete;
 		private System.Windows.Forms.ContextMenuStrip diagramContextMenuStrip;
 		private GUI.Diagram.DiagramControl diagram;
 		private System.Windows.Forms.SaveFileDialog saveAsImageDialog;
-		private System.Windows.Forms.ToolStripMenuItem mnuAddNewElementContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuMembersFormatContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuSelectAllContext;
 		private System.Windows.Forms.ToolStripSeparator mnuSepSelectAll;
 		private System.Windows.Forms.ToolStripMenuItem mnuSaveAsImageContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewClassContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewStructContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewInterfaceContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewEnumContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewDelegateContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewCommentContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowTypeContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowParametersContext;
 		private System.Windows.Forms.ToolStripMenuItem mnuShowParameterNamesContext;
@@ -699,15 +558,13 @@ namespace NClass.GUI
 		private System.Windows.Forms.ToolStripButton toolNewComposition;
 		private System.Windows.Forms.ToolStripButton toolNewAggregation;
 		private System.Windows.Forms.ToolStripSeparator toolSepRelations;
-		private System.Windows.Forms.ToolStripSeparator mnuSepElementContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewAssociationContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewCompositionContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewAggregationContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewGeneralizationContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewRealizationContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewDependencyContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewNestingContext;
-		private System.Windows.Forms.ToolStripMenuItem mnuNewCommentRelationContext;
         private System.Windows.Forms.ToolStripButton toolNewGeneralization;
+        private System.Windows.Forms.ToolStrip typeDetailsToolStrip;
+        private System.Windows.Forms.ToolStripLabel lblName;
+        private System.Windows.Forms.ToolStripTextBox txtName;
+        private System.Windows.Forms.ToolStripLabel lblAccess;
+        private System.Windows.Forms.ToolStripComboBox cboAccess;
+        private System.Windows.Forms.ToolStripLabel lblModifier;
+        private System.Windows.Forms.ToolStripComboBox cboModifier;
     }
 }
