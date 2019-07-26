@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UMLGraph
-
+namespace UMLGraph.Grupos.GrupoX.Figuras
+    
 {
     class Clase:Figura
     {

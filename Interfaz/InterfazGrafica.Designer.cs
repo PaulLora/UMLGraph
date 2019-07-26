@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazGrafica));
-            this.CmbSelecGrupo = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEnunciado = new System.Windows.Forms.Label();
             this.pnlEjercicios = new System.Windows.Forms.Panel();
@@ -51,15 +50,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlDibujar = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBorrarLienzo = new System.Windows.Forms.Button();
-            this.btnClase = new System.Windows.Forms.Button();
-            this.btnDependencia = new System.Windows.Forms.Button();
-            this.btnRelacion = new System.Windows.Forms.Button();
-            this.btnComposicion = new System.Windows.Forms.Button();
-            this.btnAgregacion = new System.Windows.Forms.Button();
-            this.btnHerencia = new System.Windows.Forms.Button();
-            this.btnInterfaz = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.pnlEjercicios.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
@@ -69,23 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlDibujar.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // CmbSelecGrupo
-            // 
-            this.CmbSelecGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CmbSelecGrupo.BackColor = System.Drawing.SystemColors.Menu;
-            this.CmbSelecGrupo.FormattingEnabled = true;
-            this.CmbSelecGrupo.Items.AddRange(new object[] {
-            "Grupo 5"});
-            this.CmbSelecGrupo.Location = new System.Drawing.Point(591, 4);
-            this.CmbSelecGrupo.Name = "CmbSelecGrupo";
-            this.CmbSelecGrupo.Size = new System.Drawing.Size(258, 21);
-            this.CmbSelecGrupo.TabIndex = 12;
-            this.CmbSelecGrupo.Visible = false;
-            this.CmbSelecGrupo.SelectedIndexChanged += new System.EventHandler(this.CmbSelecGrupo_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -94,7 +68,6 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblEnunciado);
             this.panel2.Controls.Add(this.pnlEjercicios);
-            this.panel2.Controls.Add(this.CmbSelecGrupo);
             this.panel2.Controls.Add(this.btnEnunciados);
             this.panel2.Location = new System.Drawing.Point(144, 25);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -106,7 +79,7 @@
             // 
             this.lblEnunciado.AutoSize = true;
             this.lblEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnunciado.Location = new System.Drawing.Point(12, 46);
+            this.lblEnunciado.Location = new System.Drawing.Point(12, 21);
             this.lblEnunciado.Name = "lblEnunciado";
             this.lblEnunciado.Size = new System.Drawing.Size(78, 18);
             this.lblEnunciado.TabIndex = 14;
@@ -224,7 +197,7 @@
             this.btnEnunciados.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnEnunciados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnunciados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnunciados.Location = new System.Drawing.Point(3, 6);
+            this.btnEnunciados.Location = new System.Drawing.Point(3, -2);
             this.btnEnunciados.Name = "btnEnunciados";
             this.btnEnunciados.Size = new System.Drawing.Size(139, 27);
             this.btnEnunciados.TabIndex = 13;
@@ -262,13 +235,12 @@
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(953, 2);
+            this.btnRestaurar.Location = new System.Drawing.Point(953, 3);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(19, 19);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestaurar.TabIndex = 3;
             this.btnRestaurar.TabStop = false;
-            this.btnRestaurar.Visible = false;
             this.btnRestaurar.Click += new System.EventHandler(this.BtnRestaurar_Click);
             // 
             // btnMinimizar
@@ -295,6 +267,7 @@
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximizar.TabIndex = 1;
             this.btnMaximizar.TabStop = false;
+            this.btnMaximizar.Visible = false;
             this.btnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
             // 
             // btnCerrar
@@ -357,112 +330,12 @@
             // 
             // pnlDibujar
             // 
-            this.pnlDibujar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDibujar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlDibujar.Controls.Add(this.panel1);
-            this.pnlDibujar.Location = new System.Drawing.Point(0, 131);
+            this.pnlDibujar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDibujar.Location = new System.Drawing.Point(0, 130);
             this.pnlDibujar.Name = "pnlDibujar";
-            this.pnlDibujar.Size = new System.Drawing.Size(997, 457);
+            this.pnlDibujar.Size = new System.Drawing.Size(1000, 470);
             this.pnlDibujar.TabIndex = 18;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.btnBorrarLienzo);
-            this.panel1.Controls.Add(this.btnClase);
-            this.panel1.Controls.Add(this.btnDependencia);
-            this.panel1.Controls.Add(this.btnRelacion);
-            this.panel1.Controls.Add(this.btnComposicion);
-            this.panel1.Controls.Add(this.btnAgregacion);
-            this.panel1.Controls.Add(this.btnHerencia);
-            this.panel1.Controls.Add(this.btnInterfaz);
-            this.panel1.Location = new System.Drawing.Point(11, 12);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 186);
-            this.panel1.TabIndex = 14;
-            this.panel1.Visible = false;
-            // 
-            // btnBorrarLienzo
-            // 
-            this.btnBorrarLienzo.Location = new System.Drawing.Point(3, 539);
-            this.btnBorrarLienzo.Name = "btnBorrarLienzo";
-            this.btnBorrarLienzo.Size = new System.Drawing.Size(132, 23);
-            this.btnBorrarLienzo.TabIndex = 10;
-            this.btnBorrarLienzo.Text = "Borrar lienzo";
-            this.btnBorrarLienzo.UseVisualStyleBackColor = true;
-            this.btnBorrarLienzo.Click += new System.EventHandler(this.Button9_Click);
-            // 
-            // btnClase
-            // 
-            this.btnClase.Location = new System.Drawing.Point(1, 3);
-            this.btnClase.Name = "btnClase";
-            this.btnClase.Size = new System.Drawing.Size(132, 21);
-            this.btnClase.TabIndex = 0;
-            this.btnClase.Text = "Dibujar clase";
-            this.btnClase.UseVisualStyleBackColor = true;
-            this.btnClase.Click += new System.EventHandler(this.btnClase_Click);
-            // 
-            // btnDependencia
-            // 
-            this.btnDependencia.Location = new System.Drawing.Point(1, 119);
-            this.btnDependencia.Name = "btnDependencia";
-            this.btnDependencia.Size = new System.Drawing.Size(132, 21);
-            this.btnDependencia.TabIndex = 7;
-            this.btnDependencia.Text = "Dibujar dependencia";
-            this.btnDependencia.UseVisualStyleBackColor = true;
-            this.btnDependencia.Click += new System.EventHandler(this.BtnDependencia_Click);
-            // 
-            // btnRelacion
-            // 
-            this.btnRelacion.Location = new System.Drawing.Point(1, 61);
-            this.btnRelacion.Name = "btnRelacion";
-            this.btnRelacion.Size = new System.Drawing.Size(132, 21);
-            this.btnRelacion.TabIndex = 1;
-            this.btnRelacion.Text = "Dibujar relación";
-            this.btnRelacion.UseVisualStyleBackColor = true;
-            this.btnRelacion.Click += new System.EventHandler(this.BtnRelacion_Click);
-            // 
-            // btnComposicion
-            // 
-            this.btnComposicion.Location = new System.Drawing.Point(1, 148);
-            this.btnComposicion.Name = "btnComposicion";
-            this.btnComposicion.Size = new System.Drawing.Size(132, 21);
-            this.btnComposicion.TabIndex = 8;
-            this.btnComposicion.Text = "Dibujar composición";
-            this.btnComposicion.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregacion
-            // 
-            this.btnAgregacion.Location = new System.Drawing.Point(1, 90);
-            this.btnAgregacion.Name = "btnAgregacion";
-            this.btnAgregacion.Size = new System.Drawing.Size(132, 21);
-            this.btnAgregacion.TabIndex = 6;
-            this.btnAgregacion.Text = "Dibujar agregación";
-            this.btnAgregacion.UseVisualStyleBackColor = true;
-            // 
-            // btnHerencia
-            // 
-            this.btnHerencia.Location = new System.Drawing.Point(1, 177);
-            this.btnHerencia.Name = "btnHerencia";
-            this.btnHerencia.Size = new System.Drawing.Size(132, 21);
-            this.btnHerencia.TabIndex = 2;
-            this.btnHerencia.Text = "Dibujar herencia";
-            this.btnHerencia.UseVisualStyleBackColor = true;
-            // 
-            // btnInterfaz
-            // 
-            this.btnInterfaz.Location = new System.Drawing.Point(1, 32);
-            this.btnInterfaz.Name = "btnInterfaz";
-            this.btnInterfaz.Size = new System.Drawing.Size(132, 21);
-            this.btnInterfaz.TabIndex = 4;
-            this.btnInterfaz.Text = "Dibujar interfaz";
-            this.btnInterfaz.UseVisualStyleBackColor = true;
-            this.btnInterfaz.Click += new System.EventHandler(this.BtnInterfaz_Click);
             // 
             // InterfazGrafica
             // 
@@ -478,7 +351,6 @@
             this.Name = "InterfazGrafica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "UMLGraph";
-            this.Load += new System.EventHandler(this.InterfazGrafica_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InterfazGrafica_MouseDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -492,8 +364,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlDibujar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -510,7 +380,6 @@
         private System.Windows.Forms.Button btbCerrarSesion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.ComboBox CmbSelecGrupo;
         private System.Windows.Forms.Button btnEnunciados;
         private System.Windows.Forms.Panel pnlEjercicios;
         private System.Windows.Forms.Button btnEnunciado1;
@@ -521,14 +390,5 @@
         private System.Windows.Forms.Button btnEnunciado4;
         private System.Windows.Forms.Label lblEnunciado;
         private System.Windows.Forms.Panel pnlDibujar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnBorrarLienzo;
-        private System.Windows.Forms.Button btnClase;
-        private System.Windows.Forms.Button btnDependencia;
-        private System.Windows.Forms.Button btnRelacion;
-        private System.Windows.Forms.Button btnComposicion;
-        private System.Windows.Forms.Button btnAgregacion;
-        private System.Windows.Forms.Button btnHerencia;
-        private System.Windows.Forms.Button btnInterfaz;
     }
 }
