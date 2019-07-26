@@ -50,9 +50,6 @@ namespace UMLGraph.Grupos.Grupo1.Validacion
 
                 }
 
-
-
-
             }
             return 1;
         }

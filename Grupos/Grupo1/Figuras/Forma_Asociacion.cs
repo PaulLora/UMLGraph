@@ -17,7 +17,7 @@ namespace UMLGraph
 
         List<Point> lista = new List<Point>();
         List<Panel> listaPaneles = new List<Panel>(); //Un alista de paneles es una lista de clases
-        bool bandera = true;
+        //bool bandera = true;
         Canvas c;
         public int claseA, claseB;
         //Forma_Clase clase;
@@ -37,8 +37,8 @@ namespace UMLGraph
         {
             Graphics g = canvas.panelMaster.CreateGraphics();
             this.g = g;
-            if (bandera == true)
-            {
+           // if (bandera == true)
+            //{
 
                 Point A = new Point();
                 A = obtenerPuntos(claseA+1);
@@ -49,8 +49,8 @@ namespace UMLGraph
                Pen lapiz = new Pen(Color.Black, 2);
 
                 g.DrawLine(lapiz, A, B);
-                bandera = true;
-            }
+              //  bandera = true;
+            //}
 
             //ValidacionAsociacion v = new ValidacionAsociacion(this);
         }
