@@ -12,7 +12,7 @@ namespace UMLGraph
     {
         public List<Panel> listaPadreHijo = new List<Panel>();
 
-        bool bandera = true;
+        //bool bandera = true;
         Canvas c;
         public Graphics g;
         int[] clasesHijas;
@@ -36,8 +36,8 @@ namespace UMLGraph
 
             List<Point> lista = new List<Point>();
 
-            if (bandera == true)
-            {
+         //   if (bandera == true)
+           // {
 
                 Point puntoPadre = new Point();
 
@@ -60,8 +60,8 @@ namespace UMLGraph
 
                 }
 
-                bandera = true;
-            }
+             //   bandera = true;
+    //        }
 
         }
 
