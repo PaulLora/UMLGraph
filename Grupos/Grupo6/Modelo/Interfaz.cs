@@ -10,8 +10,9 @@ using UMLGraph.Grupos.Grupo6.Vista;
 
 namespace UMLGraph.Grupos.Grupo6.Modelo
 {
-    class Clase : Figura
+    class Interfaz : Figura
     {
+
         // Escuchar cuando ocurre evento y manejar el cmabio de posicion
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -22,14 +23,14 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         private PantallaTrabajoGr6 pantallaTrabajo;
 
         /************************* Atributos *****************************/
-        private String idClase;
+        private String idInterfaz;
         private String titulo;
         private List<String> atributos;
         private List<String> metodos;
         private Panel panelContenedor;
 
         /************************* Constructores *****************************/
-        public Clase()
+        public Interfaz()
         {
             this.LocalizacionX = 70;
             this.LocalizacionY = 60;
@@ -37,13 +38,13 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             this.Alto = 210;
         }
 
-        public Clase(PantallaTrabajoGr6 pantallaTrabajoRecibida, string idClase, string titulo, List<string> atributos, List<string> metodos)
+        public Interfaz(PantallaTrabajoGr6 pantallaTrabajoRecibida, string idClase, string titulo, List<string> atributos, List<string> metodos)
         {
             this.LocalizacionX = 70;
             this.LocalizacionY = 60;
             this.Ancho = 175;
             this.Alto = 210;
-            this.idClase = idClase;
+            this.idInterfaz = idInterfaz;
             this.titulo = titulo;
             this.atributos = atributos;
             this.metodos = metodos;
@@ -51,7 +52,7 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         }
 
         /************************* GETTERS AND SETTERS *****************************/
-        public string IdClase { get => idClase; set => idClase = value; }
+        public string IdClase { get => idInterfaz; set => idInterfaz = value; }
         public string Titulo { get => titulo; set => titulo = value; }
         public List<string> Atributos { get => atributos; set => atributos = value; }
         public List<string> Metodos { get => metodos; set => metodos = value; }
@@ -76,7 +77,7 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             lbl_idClase.BackColor = Color.Transparent;
             //lbl_idClase.
             lbl_idClase.TextAlign = ContentAlignment.MiddleCenter;
-            lbl_idClase.Text = this.idClase;
+            lbl_idClase.Text = this.idInterfaz;
             //Titulo
             lbl_titulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             lbl_titulo.Location = new Point(10, 25);
@@ -116,11 +117,10 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
             btn_editarClase.BackColor = Color.LightSteelBlue;
             btn_editarClase.Text = "EDITAR CLASE";
             btn_editarClase.TextAlign = ContentAlignment.MiddleCenter;
-            btn_editarClase.Click += new System.EventHandler(Btn_editar_Click);
             //Configuracion Panel
             panelContenedor.Location = new System.Drawing.Point(this.LocalizacionX, this.LocalizacionY);
             panelContenedor.Size = new System.Drawing.Size(this.Ancho, this.Alto);
-            panelContenedor.Name = this.idClase;
+            panelContenedor.Name = this.idInterfaz;
             panelContenedor.BackColor = Color.Wheat;
             //Agregamos Atributos metodos al panel
             panelContenedor.Controls.Add(lbl_idClase);
@@ -132,11 +132,6 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
 
             this.panelContenedor = panelContenedor;
 
-        }
-        private void Btn_editar_Click(object sender, EventArgs e)
-        {
-            FormularioActualizarClase formularioActualizar = new FormularioActualizarClase(this.pantallaTrabajo, this.idClase, this.titulo, this.atributos, this.metodos);
-            formularioActualizar.Show();
         }
 
         /************************* MÉTODOS HEREDADOS *****************************/

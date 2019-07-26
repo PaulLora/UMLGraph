@@ -80,5 +80,135 @@ namespace UMLGraph.Grupos.Grupo6.Modelo
         {
             throw new NotImplementedException();
         }
+        //public override void dibujarFigura(Panel espaciotrabajo)
+        //{
+        //    float xPadre = this.clasePadre.GetPanelContenedor().Location.X + this.clasePadre.Ancho / 2;
+        //    float yPadre = this.clasePadre.GetPanelContenedor().Location.Y + this.clasePadre.Alto / 2;
+        //    float xHijo = this.claseHijo.GetPanelContenedor().Location.X + this.claseHijo.Ancho / 2;
+        //    float yHijo = claseHijo.GetPanelContenedor().Location.Y + this.claseHijo.Alto / 2;
+
+        //    System.Drawing.PointF puntoPadre = new System.Drawing.PointF(xPadre, yPadre);
+        //    System.Drawing.PointF puntoHijo = new System.Drawing.PointF(xHijo, yHijo);
+
+        //    this.Grafico = espaciotrabajo.CreateGraphics();
+        //    this.Bolígrafo = new Pen(Color.Gray, 2);
+
+        //    float x = 0;
+        //    float y = 0;
+        //    double uX = 0;
+        //    double uY = 0;
+        //    double angle;
+        //    double xx;
+        //    double yy;
+
+
+        //    if (puntoPadre.X > puntoHijo.X)
+        //    {
+        //        x = puntoHijo.X + ((puntoPadre.X - puntoHijo.X) / 2);
+        //        xx = puntoPadre.X - puntoHijo.X;
+
+        //    }
+        //    else
+        //    {
+        //        x = puntoPadre.X + ((puntoHijo.X - puntoPadre.X) / 2);
+        //        xx = puntoHijo.X - puntoPadre.X;
+        //    }
+        //    if (puntoPadre.Y > puntoHijo.Y)
+        //    {
+        //        y = puntoHijo.Y + ((puntoPadre.Y - puntoHijo.Y) / 2);
+        //        yy = puntoPadre.Y - puntoHijo.Y;
+        //    }
+        //    else
+        //    {
+        //        y = puntoPadre.Y + ((puntoHijo.Y - puntoPadre.Y) / 2);
+        //        yy = puntoHijo.Y - puntoPadre.Y;
+        //    }
+
+        //    this.Grafico.DrawLine(this.Bolígrafo, puntoPadre, puntoHijo);
+        //    this.Grafico.DrawString(this.nombreRelacion, new Font("Arial", 10), new SolidBrush(Color.Black), x, y);
+        //    Vector vectorResult = new Vector(xx, yy);
+        //    vectorResult.Normalize();
+        //    dibujarRmobo(vectorResult);
+        //}
+
+        //public void dibujarRmobo(Vector vectorResult)
+        //{
+        //    int xPadre = this.clasePadre.GetPanelContenedor().Location.X + this.clasePadre.Ancho / 2;
+        //    int yPadre = this.clasePadre.GetPanelContenedor().Location.Y + this.clasePadre.Alto / 2;
+        //    int xHijo = this.claseHijo.GetPanelContenedor().Location.X + this.claseHijo.Ancho / 2;
+        //    int yHijo = claseHijo.GetPanelContenedor().Location.Y + this.claseHijo.Alto / 2;
+
+        //    double angle;
+
+        //    angle = Math.Atan(vectorResult.Y / vectorResult.X) * (180 / Math.PI);
+        //    double radians = angle * (Math.PI / 180);
+        //    double alturaInclinacionX;
+        //    double alturaInclinacionY;
+        //    float alturaRombo = 0;
+        //    float xx = xPadre;
+        //    alturaInclinacionX = Math.Tan(radians) * this.clasePadre.Ancho / 2;
+        //    float yy = yPadre;
+        //    alturaInclinacionY = Math.Tan(radians) * this.clasePadre.Alto / 2;
+
+
+        //    /********Maneja costado derecho*************/
+
+        //    if (xPadre < xHijo && yPadre < yHijo)
+        //    {
+
+        //        xx = xPadre + (float)alturaInclinacionX;
+        //        if (xx > xPadre)
+        //        {
+        //            xx = xPadre + 13 + this.clasePadre.Ancho / 2;
+        //        }
+        //        yy = yPadre + (float)alturaInclinacionY;
+        //    }
+
+        //    if (xPadre < xHijo && yPadre > yHijo)
+        //    {
+        //        xx = xPadre + (float)alturaInclinacionX;
+        //        if (xx > xPadre)
+        //        {
+        //            xx = xPadre + 13 + this.clasePadre.Ancho / 2;
+        //        }
+        //        yy = yPadre - (float)alturaInclinacionY;
+        //    }
+
+        //    /********Maneja costado derecho*************/
+
+        //    if (xPadre > xHijo && yPadre < yHijo)
+        //    {
+        //        xx = xPadre - (float)alturaInclinacionX;
+        //        if (xx < xPadre)
+        //        {
+        //            xx = xPadre - 13 - this.clasePadre.Ancho / 2;
+        //        }
+        //        yy = yPadre + (float)alturaInclinacionY;
+        //    }
+
+        //    if (xPadre > xHijo && yPadre > yHijo)
+        //    {
+        //        xx = xPadre - (float)alturaInclinacionX;
+        //        if (xx < xPadre)
+        //        {
+        //            xx = xPadre - 13 - this.clasePadre.Ancho / 2;
+        //        }
+        //        yy = yPadre - (float)alturaInclinacionY;
+        //    }
+
+
+
+        //    /***** Puntos de Ubicacion ******/
+        //    PointF point1 = new PointF(xx, yy - 13);
+        //    PointF point2 = new PointF(xx + 13, yy);
+        //    PointF point3 = new PointF(xx, yy + 13);
+        //    PointF point4 = new PointF(xx - 13, yy);
+        //    PointF[] puntosRombo = { point1, point2, point3, point4 };
+
+        //    this.Grafico.FillPolygon(Brushes.White, puntosRombo);
+        //    this.Grafico.FillRectangle(Brushes.White, new Rectangle((int)xx, (int)yy, 13, 30));
+        //    this.Grafico.DrawPolygon(this.Bolígrafo, puntosRombo);
+
+        //}
     }
 }

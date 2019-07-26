@@ -181,7 +181,6 @@ C:\Users\andyr\Desktop\lol\UMLGraph-master\obj\Debug\UMLGraph.Grupos.Grupo5.Fpro
 C:\Users\andyr\Desktop\lol\UMLGraph-master\obj\Debug\UMLGraph.csproj.CopyComplete
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.csprojAssemblyReference.cache
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo3.Interfaz.LlenarClase.resources
-C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.Formulario.resources
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.InterfazGrafica.resources
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Inicio.resources
 C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Login.resources
@@ -207,3 +206,18 @@ C:\Users\bryan\source\repos\UMLGraph\bin\Debug\NClass.exe.config
 C:\Users\bryan\source\repos\UMLGraph\bin\Debug\Core.pdb
 C:\Users\bryan\source\repos\UMLGraph\bin\Debug\GUI.Diagram.pdb
 C:\Users\bryan\source\repos\UMLGraph\obj\Debug\UMLGraph.csproj.CopyComplete
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\NClass.exe
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\Core.dll
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\GUI.Diagram.dll
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\NClass.pdb
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\NClass.exe.config
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\Core.pdb
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\bin\Debug\GUI.Diagram.pdb
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Canvas.resources
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo1.GUI1.resources
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo3.Interfaz.CanvasGR3.resources
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo5.FpropiedadesClase.resources
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.csproj.CopyComplete
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.EliminarClase.resources
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.Formulario.resources
+C:\Users\Joel\Desktop\Propietarios21Julio\UMLGraph\obj\Debug\UMLGraph.Grupos.Grupo6.Vista.FormularioActualizarClase.resources
